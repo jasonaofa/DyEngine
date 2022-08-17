@@ -6,6 +6,7 @@
 #include "DyEngine/Core.h"
 #include "DyEngine/Application.h"
 #include "DyEngine/Log.h"
+#include "DyEngine/ImGui/ImGuiLayer.h"
 
 #include "DyEngine/Layer.h"
 //---------Entry Point-----------

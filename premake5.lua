@@ -13,10 +13,13 @@ workspace "DyEngine"
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "DyEngine/vendor/glfw/include"
 	IncludeDir["Glad"] = "DyEngine/vendor/Glad/include"
+	IncludeDir["ImGui"] = "DyEngine/vendor/imgui"
 
 
 	include"DyEngine/vendor/glfw"
 	include"DyEngine/vendor/Glad"
+	include"DyEngine/vendor/ImGui"
+
 
 project"DyEngine"
 	location"DyEngine"
@@ -49,6 +52,8 @@ project"DyEngine"
 
 
 		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.ImGui}/backends",
 		"%{IncludeDir.GLFW}"
 	}
 
@@ -56,6 +61,7 @@ project"DyEngine"
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"GLFW.lib",
 		"opengl32.lib"
 	}

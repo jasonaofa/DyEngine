@@ -10,8 +10,14 @@
     <Filter Include="DyEngine\Events">
       <UniqueIdentifier>{FCF032C6-687C-A08A-718D-237FDD97FC8A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DyEngine\ImGui">
+      <UniqueIdentifier>{4277258A-2E45-1990-17D9-89B60346F5F4}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -31,6 +37,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h">
       <Filter>DyEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h">
+      <Filter>DyEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\EntryPoint.h">
       <Filter>DyEngine</Filter>
     </ClInclude>
@@ -46,6 +55,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Events\MouseEvent.h">
       <Filter>DyEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.h">
+      <Filter>DyEngine\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Layer.h">
       <Filter>DyEngine</Filter>
     </ClInclude>
@@ -59,6 +71,12 @@
       <Filter>DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyPch.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -66,6 +84,12 @@
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
       <Filter>DyEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Core\imgui.cpp">
+      <Filter>DyEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp">
+      <Filter>DyEngine\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp">
       <Filter>DyEngine</Filter>
@@ -80,6 +104,9 @@
       <Filter>DyEngine</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyPch.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>

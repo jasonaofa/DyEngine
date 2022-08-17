@@ -6,7 +6,7 @@
 
 namespace DyEngine {
 
-	class WindowsWindow : public Window
+	class DLLEXPORT WindowsWindow : public Window
 	{
 	public:
 		WindowsWindow(const WindowProps& props);
