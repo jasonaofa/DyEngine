@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DyEngine">
+      <UniqueIdentifier>{18506B48-041D-C653-2D36-B4FB1962FBE1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DyEngine\Core">
+      <UniqueIdentifier>{7043721B-DC03-EE51-A53E-37CF11BE322E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DyEngine\Events">
+      <UniqueIdentifier>{FCF032C6-687C-A08A-718D-237FDD97FC8A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DyEngine\src\DyEngine.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Application.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\KeyCodes.h">
+      <Filter>DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h">
+      <Filter>DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\EntryPoint.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Events\ApplicationEvent.h">
+      <Filter>DyEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Events\Event.h">
+      <Filter>DyEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Events\KeyEvent.h">
+      <Filter>DyEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Events\MouseEvent.h">
+      <Filter>DyEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Layer.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\LayerStack.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Log.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Window.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyPch.h" />
+    <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
+      <Filter>DyEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp">
+      <Filter>DyEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\LayerStack.cpp">
+      <Filter>DyEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Log.cpp">
+      <Filter>DyEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Window.cpp">
+      <Filter>DyEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyPch.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
