@@ -1,0 +1,6 @@
+
+DyEngine/vendor/glfw/bin-int/
+
+DyEngine/vendor/glfw/bin/
+bin/Debug-windows-x86/SandBox/SandBox.pdb
+*.pdb
