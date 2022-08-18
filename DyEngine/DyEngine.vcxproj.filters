@@ -80,6 +80,9 @@
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Input.h" />
+    <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
@@ -110,5 +113,6 @@
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

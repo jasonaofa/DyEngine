@@ -1,9 +1,9 @@
-#include "DyPch.h"
+﻿#include "DyPch.h"
 #include "DyEngine/Events/ApplicationEvent.h"
 #include "DyEngine/Log.h"
 #include "Application.h"
 #include <GLFW/glfw3.h>
-
+#include "Input.h"
 namespace DyEngine
 {
 #define BIND_EVENT_FN(x) std::bind(&Application::x,this,std::placeholders::_1)
@@ -41,7 +41,7 @@ namespace DyEngine
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		//this is DyEngine get the event NOT app get event
 		//TODO delete later
-		//DyEngine_CORE_TRACE("{0}", e);
+		//DY_CORE_TRACE("{0}", e);
 		//反向遍历
 		for(auto it = m_LayerStack.end();it !=m_LayerStack.begin();)
 		{
@@ -63,6 +63,11 @@ namespace DyEngine
 			//遍历
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			//C++17 结构化绑定的演示
+			//auto [x, y] = Input::GetMousePosition();
+			//DY_CORE_TRACE("{0},{1}",x,y );
+
 
 			m_Window->OnUpdate();
 		}

@@ -156,6 +156,7 @@
     <ClInclude Include="DyEngine\src\DyEngine\Application.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\KeyCodes.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h" />
     <ClInclude Include="DyEngine\src\DyEngine\EntryPoint.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="DyEngine\src\DyEngine\Events\KeyEvent.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Events\MouseEvent.h" />
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Input.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Layer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\LayerStack.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
@@ -172,6 +174,7 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp" />
@@ -186,6 +189,7 @@
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

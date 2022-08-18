@@ -1,4 +1,4 @@
-#include "DyPch.h"
+﻿#include "DyPch.h"
 #include "Platform/Windows/WindowsWindow.h"
 #include "DyEngine/Log.h"
 
@@ -16,7 +16,7 @@ namespace DyEngine {
 
 	static void GLFWErrorCallback(int error, const char* description)
 	{
-		DyEngine_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
+		DY_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
 	Window* Window::Create(const WindowProps& props)
@@ -40,7 +40,7 @@ namespace DyEngine {
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 
-		DyEngine_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		DY_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized)
 		{

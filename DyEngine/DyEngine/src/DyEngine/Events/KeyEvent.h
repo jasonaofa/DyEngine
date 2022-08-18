@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 
 
@@ -54,7 +54,7 @@ namespace DyEngine {
 	class DLLEXPORT KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleasedEvent(const KeyCode keycode)
+		KeyReleasedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override

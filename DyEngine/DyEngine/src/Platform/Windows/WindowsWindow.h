@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "DyEngine/Window.h"
 #include <GLFW/glfw3.h>
@@ -22,6 +22,7 @@ namespace DyEngine {
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
 
+		inline virtual void* GetNativeWindow() const { return m_Window; }
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();

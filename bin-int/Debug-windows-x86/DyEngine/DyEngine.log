@@ -1,0 +1,53 @@
+﻿  ImGuiLayer.cpp
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Core.h(14,1): warning C4005: “DY_ENABLE_ASSERTS”: 宏重定义
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyPch.cpp : message : 参见“DY_ENABLE_ASSERTS”的前一个定义
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\Event.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Layer.h(24,15): warning C4251: “DyEngine::Layer::m_DebugName”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“DyEngine::Layer”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\KeyEvent.h(14,2): warning C4275: 非 dll 接口 class“DyEngine::Event”用作 dll 接口 class“DyEngine::KeyEvent”的基
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\Event.h(56): message : 参见“DyEngine::Event”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\KeyEvent.h(13): message : 参见“DyEngine::KeyEvent”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Log.h(19,42): warning C4251: “DyEngine::Log::s_CoreLogger”: class“std::shared_ptr<spdlog::logger>”需要有 dll 接口由 class“DyEngine::Log”的客户端使用
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\vendor\spdlog\include\spdlog\details\registry.h(34): message : 参见“std::shared_ptr<spdlog::logger>”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Log.h(20,42): warning C4251: “DyEngine::Log::s_ClintLogger”: class“std::shared_ptr<spdlog::logger>”需要有 dll 接口由 class“DyEngine::Log”的客户端使用
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\vendor\spdlog\include\spdlog\details\registry.h(34): message : 参见“std::shared_ptr<spdlog::logger>”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\LayerStack.h(24,22): warning C4251: “DyEngine::LayerStack::m_Layers”: class“std::vector<DyEngine::Layer *,std::allocator<DyEngine::Layer *>>”需要有 dll 接口由 class“DyEngine::LayerStack”的客户端使用
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\LayerStack.h(20): message : 参见“std::vector<DyEngine::Layer *,std::allocator<DyEngine::Layer *>>”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\LayerStack.h(25,33): warning C4251: “DyEngine::LayerStack::m_LayerInsert”: class“std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>”需要有 dll 接口由 class“DyEngine::LayerStack”的客户端使用
+          with
+          [
+              _Ty=DyEngine::Layer *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(457): message : 参见“std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>”的声明
+          with
+          [
+              _Ty=DyEngine::Layer *
+          ]
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Application.h(30,27): warning C4251: “DyEngine::Application::m_Window”: class“std::unique_ptr<DyEngine::Window,std::default_delete<DyEngine::Window>>”需要有 dll 接口由 class“DyEngine::Application”的客户端使用
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Application.h(30): message : 参见“std::unique_ptr<DyEngine::Window,std::default_delete<DyEngine::Window>>”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp(29,79): warning C4244: “参数”: 从“unsigned int”转换到“float”，可能丢失数据
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp(29,51): warning C4244: “参数”: 从“unsigned int”转换到“float”，可能丢失数据
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp(147,52): warning C4244: “参数”: 从“unsigned int”转换到“float”，可能丢失数据
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp(147,37): warning C4244: “参数”: 从“unsigned int”转换到“float”，可能丢失数据
+  Layer.cpp
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Core.h(14,1): warning C4005: “DY_ENABLE_ASSERTS”: 宏重定义
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyPch.cpp : message : 参见“DY_ENABLE_ASSERTS”的前一个定义
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\Event.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Layer.h(24,15): warning C4251: “DyEngine::Layer::m_DebugName”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“DyEngine::Layer”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  WindowsWindow.cpp
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Core.h(14,1): warning C4005: “DY_ENABLE_ASSERTS”: 宏重定义
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyPch.cpp : message : 参见“DY_ENABLE_ASSERTS”的前一个定义
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\Event.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Log.h(19,42): warning C4251: “DyEngine::Log::s_CoreLogger”: class“std::shared_ptr<spdlog::logger>”需要有 dll 接口由 class“DyEngine::Log”的客户端使用
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\vendor\spdlog\include\spdlog\details\registry.h(34): message : 参见“std::shared_ptr<spdlog::logger>”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Log.h(20,42): warning C4251: “DyEngine::Log::s_ClintLogger”: class“std::shared_ptr<spdlog::logger>”需要有 dll 接口由 class“DyEngine::Log”的客户端使用
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\vendor\spdlog\include\spdlog\details\registry.h(34): message : 参见“std::shared_ptr<spdlog::logger>”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\KeyEvent.h(14,2): warning C4275: 非 dll 接口 class“DyEngine::Event”用作 dll 接口 class“DyEngine::KeyEvent”的基
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\Event.h(56): message : 参见“DyEngine::Event”的声明
+C:\Users\frank\Documents\GitHub\DyEngine\DyEngine\DyEngine\src\DyEngine\Events\KeyEvent.h(13): message : 参见“DyEngine::KeyEvent”的声明
+  正在生成代码...
+    正在创建库 ..\bin\Debug-windows-x86\DyEngine\DyEngine.lib 和对象 ..\bin\Debug-windows-x86\DyEngine\DyEngine.exp
+LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+LINK : warning LNK4098: 默认库“LIBCMTD”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+  DyEngine.vcxproj -> C:\Users\frank\Documents\GitHub\DyEngine\bin\Debug-windows-x86\DyEngine\DyEngine.dll

@@ -16,8 +16,8 @@
 
 //USE if TO INSTEAD make "DY_ENABLE_ASSERTS 0"   WORK
 #ifdef DY_ENABLE_ASSERTS
-	#define DY_ASSERT(x,...){if(!(x)){DyEngine_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
-	#define DY_CORE_ASSERT(x,...){if(!(x)){DyEngine_CORE_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
+	#define DY_ASSERT(x,...){if(!(x)){DY_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
+	#define DY_CORE_ASSERT(x,...){if(!(x)){DY_CORE_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
 #else
 	#define DY_ASSERT(x,...)
 	#define DY_CORE_ASSERT(x,...)
