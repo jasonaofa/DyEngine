@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifdef DY_PLATFORM_WINDOWS
 	#ifdef DY_BUILD_DLL
