@@ -1,9 +1,9 @@
 [submodule "DyEngine/vendor/spdlog"]
 	path = DyEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "DyEngine/vendor/glfw"]
-	path = DyEngine/vendor/glfw
-	url = https://github.com/jasonaofa/glfw
 [submodule "DyEngine/vendor/imgui"]
 	path = DyEngine/vendor/imgui
 	url = https://github.com/jasonaofa/imgui
+[submodule "DyEngine/vendor/glfw"]
+	path = DyEngine/vendor/glfw
+	url = https://github.com/jasonaofa/glfw
