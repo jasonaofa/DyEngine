@@ -83,8 +83,7 @@
       <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -95,7 +94,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86\DyEngine\DyEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86\DyEngine\DyEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86\DyEngine\DyEngine.dll ..\bin\Debug-windows-x86\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86\DyEngine\DyEngine.dll ..\bin\Debug-windows-x86\SandBox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86\DyEngine\DyEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86\DyEngine\DyEngine.dll "..\bin\Debug-windows-x86\SandBox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86\DyEngine\DyEngine.dll "..\bin\Debug-windows-x86\SandBox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,8 +109,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -123,7 +121,7 @@
       <ImportLibrary>..\bin\Release-windows-x86\DyEngine\DyEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86\DyEngine\DyEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86\DyEngine\DyEngine.dll ..\bin\Release-windows-x86\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86\DyEngine\DyEngine.dll ..\bin\Release-windows-x86\SandBox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86\DyEngine\DyEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86\DyEngine\DyEngine.dll "..\bin\Release-windows-x86\SandBox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86\DyEngine\DyEngine.dll "..\bin\Release-windows-x86\SandBox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
@@ -138,8 +136,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -151,7 +148,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86\DyEngine\DyEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86\DyEngine\DyEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86\DyEngine\DyEngine.dll ..\bin\Dist-windows-x86\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86\DyEngine\DyEngine.dll ..\bin\Dist-windows-x86\SandBox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86\DyEngine\DyEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86\DyEngine\DyEngine.dll "..\bin\Dist-windows-x86\SandBox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86\DyEngine\DyEngine.dll "..\bin\Dist-windows-x86\SandBox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -79,6 +79,13 @@ namespace DyEngine
 
 	/**
 	 * \brief 调度器/分发器 根据事件类型调度事件
+	 *	example:
+	 *	  EventDispatcher dispatcher(event);
+		  dispatcher.Dispatch<MouseButtonPressedEvent>(std::bind(&ImGuiLayer::OnMouseButtonPressedEvent, this, std::placeholders::_1));
+
+
+		  dispatcher.Dispatch<用来判断的时间类型是否和创建的时候给的event一致>（如果一致就执行这里面的代码）
+
 	 */
 	class EventDispatcher
 	{

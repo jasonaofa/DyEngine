@@ -8,3 +8,5 @@ bin/Debug-windows-x86/SandBox/SandBox.pdb
 *.ipch
 *.obj
 *.tlog
+*.ipch
+*.ipch

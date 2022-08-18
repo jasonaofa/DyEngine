@@ -10,7 +10,7 @@ namespace DyEngine {
 	/**
 	 * \brief 继承自Evnet，之前说了，Event是所有event的基类
 	 */
-	class KeyEvent : public Event
+	class DLLEXPORT KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -27,7 +27,7 @@ namespace DyEngine {
 	/**
 	 * \brief pressedEvnet
 	 */
-	class KeyPressedEvent : public KeyEvent
+	class DLLEXPORT KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode, bool isRepeat = false)
@@ -51,7 +51,7 @@ namespace DyEngine {
 	/**
 	 * \brief releaseEvent
 	 */
-	class KeyReleasedEvent : public KeyEvent
+	class DLLEXPORT KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(const KeyCode keycode)
@@ -67,10 +67,10 @@ namespace DyEngine {
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
-	class KeyTypedEvent : public KeyEvent
+	class DLLEXPORT KeyTypedEvent : public KeyEvent
 	{
 	public:
-		KeyTypedEvent(const KeyCode keycode)
+		KeyTypedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override

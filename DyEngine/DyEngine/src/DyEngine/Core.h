@@ -10,6 +10,11 @@
 	#error Dy only supports windows!
 #endif
 
+#ifdef DyEngine_Debug
+	#define DY_ENABLE_ASSERTS
+#endif 
+
+//USE if TO INSTEAD make "DY_ENABLE_ASSERTS 0"   WORK
 #ifdef DY_ENABLE_ASSERTS
 	#define DY_ASSERT(x,...){if(!(x)){DyEngine_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
 	#define DY_CORE_ASSERT(x,...){if(!(x)){DyEngine_CORE_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
@@ -17,6 +22,7 @@
 	#define DY_ASSERT(x,...)
 	#define DY_CORE_ASSERT(x,...)
 #endif 
+
 
 
 
@@ -40,3 +46,5 @@ namespace DyEngine
 
 
 }
+//bind x to placeholders
+#define DY_BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
