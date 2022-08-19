@@ -173,8 +173,8 @@
     <ClInclude Include="DyEngine\src\DyPch.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h" />
-    <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp" />
@@ -188,8 +188,8 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

@@ -34,6 +34,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\KeyCodes.h">
       <Filter>DyEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h">
+      <Filter>DyEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h">
       <Filter>DyEngine\Core</Filter>
     </ClInclude>
@@ -58,6 +61,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.h">
       <Filter>DyEngine\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Input.h">
+      <Filter>DyEngine</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Layer.h">
       <Filter>DyEngine</Filter>
     </ClInclude>
@@ -77,12 +83,12 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Input.h" />
-    <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
@@ -110,9 +116,11 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
