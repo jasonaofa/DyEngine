@@ -2,4 +2,6 @@
 /DyEngine/vendor/glfw/bin/
 /bin/
 /bin-int/
-*.upch
+bin/
+bin-int/
+*.ipch
