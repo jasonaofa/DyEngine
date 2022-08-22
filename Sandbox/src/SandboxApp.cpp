@@ -10,7 +10,7 @@ public:
 	}
 	void OnUpdate() override
 	{
-		DY_INFO("ExamplerLayer::Update");
+		//DY_INFO("ExamplerLayer::Update");
 		if (DyEngine::Input::IsKeyPressed(DY_KEY_TAB))
 		{
 			DY_INFO("Tab is pressed!");
