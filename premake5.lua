@@ -1,8 +1,9 @@
+﻿
 workspace "DyEngine"
 
-	startproject"Sandbox"
 	architecture "x86"
-
+	--TODO it doesnt work
+	startproject"SandBox"
 	configurations
 	{
 		"Debug",
@@ -40,7 +41,8 @@ project"DyEngine"
 		"DyEngine/DyEngine/src/**.h",
 		"DyEngine/DyEngine/src/**.c",
 		"DyEngine/DyEngine/src/**.cpp",
-		"DyEngine/vendor/glm/glm"
+		"DyEngine/vendor/glm/glm/**.hpp",
+		"DyEngine/vendor/glm/glm/**.inl"
 	}
 
 	libdirs 
