@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;DyEngine_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;DyEngine_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -190,6 +190,9 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vendor\glm\glm" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

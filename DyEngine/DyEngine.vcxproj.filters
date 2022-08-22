@@ -4,123 +4,146 @@
     <Filter Include="DyEngine">
       <UniqueIdentifier>{18506B48-041D-C653-2D36-B4FB1962FBE1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DyEngine\Core">
-      <UniqueIdentifier>{7043721B-DC03-EE51-A53E-37CF11BE322E}</UniqueIdentifier>
+    <Filter Include="DyEngine\src">
+      <UniqueIdentifier>{2F5A612F-1BBD-F0D3-C442-298AB084BC56}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DyEngine\Events">
-      <UniqueIdentifier>{FCF032C6-687C-A08A-718D-237FDD97FC8A}</UniqueIdentifier>
+    <Filter Include="DyEngine\src\DyEngine">
+      <UniqueIdentifier>{510408B1-BD70-C3AB-8664-5B09F28FE513}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DyEngine\ImGui">
-      <UniqueIdentifier>{4277258A-2E45-1990-17D9-89B60346F5F4}</UniqueIdentifier>
+    <Filter Include="DyEngine\src\DyEngine\Core">
+      <UniqueIdentifier>{498315AB-3593-C17B-9E4C-269A8A7BB014}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    <Filter Include="DyEngine\src\DyEngine\Events">
+      <UniqueIdentifier>{158BA5CB-0146-9577-AAFD-0DC29697DF07}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\OpenGL">
-      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    <Filter Include="DyEngine\src\DyEngine\ImGui">
+      <UniqueIdentifier>{3BB2300E-A7BF-5EF4-30A6-5ADF9CB22AAB}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    <Filter Include="DyEngine\src\Platform">
+      <UniqueIdentifier>{637B251D-CFE7-E017-98DB-787504070380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DyEngine\src\Platform\OpenGL">
+      <UniqueIdentifier>{37179F22-23D2-8ECE-CC89-0719B823D95E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DyEngine\src\Platform\Windows">
+      <UniqueIdentifier>{9DD89DCE-09F1-84F8-D29D-14923E751992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\glm">
+      <UniqueIdentifier>{829FC5A8-6E57-07F6-D75E-E051C335A2E6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DyEngine\src\DyEngine.h" />
+    <ClInclude Include="DyEngine\src\DyEngine.h">
+      <Filter>DyEngine\src</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Application.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\KeyCodes.h">
-      <Filter>DyEngine\Core</Filter>
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h">
-      <Filter>DyEngine\Core</Filter>
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h">
-      <Filter>DyEngine\Core</Filter>
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h">
-      <Filter>DyEngine\Core</Filter>
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\EntryPoint.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Events\ApplicationEvent.h">
-      <Filter>DyEngine\Events</Filter>
+      <Filter>DyEngine\src\DyEngine\Events</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Events\Event.h">
-      <Filter>DyEngine\Events</Filter>
+      <Filter>DyEngine\src\DyEngine\Events</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Events\KeyEvent.h">
-      <Filter>DyEngine\Events</Filter>
+      <Filter>DyEngine\src\DyEngine\Events</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Events\MouseEvent.h">
-      <Filter>DyEngine\Events</Filter>
+      <Filter>DyEngine\src\DyEngine\Events</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.h">
-      <Filter>DyEngine\ImGui</Filter>
+      <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Input.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Layer.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\LayerStack.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Log.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Window.h">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyPch.h" />
+    <ClInclude Include="DyEngine\src\DyPch.h">
+      <Filter>DyEngine\src</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Core\imgui.cpp">
-      <Filter>DyEngine\Core</Filter>
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp">
-      <Filter>DyEngine\ImGui</Filter>
+      <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\LayerStack.cpp">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Log.cpp">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Window.cpp">
-      <Filter>DyEngine</Filter>
+      <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyPch.cpp" />
+    <ClCompile Include="DyEngine\src\DyPch.cpp">
+      <Filter>DyEngine\src</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Platform\OpenGL</Filter>
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp">
-      <Filter>Platform\Windows</Filter>
+      <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
-      <Filter>Platform\Windows</Filter>
+      <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vendor\glm\glm">
+      <Filter>vendor\glm</Filter>
+    </None>
   </ItemGroup>
 </Project>

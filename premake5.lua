@@ -16,7 +16,7 @@ workspace "DyEngine"
 	IncludeDir["GLFW"] = "DyEngine/vendor/glfw/include"
 	IncludeDir["Glad"] = "DyEngine/vendor/Glad/include"
 	IncludeDir["ImGui"] = "DyEngine/vendor/imgui"
-
+	IncludeDir["glm"] = "DyEngine/vendor/glm"
 
 	include"DyEngine/vendor/glfw"
 	include"DyEngine/vendor/Glad"
@@ -39,7 +39,8 @@ project"DyEngine"
 	{
 		"DyEngine/DyEngine/src/**.h",
 		"DyEngine/DyEngine/src/**.c",
-		"DyEngine/DyEngine/src/**.cpp"
+		"DyEngine/DyEngine/src/**.cpp",
+		"DyEngine/vendor/glm/glm"
 	}
 
 	libdirs 
@@ -57,7 +58,8 @@ project"DyEngine"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.ImGui}/backends",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -125,6 +127,7 @@ project"SandBox"
 		"DyEngine/vendor/spdlog/include;",
 		"DyEngine/vendor/imgui;",
 		"DyEngine/vendor/glfw/include;",
+		"%{IncludeDir.glm}"
 	}
 
 	links
