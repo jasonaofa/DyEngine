@@ -13,7 +13,7 @@
 - Input Polling 
 ![image](https://user-images.githubusercontent.com/31367799/185868136-fd3ae58d-bed2-4427-be68-0787ab321f87.png)
 
-还处在一个比较初级的状态。但是底层的架构已经搭完了。
+<还处在一个非常初级的阶段>
 
 # 2. 如何运行
 目前只支持WINDOWS系统。
