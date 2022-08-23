@@ -22,9 +22,6 @@
     <Filter Include="DyEngine\src\Platform">
       <UniqueIdentifier>{637B251D-CFE7-E017-98DB-787504070380}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DyEngine\src\Platform\OpenGL">
-      <UniqueIdentifier>{37179F22-23D2-8ECE-CC89-0719B823D95E}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DyEngine\src\Platform\Windows">
       <UniqueIdentifier>{9DD89DCE-09F1-84F8-D29D-14923E751992}</UniqueIdentifier>
     </Filter>

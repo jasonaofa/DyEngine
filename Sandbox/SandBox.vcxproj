@@ -79,10 +79,10 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_PLATFORM_WINDOWS;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\DyEngine\vendor\Glad\include;;..\DyEngine\DyEngine\src;;..\DyEngine\vendor\spdlog\include;;..\DyEngine\vendor\imgui;;..\DyEngine\vendor\glfw\include;;..\DyEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\DyEngine\vendor\Glad\include;;..\DyEngine\DyEngine\src;;..\DyEngine\vendor\spdlog\include;;..\DyEngine\vendor\imgui;;..\DyEngine\vendor\glfw\include;;..\DyEngine\vendor;..\DyEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -95,13 +95,13 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_PLATFORM_WINDOWS;DyEngine_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\DyEngine\vendor\Glad\include;;..\DyEngine\DyEngine\src;;..\DyEngine\vendor\spdlog\include;;..\DyEngine\vendor\imgui;;..\DyEngine\vendor\glfw\include;;..\DyEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\DyEngine\vendor\Glad\include;;..\DyEngine\DyEngine\src;;..\DyEngine\vendor\spdlog\include;;..\DyEngine\vendor\imgui;;..\DyEngine\vendor\glfw\include;;..\DyEngine\vendor;..\DyEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -115,13 +115,13 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_PLATFORM_WINDOWS;DyEngine_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\DyEngine\vendor\Glad\include;;..\DyEngine\DyEngine\src;;..\DyEngine\vendor\spdlog\include;;..\DyEngine\vendor\imgui;;..\DyEngine\vendor\glfw\include;;..\DyEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\DyEngine\vendor\Glad\include;;..\DyEngine\DyEngine\src;;..\DyEngine\vendor\spdlog\include;;..\DyEngine\vendor\imgui;;..\DyEngine\vendor\glfw\include;;..\DyEngine\vendor;..\DyEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>

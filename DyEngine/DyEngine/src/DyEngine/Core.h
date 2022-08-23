@@ -1,17 +1,22 @@
 ﻿#pragma once
 
 #ifdef DY_PLATFORM_WINDOWS
-	#ifdef DY_BUILD_DLL
-		#define DLLEXPORT __declspec(dllexport)
+	#if DY_DYNAMIC_LINK
+		#ifdef DY_BUILD_DLL
+			#define DLLEXPORT __declspec(dllexport)
+		#else
+			#define DLLEXPORT __declspec(dllimport)
+		#endif
 	#else
-		#define DLLEXPORT __declspec(dllimport)
+		#define DLLEXPORT
 	#endif
+
 #else
 	#error Dy only supports windows!
 #endif
 
 #ifdef DyEngine_Debug
-	#define DY_ENABLE_ASSERTS
+	//#define DY_ENABLE_ASSERTS
 #endif 
 
 //USE if TO INSTEAD make "DY_ENABLE_ASSERTS 0"   WORK

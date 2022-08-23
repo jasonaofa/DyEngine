@@ -25,9 +25,10 @@ workspace "DyEngine"
 
 project"DyEngine"
 	location"DyEngine"
-	kind"SharedLib"
+	kind"StaticLib"
 	language"C++"
-	staticruntime"off"
+	cppdialect"C++17"	
+	staticruntime"on"
 
 	targetdir("bin/" .. outputdir .."/%{prj.name}")
 	objdir("bin-int/" .. outputdir .."/%{prj.name}")
@@ -72,42 +73,38 @@ project"DyEngine"
 		"opengl32.lib"
 	}
 	filter "system:windows"
-		cppdialect		"C++17"	
 		systemversion	"latest"
 
 		defines	
 		{
 			"DY_ENABLE_ASSERTS",
 			"DY_PLATFORM_WINDOWS",
-			"DY_BUILD_DLL"
+			"DY_BUILD_DLL",
+			"_CRT_SECURE_NO_WARNINGS"
 
-		}
-
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/SandBox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines"DyEngine_Debug"
 		runtime	"Debug"
-		symbols "On"	
+		symbols "on"	
 
 	filter "configurations:Release"
 		defines"DyEngine_Release"
 		runtime"Release"
-		optimize "On"	
+		optimize "on"	
 
 	filter "configurations:Dist"
 		defines"DyEngine_Dist"
 		runtime"Release"
-		optimize "On"	
+		optimize "on"	
 	
 project"SandBox"
 	location"SandBox"
 	kind "ConsoleApp"
 	language"C++"
-	staticruntime"off"
+	cppdialect"C++17"	
+	staticruntime"on"
 
 
 	targetdir("bin/" .. outputdir .."/%{prj.name}")
@@ -138,7 +135,6 @@ project"SandBox"
 	}
 
 	filter "system:windows"
-		cppdialect		"C++17"	
 		systemversion	"latest"
 
 		defines	
@@ -149,14 +145,14 @@ project"SandBox"
 	filter "configurations:Debug"
 		defines"DyEngine_Debug"
 		runtime"Debug"
-		symbols "On"	
+		symbols "on"	
 
 	filter "configurations:Release"
 		defines"DyEngine_Release"
 		runtime"Release"
-		optimize "On"	
+		optimize "on"	
 
 	filter "configurations:Dist"
 		defines"DyEngine_Dist"
 		runtime"Release"
-		optimize "On"	
+		optimize "on"	

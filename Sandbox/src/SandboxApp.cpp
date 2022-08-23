@@ -1,5 +1,7 @@
 ﻿#include <DyEngine.h>
 
+#include "imgui.h"
+
 class ExamplerLayer : public DyEngine::Layer
 {
 public:
@@ -15,6 +17,14 @@ public:
 		{
 			DY_INFO("Tab is pressed!");
 		}
+
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("test");
+		ImGui::Text("testText");
+		ImGui::End();
 	}
 
 	void OnEvent(DyEngine::Event& event) override
