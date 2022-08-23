@@ -108,12 +108,6 @@
     <ClInclude Include="DyEngine\src\DyPch.h">
       <Filter>DyEngine\src</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>DyEngine\src\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h">
-      <Filter>DyEngine\src\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClInclude>
@@ -1370,9 +1364,6 @@
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
       <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Core\imgui.cpp">
-      <Filter>DyEngine\src\DyEngine\Core</Filter>
-    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp">
       <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClCompile>
@@ -1390,9 +1381,6 @@
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <Filter>DyEngine\src</Filter>
-    </ClCompile>
-    <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>

@@ -4,6 +4,7 @@
 #include "Events/Event.h"
 #include "DyEngine/LayerStack.h"
 #include "Events/ApplicationEvent.h"
+#include "DyEngine/ImGui/ImGuiLayer.h"
 
 namespace DyEngine
 {
@@ -28,8 +29,10 @@ namespace DyEngine
 		bool OnWindowClose(WindowCloseEvent& e);
 		
 		std::unique_ptr<Window> m_Window;
+
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		ImGuiLayer* m_ImGuiLayer;
 	private:
 		static Application* s_Instance;
 	};

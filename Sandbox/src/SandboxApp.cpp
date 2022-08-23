@@ -31,7 +31,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExamplerLayer());
-		PushOverlay(new DyEngine::ImGuiLayer());
 	}
 	~Sandbox()
 	{

@@ -2,7 +2,6 @@
 workspace "DyEngine"
 
 	architecture "x86"
-	--TODO it doesnt work
 	startproject"SandBox"
 	configurations
 	{
@@ -129,6 +128,7 @@ project"SandBox"
 		"DyEngine/vendor/spdlog/include;",
 		"DyEngine/vendor/imgui;",
 		"DyEngine/vendor/glfw/include;",
+		"DyEngine/vendor",
 		"%{IncludeDir.glm}"
 	}
 

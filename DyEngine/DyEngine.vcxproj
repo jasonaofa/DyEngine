@@ -171,8 +171,6 @@
     <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Window.h" />
     <ClInclude Include="DyEngine\src\DyPch.h" />
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -593,7 +591,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Core\imgui.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\LayerStack.cpp" />
@@ -602,7 +599,6 @@
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
