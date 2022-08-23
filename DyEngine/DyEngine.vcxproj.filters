@@ -22,8 +22,14 @@
     <Filter Include="DyEngine\src\Platform">
       <UniqueIdentifier>{637B251D-CFE7-E017-98DB-787504070380}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DyEngine\src\Platform\OpenGL">
+      <UniqueIdentifier>{37179F22-23D2-8ECE-CC89-0719B823D95E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="DyEngine\src\Platform\Windows">
       <UniqueIdentifier>{9DD89DCE-09F1-84F8-D29D-14923E751992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DyEngine\src\Renderer">
+      <UniqueIdentifier>{B58202F8-21EF-BDF2-EAE2-5550560EE05A}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -105,11 +111,17 @@
     <ClInclude Include="DyEngine\src\DyPch.h">
       <Filter>DyEngine\src</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>DyEngine\src\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Renderer\GraphicsContext.h">
+      <Filter>DyEngine\src\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glm\glm\common.hpp">
       <Filter>vendor\glm\glm</Filter>
@@ -1379,11 +1391,17 @@
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <Filter>DyEngine\src</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\Renderer\GraphicsContext.cpp">
+      <Filter>DyEngine\src\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

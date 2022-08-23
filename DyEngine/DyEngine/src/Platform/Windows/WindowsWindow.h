@@ -2,7 +2,7 @@
 
 #include "DyEngine/Window.h"
 #include <GLFW/glfw3.h>
-
+#include "Renderer/GraphicsContext.h"
 
 namespace DyEngine {
 
@@ -30,6 +30,7 @@ namespace DyEngine {
 	private:
 		//window
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 		//只要传这个结构体给GLFW就行了。不用传递整个类
 		struct WindowData
 		{

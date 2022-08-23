@@ -33,6 +33,8 @@ namespace DyEngine
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 		ImGuiLayer* m_ImGuiLayer;
+
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
 	private:
 		static Application* s_Instance;
 	};

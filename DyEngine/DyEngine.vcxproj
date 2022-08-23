@@ -162,8 +162,10 @@
     <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Window.h" />
     <ClInclude Include="DyEngine\src\DyPch.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="DyEngine\src\Renderer\GraphicsContext.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -590,8 +592,10 @@
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="DyEngine\src\Renderer\GraphicsContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

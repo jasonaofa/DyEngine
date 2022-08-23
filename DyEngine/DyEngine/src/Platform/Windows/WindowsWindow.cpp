@@ -8,7 +8,9 @@
 #include "DyEngine/Events/MouseEvent.h"
 
 #include "DyEngine/log.h"
-#include <GLFW/glfw3.h>
+
+
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace DyEngine {
 	
@@ -42,6 +44,7 @@ namespace DyEngine {
 
 		DY_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
+
 		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
@@ -50,12 +53,15 @@ namespace DyEngine {
 			s_GLFWInitialized = true;
 		}
 
-			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-			glfwMakeContextCurrent(m_Window);
+
+		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
 
 
-			glfwSetWindowUserPointer(m_Window, &m_Data);
-			SetVSync(true);
+		glfwSetWindowUserPointer(m_Window, &m_Data);
+		SetVSync(true);
 
 		//设置glfw回调,lambda
 			glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
@@ -153,7 +159,8 @@ namespace DyEngine {
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
+
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
