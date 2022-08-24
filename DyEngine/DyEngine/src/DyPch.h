@@ -13,4 +13,6 @@
 
 #ifdef DY_PLATFORM_WINDOWS
 	#include <Windows.h>
+	#include "DyEngine/Core.h"
+	#include "DyEngine/Log.h"
 #endif

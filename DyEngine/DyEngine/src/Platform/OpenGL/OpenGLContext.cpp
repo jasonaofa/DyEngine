@@ -1,32 +1,41 @@
 #include "DyPch.h"
 
+#include "glad/glad.h"
 #include "OpenGLContext.h"
 
-#include "DyEngine/Log.h"
-#include "glad/glad.h"
+#include <GLFW/glfw3.h>
 
 
 namespace DyEngine
 {
-
-	 OpenGLContext::OpenGLContext(GLFWwindow* windowHandle)
-		 :m_WindowHandle(windowHandle)
+	OpenGLContext::OpenGLContext(GLFWwindow* windowHandle)
+		: m_WindowHandle(windowHandle)
 	{
 	}
 
-	 void OpenGLContext::Init()
+	void OpenGLContext::Init()
 	{
-		 glfwMakeContextCurrent(m_WindowHandle);
+		glfwMakeContextCurrent(m_WindowHandle);
 
-		 DY_CORE_INFO("OpenGL Info:");
-		 DY_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
-		 DY_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
-		 DY_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
+		//这是初始化GLAD
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		if (!status)
+		{
+			std::cout << "Failed to initialize Glad!" << std::endl;
+		};
+		DY_CORE_INFO("OpenGL Info:");
+		DY_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
+		DY_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+		DY_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
 
+		if (GLVersion.major > 4 || (GLVersion.major == 4 && GLVersion.minor >= 5))
+		{
+			std::cout << "DyEngine requires at least OpenGL version 4.5!" << std::endl;
+		};
 	}
 
-	 void OpenGLContext::SwapBuffers()
+	void OpenGLContext::SwapBuffers()
 	{
-		 glfwSwapBuffers(m_WindowHandle);
+		glfwSwapBuffers(m_WindowHandle);
 	}
 }

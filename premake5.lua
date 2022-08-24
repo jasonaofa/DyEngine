@@ -80,7 +80,8 @@ project"DyEngine"
 			"DY_ENABLE_ASSERTS",
 			"DY_PLATFORM_WINDOWS",
 			"DY_BUILD_DLL",
-			"_CRT_SECURE_NO_WARNINGS"
+			"_CRT_SECURE_NO_WARNINGS",
+			"GLFW_INCLUDE_NONE"
 
 		}
 
@@ -140,6 +141,7 @@ project"SandBox"
 		defines	
 		{
 			"DY_PLATFORM_WINDOWS",
+			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"

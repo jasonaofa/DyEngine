@@ -16,7 +16,7 @@
 #endif
 
 #ifdef DyEngine_Debug
-	//#define DY_ENABLE_ASSERTS
+	#define DY_ENABLE_ASSERTS
 #endif 
 
 //USE if TO INSTEAD make "DY_ENABLE_ASSERTS 0"   WORK

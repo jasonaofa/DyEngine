@@ -76,7 +76,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -97,7 +97,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;DyEngine_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -122,7 +122,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;DyEngine_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -143,6 +143,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Application.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core.h" />
@@ -160,12 +161,15 @@
     <ClInclude Include="DyEngine\src\DyEngine\Layer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\LayerStack.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Window.h" />
     <ClInclude Include="DyEngine\src\DyPch.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="DyEngine\src\Renderer\GraphicsContext.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -583,19 +587,23 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\LayerStack.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Log.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Window.cpp" />
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="DyEngine\src\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

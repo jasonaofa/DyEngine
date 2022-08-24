@@ -120,7 +120,7 @@
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\Renderer\GraphicsContext.h">
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h">
       <Filter>DyEngine\src\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glm\glm\common.hpp">
@@ -1368,6 +1368,10 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
@@ -1400,8 +1404,12 @@
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\Renderer\GraphicsContext.cpp">
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp">
       <Filter>DyEngine\src\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>

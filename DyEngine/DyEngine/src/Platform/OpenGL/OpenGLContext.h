@@ -1,10 +1,9 @@
 #pragma once
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
-#include <GL/GL.h>
-#include "Renderer/GraphicsContext.h"
+#include "DyEngine/Log.h"
 
+#include "DyEngine/Renderer/GraphicsContext.h"
 
+struct GLFWwindow;
 
 namespace DyEngine
 {

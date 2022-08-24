@@ -9,7 +9,6 @@
 
 #include "DyEngine/log.h"
 
-
 #include "Platform/OpenGL/OpenGLContext.h"
 
 namespace DyEngine {
