@@ -78,7 +78,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>DY_PLATFORM_WINDOWS;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DY_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\DyEngine\vendor\Glad\include;;..\DyEngine\DyEngine\src;;..\DyEngine\vendor\spdlog\include;;..\DyEngine\vendor\imgui;;..\DyEngine\vendor\glfw\include;;..\DyEngine\vendor;..\DyEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>

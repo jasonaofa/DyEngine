@@ -20,11 +20,8 @@
 基于Premake编译，在根目录下写好了一个批处理：![image](https://user-images.githubusercontent.com/31367799/185866568-dec06497-fcdf-482c-8da6-7c01410ab2fd.png)
 默认是VS2019，可以自己修改
 
-# 3. Submodule
-都在\DyEngine\vendor里，记得拉一下。
-
-目前只有：
-- glfw
-- glad
-- imgui
-- spdlog
+#3. 设计
+- 入口是EntryPoint 启动的时候首先执行
+- 界面和应用都写在Applicaiton
+- 不同系统的事件都写在不同的window，e.g.:WindowsWindow
+- 记得啦submodule都在\DyEngine\vendor里。

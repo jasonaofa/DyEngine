@@ -19,6 +19,9 @@
     <Filter Include="DyEngine\src\DyEngine\ImGui">
       <UniqueIdentifier>{3BB2300E-A7BF-5EF4-30A6-5ADF9CB22AAB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DyEngine\src\DyEngine\Renderer">
+      <UniqueIdentifier>{17B32F42-03D9-F9A8-EC1E-7F74D8E31E75}</UniqueIdentifier>
+    </Filter>
     <Filter Include="DyEngine\src\Platform">
       <UniqueIdentifier>{637B251D-CFE7-E017-98DB-787504070380}</UniqueIdentifier>
     </Filter>
@@ -27,9 +30,6 @@
     </Filter>
     <Filter Include="DyEngine\src\Platform\Windows">
       <UniqueIdentifier>{9DD89DCE-09F1-84F8-D29D-14923E751992}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DyEngine\src\Renderer">
-      <UniqueIdentifier>{B58202F8-21EF-BDF2-EAE2-5550560EE05A}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -105,13 +105,43 @@
     <ClInclude Include="DyEngine\src\DyEngine\Log.h">
       <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\RenderCommand.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\RendererAPI.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Window.h">
       <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyPch.h">
       <Filter>DyEngine\src</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h">
@@ -119,9 +149,6 @@
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>DyEngine\src\Platform\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h">
-      <Filter>DyEngine\src\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glm\glm\common.hpp">
       <Filter>vendor\glm\glm</Filter>
@@ -1368,10 +1395,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
@@ -1389,13 +1412,40 @@
     <ClCompile Include="DyEngine\src\DyEngine\Log.cpp">
       <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\RenderCommand.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Window.cpp">
       <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <Filter>DyEngine\src</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp">
@@ -1404,12 +1454,5 @@
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp">
-      <Filter>DyEngine\src\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
-    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>
