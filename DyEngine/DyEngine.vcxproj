@@ -143,7 +143,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Application.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core.h" />
@@ -157,10 +156,14 @@
     <ClInclude Include="DyEngine\src\DyEngine\Events\KeyEvent.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Events\MouseEvent.h" />
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_glfw.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Input.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Layer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\LayerStack.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Window.h" />
@@ -169,7 +172,6 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -587,12 +589,15 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\LayerStack.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Log.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Window.cpp" />
@@ -603,7 +608,6 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

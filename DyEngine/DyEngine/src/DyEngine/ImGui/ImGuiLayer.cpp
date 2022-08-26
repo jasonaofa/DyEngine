@@ -1,9 +1,12 @@
-#include "DyPch.h"
+﻿#include "DyPch.h"
 #include "ImGuiLayer.h"
 
 #include <imgui.h>
-#include <backends/imgui_impl_glfw.h>
-#include <backends/imgui_impl_opengl3.h>
+
+
+#include "DyEngine/ImGui/imgui_impl_opengl3.h"
+#include "DyEngine/ImGui/imgui_impl_glfw.h"
+
 #include "DyEngine/Application.h"
 
 //TODO delete later
