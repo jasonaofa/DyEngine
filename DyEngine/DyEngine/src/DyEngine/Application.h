@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Core.h"
 #include "Window.h"
 #include "Events/Event.h"
@@ -8,6 +8,7 @@
 
 #include "DyEngine/Renderer/Shader.h"
 #include "DyEngine/Renderer/Buffer.h"
+#include "DyEngine/Renderer/VertexArray.h"
 
 namespace DyEngine
 {
@@ -37,10 +38,11 @@ namespace DyEngine
 		LayerStack m_LayerStack;
 		ImGuiLayer* m_ImGuiLayer;
 
-		unsigned int m_VertexArray;
-		std::unique_ptr<Shader> m_Shader;
-		std::unique_ptr<VertexBuffer> m_VertexBuffer;
-		std::unique_ptr<IndexBuffer> m_IndexBuffer;
+		std::shared_ptr<Shader> m_Shader;
+		//std::shared_ptr<VertexBuffer> m_VertexBuffer;
+		//std::shared_ptr<IndexBuffer> m_IndexBuffer;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
 	private:
 		static Application* s_Instance;
 	};

@@ -18,26 +18,7 @@ namespace DyEngine
 
 	Application* Application::s_Instance = nullptr;
 
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
-	{
-		switch (type)
-		{
-			case ShaderDataType::Float:    return GL_FLOAT;
-			case ShaderDataType::Float2:   return GL_FLOAT;
-			case ShaderDataType::Float3:   return GL_FLOAT;
-			case ShaderDataType::Float4:   return GL_FLOAT;
-			case ShaderDataType::Mat3:     return GL_FLOAT;
-			case ShaderDataType::Mat4:     return GL_FLOAT;
-			case ShaderDataType::Int:      return GL_INT;
-			case ShaderDataType::Int2:     return GL_INT;
-			case ShaderDataType::Int3:     return GL_INT;
-			case ShaderDataType::Int4:     return GL_INT;
-			case ShaderDataType::Bool:     return GL_BOOL;
-		}
 
-		DY_CORE_ASSERT(false, "Unknown ShaderDataType!");
-		return 0;
-	}
 
 	Application::Application()
 	{
@@ -50,42 +31,30 @@ namespace DyEngine
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
-
-		glGenVertexArrays(1, &m_VertexArray);
-		glBindVertexArray(m_VertexArray);
-
+		m_VertexArray.reset(VertexArray::Create());
 
 		float vertices[3 * 7] = {
 			-0.5f,-0.5f,0.0f, 0.8f,0.2f,0.8f,1.0f,
 			0.5f,-0.5f,0.0f,0.2f,0.3f,0.8f,1.0f,
 			0.0f,0.5f,0.0f,0.8f,0.8f,0.2f,1.0f,
 		};
+		std::shared_ptr<VertexBuffer> vertexBuffer;
 
-		m_VertexBuffer.reset(VertexBuffer::Create(vertices,sizeof(vertices)));
+		vertexBuffer.reset(VertexBuffer::Create(vertices,sizeof(vertices)));
 
 		BufferLayout layout = {
 			{ShaderDataType::Float3,"a_Position"},
 			{ShaderDataType::Float4,"a_Color"}
 		};
 
-		m_VertexBuffer->SetLayout(layout);
-
-		uint32_t index = 0;
-		for (const auto& element : m_VertexBuffer->GetLayout())
-		{
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(index, element.GetComponentCount(), 
-				ShaderDataTypeToOpenGLBaseType(element.Type), 
-				element.Normalized? GL_TRUE:GL_FALSE, 
-				layout.GetStride(), 
-				(const void*)element.Offset);
-			index++;
-		}
-
+		vertexBuffer->SetLayout(layout);
+		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		unsigned int indices[3] = { 0,1,2, };
-		m_IndexBuffer.reset(IndexBuffer::Create(indices,sizeof(indices)/sizeof(uint32_t)));
+		std::shared_ptr<IndexBuffer> IndexBuffer;
 
+		IndexBuffer.reset(IndexBuffer::Create(indices,sizeof(indices)/sizeof(uint32_t)));
+		m_VertexArray->SetIndexBuffer(IndexBuffer);
 
 
 		const std::string vertexSrc = R"(
@@ -164,9 +133,10 @@ namespace DyEngine
 			glClearColor(0.1f, 0.1f, 0.1f, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			glBindVertexArray(m_VertexArray);
+
 			m_Shader->Bind();
-			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);
+			m_VertexArray->Bind();
+			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			//遍历
 			for (Layer* layer : m_LayerStack)

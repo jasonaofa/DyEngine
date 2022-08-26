@@ -166,10 +166,12 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Window.h" />
     <ClInclude Include="DyEngine\src\DyPch.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -600,12 +602,14 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Window.cpp" />
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
