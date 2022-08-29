@@ -1,4 +1,5 @@
 #pragma once
+#include "Core/Timestep.h"
 #include "DyEngine/Core.h"
 #include "DyEngine/Events/Event.h"
 
@@ -15,7 +16,7 @@ namespace  DyEngine
 
 		virtual void OnAttach(){}
 		virtual void OnDetach(){}
-		virtual void OnUpdate(){}
+		virtual void OnUpdate(Timestep deltaTime) {}
 		virtual void OnImGuiRender(){}
 		virtual void OnEvent(Event& event){}
 

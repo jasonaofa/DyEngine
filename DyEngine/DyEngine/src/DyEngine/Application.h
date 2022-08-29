@@ -11,6 +11,8 @@
 #include "DyEngine/Renderer/VertexArray.h"
 #include "DyEngine/Renderer/OrthographicCamera.h"
 
+#include "DyEngine/Core/Timestep.h"
+
 namespace DyEngine
 {
 	class DLLEXPORT Application
@@ -47,7 +49,7 @@ namespace DyEngine
 
 		std::shared_ptr<VertexArray> m_SquareVA;
 
-
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

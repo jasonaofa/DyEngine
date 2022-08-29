@@ -8,6 +8,7 @@
 #include "imgui_impl_opengl3_loader.h"
 #include "DyEngine/Renderer/Renderer.h"
 
+
 #include <glfw/glfw3.h>
 
 #include "Input.h"
@@ -26,7 +27,7 @@ namespace DyEngine
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
-
+		m_Window->SetVSync(false);
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
@@ -68,9 +69,13 @@ namespace DyEngine
 
 		while (m_Running)
 		{
-			//遍历
+			float time = (float)glfwGetTime();//should be Platform::GetTime;
+			Timestep timestep = time - m_LastFrameTime;
+			m_LastFrameTime = time;
+
+
 			for (Layer* layer : m_LayerStack)
-				layer->OnUpdate();
+				layer->OnUpdate(timestep);
 
 			//C++17 结构化绑定的演示
 			//auto [x, y] = Input::GetMousePosition();
