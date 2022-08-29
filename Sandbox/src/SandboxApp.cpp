@@ -1,8 +1,9 @@
 ﻿#include <DyEngine.h>
 #include "imgui.h"
-
+#include "Platform/OpenGL/OpenGLShader.h"
 #include <glm/gtc/matrix_transform.hpp>
 
+#include <glm/gtc/type_ptr.hpp>
 class ExamplerLayer : public DyEngine::Layer
 {
 public:
@@ -61,15 +62,14 @@ public:
 			layout(location =0) out vec4 color;
 
 			in  vec3 v_Position;
-			in	vec4 v_Color;
+			uniform vec3 u_Color;
 			void main()
 			{
-				color = vec4(0.8,0.2,0.3,1.0);
-				color = v_Color;
+				color = vec4(u_Color,1.0);
 			}
 		)";
+		m_Shader.reset(DyEngine::Shader::Create(vertexSrc, fragmentSrc));
 
-		m_Shader.reset(new DyEngine::Shader(vertexSrc, fragmentSrc));
 
 	}
 	void OnUpdate(DyEngine::Timestep deltaTime) override
@@ -113,6 +113,13 @@ public:
 
 		//DyEngine::Renderer::Submit(m_Shader, m_VertexArray, glm::mat4(1.0f));
 
+		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_Shader)->Bind();
+		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_Shader)->UploadUniformFloat3("u_Color", m_TriColor);
+
+
+
+
+
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
 		for (int y = 0; y < 20; y++)
@@ -131,7 +138,9 @@ public:
 
 	virtual void OnImGuiRender() override
 	{
-
+		ImGui::Begin("Settings");
+		ImGui::ColorEdit3("Square Color", glm::value_ptr(m_TriColor));
+		ImGui::End();
 	}
 
 	void OnEvent(DyEngine::Event& event) override
@@ -153,6 +162,8 @@ private:
 	float m_CameraMoveSpeed = 1.0f;
 	float m_CameraRotation = 0.0f;
 	float m_CameraRotationSpeed = 10.0f;
+
+	glm::vec3 m_TriColor = { 0.2f, 0.3f, 0.8f };
 };
 
 class Sandbox : public DyEngine::Application

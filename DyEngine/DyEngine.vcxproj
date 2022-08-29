@@ -149,8 +149,8 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\KeyCodes.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\Timestep.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h" />
     <ClInclude Include="DyEngine\src\DyEngine\EntryPoint.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Events\Event.h" />
@@ -175,11 +175,11 @@
     <ClInclude Include="DyEngine\src\DyPch.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -618,11 +618,11 @@
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

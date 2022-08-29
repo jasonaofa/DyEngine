@@ -72,6 +72,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Timestep.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
@@ -145,6 +148,9 @@
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1404,8 +1410,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Core\Timestep.h" />
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
@@ -1465,6 +1469,9 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1477,6 +1484,5 @@
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
 </Project>
