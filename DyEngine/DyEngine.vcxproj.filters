@@ -117,10 +117,19 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\RenderCommand.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\RendererAPI.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Window.h">
@@ -133,6 +142,12 @@
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h">
@@ -1386,8 +1401,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h" />
-    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
@@ -1417,10 +1430,19 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\RenderCommand.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\RendererAPI.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Window.cpp">
@@ -1435,13 +1457,17 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp" />
-    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp" />
   </ItemGroup>
 </Project>

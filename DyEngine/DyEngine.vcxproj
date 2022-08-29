@@ -164,7 +164,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\RendererAPI.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Window.h" />
@@ -172,6 +174,7 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -600,7 +603,9 @@
     <ClCompile Include="DyEngine\src\DyEngine\Log.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\RendererAPI.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Window.cpp" />
@@ -610,6 +615,7 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>

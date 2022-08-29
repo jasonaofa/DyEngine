@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "DyEngine/Renderer/Buffer.h"
 #include <memory>
