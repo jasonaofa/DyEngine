@@ -9,6 +9,7 @@
 #include "DyEngine/Renderer/Shader.h"
 #include "DyEngine/Renderer/Buffer.h"
 #include "DyEngine/Renderer/VertexArray.h"
+#include "DyEngine/Renderer/OrthographicCamera.h"
 
 namespace DyEngine
 {
@@ -16,7 +17,7 @@ namespace DyEngine
 	{
 	public:
 		Application();
-		virtual ~Application();
+		virtual ~Application() = default;
 
 		void OnEvent(Event& e);
 
@@ -45,6 +46,7 @@ namespace DyEngine
 		std::shared_ptr<IndexBuffer> m_IndexBuffer;
 
 		std::shared_ptr<VertexArray> m_SquareVA;
+
 
 	private:
 		static Application* s_Instance;

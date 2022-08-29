@@ -1,7 +1,9 @@
 #pragma once
 
-#include "DyEngine/Renderer/Shader.h"
+#include "OrthographicCamera.h"
+#include "Shader.h"
 #include "RenderCommand.h"
+
 namespace DyEngine {
 
 
@@ -9,9 +11,9 @@ namespace DyEngine {
 	{
 	public:
 
-		static void BeginScene();
+		static void BeginScene(OrthographicCamera& camera);
 		static void EndScene();
-		static void Submit(const std::shared_ptr<VertexArray>& vertexArray);
+		static void Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray);
 		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }		//static void Init();
 		//static void Shutdown();
 
@@ -24,12 +26,12 @@ namespace DyEngine {
 
 		//static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 	private:
-		//struct SceneData
-		//{
-		//	glm::mat4 ViewProjectionMatrix;
-		//};
+		struct SceneData
+		{
+			glm::mat4 ViewProjectionMatrix;
+		};
 
-		//static Scope<SceneData> s_SceneData;
+		static SceneData* s_SceneData;
 	};
 
 }

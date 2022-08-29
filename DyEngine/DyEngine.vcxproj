@@ -164,6 +164,7 @@
     <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\RendererAPI.h" />
@@ -603,6 +604,7 @@
     <ClCompile Include="DyEngine\src\DyEngine\Log.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\RendererAPI.cpp" />

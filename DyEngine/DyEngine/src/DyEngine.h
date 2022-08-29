@@ -11,6 +11,17 @@
 #include "DyEngine/Core/KeyCodes.h"
 #include "DyEngine/Core/MouseButtonCodes.h"
 #include "DyEngine/Layer.h"
+//---------Render-----------
+#include "DyEngine/Renderer/Renderer.h"
+#include "DyEngine/Renderer/RenderCommand.h"
+
+#include "DyEngine/Renderer/Buffer.h"
+#include "DyEngine/Renderer/Shader.h"
+#include "DyEngine/Renderer/VertexArray.h"
+
+#include "DyEngine/Renderer/OrthographicCamera.h"
+//-------------------------------
 
 //---------Entry Point-----------
 #include "DyEngine/EntryPoint.h"
+//-------------------------------

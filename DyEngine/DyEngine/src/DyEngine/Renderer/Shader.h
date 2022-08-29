@@ -13,6 +13,8 @@ namespace DyEngine
 		virtual void Bind() const;
 		virtual void Unbind() const;
 
+		void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
+
 		//virtual void SetInt(const std::string& name, int value) = 0;
 		//virtual void SetIntArray(const std::string& name, int* values, uint32_t count) = 0;
 		//virtual void SetFloat(const std::string& name, float value) = 0;
