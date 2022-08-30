@@ -14,7 +14,7 @@ namespace DyEngine
 		glClearColor(color.r, color.g, color.g, color.a);
 	}
 
-	void OpenGLRendererAPI::DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray)
+	void OpenGLRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray)
 	{
 		glDrawElements(GL_TRIANGLES, vertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 	}

@@ -20,6 +20,7 @@
 #include "DyEngine/Renderer/Buffer.h"
 #include "DyEngine/Renderer/Shader.h"
 #include "DyEngine/Renderer/VertexArray.h"
+#include "DyEngine/Renderer/Texture.h"
 
 #include "DyEngine/Renderer/OrthographicCamera.h"
 //-------------------------------

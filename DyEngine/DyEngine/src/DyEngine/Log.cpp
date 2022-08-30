@@ -4,8 +4,8 @@
 
 namespace DyEngine
 {
-	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
-	std::shared_ptr<spdlog::logger> Log::s_ClintLogger;
+	Ref<spdlog::logger> Log::s_CoreLogger;
+	Ref<spdlog::logger> Log::s_ClintLogger;
 
 	void Log::Init()
 	{

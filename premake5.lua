@@ -17,11 +17,13 @@ workspace "DyEngine"
 	IncludeDir["Glad"] = "DyEngine/vendor/Glad/include"
 	IncludeDir["ImGui"] = "DyEngine/vendor/imgui"
 	IncludeDir["glm"] = "DyEngine/vendor/glm"
+	IncludeDir["stb_image"] = "DyEngine/vendor/stb_image"
 
+group "Dependencies"
 	include"DyEngine/vendor/glfw"
 	include"DyEngine/vendor/Glad"
 	include"DyEngine/vendor/ImGui"
-
+group ""
 
 project"DyEngine"
 	location"DyEngine"
@@ -42,7 +44,9 @@ project"DyEngine"
 		"DyEngine/DyEngine/src/**.c",
 		"DyEngine/DyEngine/src/**.cpp",
 		"DyEngine/vendor/glm/glm/**.hpp",
-		"DyEngine/vendor/glm/glm/**.inl"
+		"DyEngine/vendor/glm/glm/**.inl",
+		"DyEngine/vendor/stb_image/**.h",
+		"DyEngine/vendor/stb_image/**.cpp",
 	}
 
 	libdirs 
@@ -61,7 +65,9 @@ project"DyEngine"
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.ImGui}/backends",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
+
 	}
 
 	links

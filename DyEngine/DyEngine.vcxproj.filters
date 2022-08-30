@@ -52,6 +52,9 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DyEngine\src\DyEngine.h">
@@ -135,6 +138,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Texture.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
@@ -151,6 +157,9 @@
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1410,6 +1419,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
@@ -1454,6 +1466,9 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Texture.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
@@ -1472,6 +1487,9 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1483,6 +1501,9 @@
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -41,13 +41,13 @@ namespace DyEngine
 		LayerStack m_LayerStack;
 		ImGuiLayer* m_ImGuiLayer;
 
-		std::shared_ptr<Shader> m_Shader;
+		Ref<Shader> m_Shader;
 		//Ref<VertexArray>  m_VertexArray;
-		std::shared_ptr<VertexArray> m_VertexArray;
-		std::shared_ptr<VertexBuffer> m_VertexBuffer;
-		std::shared_ptr<IndexBuffer> m_IndexBuffer;
-
-		std::shared_ptr<VertexArray> m_SquareVA;
+		Ref<VertexArray> m_VertexArray;
+		Ref<VertexBuffer> m_VertexBuffer;
+		Ref<IndexBuffer> m_IndexBuffer;
+		
+		Ref<VertexArray> m_SquareVA;
 
 		float m_LastFrameTime = 0.0f;
 	private:

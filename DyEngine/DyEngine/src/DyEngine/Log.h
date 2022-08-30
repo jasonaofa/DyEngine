@@ -12,12 +12,12 @@ namespace DyEngine
 	public:
 		static void Init();
 
-		inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
-		inline static std::shared_ptr<spdlog::logger>& GetClintLogger() { return s_ClintLogger; }
+		inline static Ref<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
+		inline static Ref<spdlog::logger>& GetClintLogger() { return s_ClintLogger; }
 
 	private:
-		static std::shared_ptr<spdlog::logger> s_CoreLogger;
-		static std::shared_ptr<spdlog::logger> s_ClintLogger;
+		static Ref<spdlog::logger> s_CoreLogger;
+		static Ref<spdlog::logger> s_ClintLogger;
 
 
 	};

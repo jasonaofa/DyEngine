@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <memory>
 
 #ifdef DY_PLATFORM_WINDOWS
 	#if DY_DYNAMIC_LINK
@@ -53,3 +54,19 @@ namespace DyEngine
 }
 //bind x to placeholders
 #define DY_BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
+namespace DyEngine
+{
+	template<typename T>
+	/// <summary>
+	/// scope 是unique ptr
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	using Scope = std::unique_ptr<T>;
+
+	template<typename T>
+	/// <summary>
+	/// 用来一次性修改项目中的智能指针类型，此时ref是shared ptr
+	/// </summary>
+	using Ref = std::shared_ptr<T>;
+}
