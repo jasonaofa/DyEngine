@@ -20,22 +20,25 @@ public:
 			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
+		//float vertices[5 * 4] = {
+		//	-1.0f, -1.0f, 0.0f, 0.0f, 0.0f,
+		//	 1.0f, -1.0f, 0.0f, 1.0f, 0.0f,
+		//	 1.0f,  1.0f, 0.0f, 1.0f, 1.0f,
+		//	-1.0f,  1.0f, 0.0f, 0.0f, 1.0f
+		//};
 
 		DyEngine::Ref<DyEngine::VertexBuffer> vertexBuffer;
-		m_VertexBuffer.reset(DyEngine::VertexBuffer::Create(vertices, sizeof(vertices)));
+		vertexBuffer.reset(DyEngine::VertexBuffer::Create(vertices, sizeof(vertices)));
 
-		DyEngine::BufferLayout layout = {
+		vertexBuffer->SetLayout({
 			{DyEngine::ShaderDataType::Float3,"a_Position"},
 			{DyEngine::ShaderDataType::Float2, "a_TexCoord" }
-		};
-		m_VertexBuffer->SetLayout(layout);
-		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
+		});
+		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
-		unsigned int indices[6] = { 0,1,2,2,3,0 };
+		uint32_t  indices[6] = { 0,1,2,2,3,0 };
 		m_IndexBuffer.reset(DyEngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
-
-
 
 		const std::string vertexSrc = R"(
 			#version 330 core
@@ -76,9 +79,11 @@ public:
 		m_TextureShader.reset(DyEngine::Shader::Create(vertexSrc, fragmentSrc));
 
 		m_Texture = DyEngine::Texture2D::Create("Assets/Textures/Checkerboard.png");
+		m_ChernoLogoTexture = DyEngine::Texture2D::Create("assets/textures/ChernoLogo.png");
 
 		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+
 	}
 	void OnUpdate(DyEngine::Timestep deltaTime) override
 	{
@@ -124,8 +129,9 @@ public:
 
 
 		m_Texture->Bind();
-		DyEngine::Renderer::Submit(m_TextureShader, m_VertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
-
+		DyEngine::Renderer::Submit(m_TextureShader, m_VertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
+		m_ChernoLogoTexture->Bind();
+		DyEngine::Renderer::Submit(m_TextureShader, m_VertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
 
 
 		//for (int y = 0; y < 20; y++)
@@ -137,8 +143,6 @@ public:
 		//		DyEngine::Renderer::Submit(m_Shader, m_VertexArray, transform);
 		//	}
 		//}
-
-
 		DyEngine::Renderer::EndScene();
 	}
 
@@ -160,7 +164,7 @@ private:
 	DyEngine::Ref<DyEngine::Shader> m_Shader;
 	DyEngine::Ref<DyEngine::Shader> m_TextureShader;
 
-	DyEngine::Ref<DyEngine::Texture2D> m_Texture;
+	DyEngine::Ref<DyEngine::Texture2D> m_Texture, m_ChernoLogoTexture;
 	DyEngine::Ref<DyEngine::VertexArray> m_VertexArray;
 
 	DyEngine::Ref<DyEngine::VertexBuffer> m_VertexBuffer;

@@ -140,6 +140,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Textures\Checkerboard.png" />
+    <Image Include="Assets\Textures\ChernoLogo.png" />
+    <Image Include="Assets\Textures\DungeonStoneBrick_roughness.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

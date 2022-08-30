@@ -1,4 +1,4 @@
-#include "DyPch.h"
+﻿#include "DyPch.h"
 #include "OpenGLVertexArray.h"
 #include "glad/glad.h"
 namespace DyEngine
@@ -77,7 +77,7 @@ namespace DyEngine
 					ShaderDataTypeToOpenGLBaseType(element.Type),
 					element.Normalized ? GL_TRUE : GL_FALSE,
 					layout.GetStride(),
-					(const void*)element.Offset);
+					(const void*)(intptr_t)element.Offset);
 				m_VertexBufferIndex++;
 				break;
 			}
@@ -120,6 +120,7 @@ namespace DyEngine
 		}
 
 		m_VertexBuffers.push_back(vertexBuffer);
+
 	}
 
 	void OpenGLVertexArray::SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer)

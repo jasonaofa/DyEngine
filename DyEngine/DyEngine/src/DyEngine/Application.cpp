@@ -31,6 +31,7 @@ namespace DyEngine
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
+		Renderer::Init();
 	}
 
 	void Application::PushLayer(Layer* layer)

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "DyEngine/Renderer/VertexArray.h"
 
@@ -23,6 +23,7 @@ namespace DyEngine
 		uint32_t m_VertexBufferIndex = 0;
 		std::vector<Ref<VertexBuffer>> m_VertexBuffers;
 		Ref<IndexBuffer> m_IndexBuffer;
+
 	};
 }
 

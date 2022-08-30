@@ -12,10 +12,10 @@ namespace DyEngine
 		std::string Title;
 		unsigned int Width;
 		unsigned int Height;
-
+		//Tags 窗口尺寸
 		WindowProps(const std::string& title = "DyEngine",
 					unsigned int width = 1280,
-					unsigned int height = 720)
+					unsigned int height = 1280)
 						:Title(title),Width(width),Height(height)
 		{
 		}
