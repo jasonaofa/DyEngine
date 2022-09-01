@@ -20,14 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Assets\Textures\Checkerboard.png">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="Assets\Textures\DungeonStoneBrick_roughness.png">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="Assets\Textures\ChernoLogo.png">
-      <Filter>资源文件</Filter>
-    </Image>
+    <None Include="Assets\Shaders\Texture.glsl" />
   </ItemGroup>
 </Project>
