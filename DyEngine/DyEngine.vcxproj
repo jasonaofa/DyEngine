@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\;DyEngine\src;vendor\spdlog\include;vendor\imgui;vendor\Glad;vendor\Glad\include;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -100,7 +100,7 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\;DyEngine\src;vendor\spdlog\include;vendor\imgui;vendor\Glad;vendor\Glad\include;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -126,7 +126,7 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\;DyEngine\src;vendor\spdlog\include;vendor\imgui;vendor\Glad;vendor\Glad\include;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -148,14 +148,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DyEngine\src\DyEngine.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Application.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Core.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Application.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Core.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\EntryPoint.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Input.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\KeyCodes.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Layer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\LayerStack.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Log.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\Timestep.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Window.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\EntryPoint.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Events\Event.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Events\KeyEvent.h" />
@@ -163,20 +168,16 @@
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_glfw.h" />
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Input.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Layer.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\LayerStack.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Log.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Renderer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\RendererAPI.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Texture.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Window.h" />
     <ClInclude Include="DyEngine\src\DyPch.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
@@ -604,23 +605,30 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DyEngine\src\DyEngine\Application.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Core\Application.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Core\Layer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Core\LayerStack.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Core\Log.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_glfw.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\LayerStack.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Log.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DyPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">DyPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DyPch.h</PrecompiledHeaderFile>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\RendererAPI.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Texture.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Window.cpp" />
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

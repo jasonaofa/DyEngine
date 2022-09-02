@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "DyEngine/Core.h"
+#include "Core.h"
 #include "DyEngine/Events/Event.h"
 #include "Log.h"
 

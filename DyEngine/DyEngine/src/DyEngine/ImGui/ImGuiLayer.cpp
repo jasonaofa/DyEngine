@@ -7,7 +7,7 @@
 #include "DyEngine/ImGui/imgui_impl_opengl3.h"
 #include "DyEngine/ImGui/imgui_impl_glfw.h"
 
-#include "DyEngine/Application.h"
+#include "DyEngine/Core/Application.h"
 
 //TODO delete later
 #include <GLFW/glfw3.h>

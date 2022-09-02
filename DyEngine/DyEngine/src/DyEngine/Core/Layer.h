@@ -1,6 +1,6 @@
 #pragma once
-#include "Core/Timestep.h"
-#include "DyEngine/Core.h"
+#include "Timestep.h"
+#include "Core.h"
 #include "DyEngine/Events/Event.h"
 
 namespace  DyEngine

@@ -7,12 +7,12 @@
 
 #include <string>
 #include <sstream>
+#include <array>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
 
+#include "DyEngine/Core/Log.h"
 #ifdef DY_PLATFORM_WINDOWS
 	#include <Windows.h>
-	#include "DyEngine/Core.h"
-	#include "DyEngine/Log.h"
 #endif

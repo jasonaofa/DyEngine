@@ -1,13 +1,13 @@
 ﻿#include "DyPch.h"
 #include "Platform/Windows/WindowsWindow.h"
-#include "DyEngine/Log.h"
+#include "DyEngine/Core/Log.h"
 
 #include "DyEngine/Events/Event.h"
 #include "DyEngine/Events/ApplicationEvent.h"
 #include "DyEngine/Events/KeyEvent.h"
 #include "DyEngine/Events/MouseEvent.h"
 
-#include "DyEngine/log.h"
+#include "DyEngine/Core/log.h"
 
 #include "Platform/OpenGL/OpenGLContext.h"
 

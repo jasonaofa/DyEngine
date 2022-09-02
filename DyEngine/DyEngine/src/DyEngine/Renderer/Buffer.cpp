@@ -1,9 +1,8 @@
 #include "DyPch.h"
 #include "Buffer.h"
-
+#include "Renderer.h"
 #include "Platform/OpenGL/OpenGLBuffer.h"
 
-#include "Renderer.h"
 
 namespace DyEngine
 {
@@ -11,10 +10,11 @@ namespace DyEngine
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::API::None		:	DY_CORE_ASSERT(false, "RendererAPI::None"); return nullptr;
-			case RendererAPI::API::OpenGL	:	return new OpenGLVertexBuffer(vertices,size);
+		case RendererAPI::API::None:    DY_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:  return new OpenGLVertexBuffer(vertices, size);
 		}
-		DY_CORE_ASSERT(false,"Unknown API!");
+
+		DY_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
 
@@ -22,10 +22,11 @@ namespace DyEngine
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::API::None		:	DY_CORE_ASSERT(false, "RendererAPI::None"); return nullptr;
-			case RendererAPI::API::OpenGL		:	return new OpenGLIndexBuffer(indices, size);
+		case RendererAPI::API::None:    DY_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:  return new OpenGLIndexBuffer(indices, size);
 		}
-		DY_CORE_ASSERT(false, "Unknown API!");
+
+		DY_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
 }

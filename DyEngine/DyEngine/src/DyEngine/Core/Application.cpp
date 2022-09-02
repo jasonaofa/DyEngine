@@ -2,7 +2,7 @@
 
 #include "DyEngine/Events/ApplicationEvent.h"
 
-#include "DyEngine/Log.h"
+#include "Log.h"
 #include "Application.h"
 #include <glad/glad.h>
 #include "imgui_impl_opengl3_loader.h"
@@ -51,6 +51,7 @@ namespace DyEngine
 		EventDispatcher dispatcher(e);
 		//如果事件是WindowCloseEvent，就调用OnWindowClose函数
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
 		//this is DyEngine get the event NOT app get event
 		//TODO delete later
 		//DY_CORE_TRACE("{0}", e);
@@ -75,8 +76,11 @@ namespace DyEngine
 			m_LastFrameTime = time;
 
 
-			for (Layer* layer : m_LayerStack)
-				layer->OnUpdate(timestep);
+			if (!m_Minimized)
+			{
+				for (Layer* layer : m_LayerStack)
+					layer->OnUpdate(timestep);
+			}
 
 			//C++17 结构化绑定的演示
 			//auto [x, y] = Input::GetMousePosition();
@@ -94,5 +98,24 @@ namespace DyEngine
 	{
 		m_Running = false;
 		return true;
+	}
+
+	/**
+	 * \brief 重置窗口
+	 * \param e 
+	 * \return 
+	 */
+	bool Application::OnWindowResize(WindowResizeEvent& e)
+	{
+		if (e.GetWidth() == 0 || e.GetHeight() == 0)
+		{
+			m_Minimized = true;
+			return false;
+		}
+
+		m_Minimized = false;
+		Renderer::OnWindowResize(e.GetWidth(), e.GetHeight());
+
+		return false;
 	}
 }

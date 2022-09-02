@@ -60,13 +60,28 @@
     <ClInclude Include="DyEngine\src\DyEngine.h">
       <Filter>DyEngine\src</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Application.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Application.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Core.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Core.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\EntryPoint.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Input.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\KeyCodes.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Layer.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\LayerStack.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Log.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h">
@@ -78,11 +93,11 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\Timestep.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h">
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Window.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\EntryPoint.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Events\ApplicationEvent.h">
       <Filter>DyEngine\src\DyEngine\Events</Filter>
@@ -105,18 +120,6 @@
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.h">
       <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Input.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Layer.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\LayerStack.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Log.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
-    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
@@ -124,6 +127,9 @@
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\RenderCommand.h">
@@ -143,9 +149,6 @@
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Window.h">
-      <Filter>DyEngine\src\DyEngine</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyPch.h">
       <Filter>DyEngine\src</Filter>
@@ -1424,8 +1427,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DyEngine\src\DyEngine\Application.cpp">
-      <Filter>DyEngine\src\DyEngine</Filter>
+    <ClCompile Include="DyEngine\src\DyEngine\Core\Application.cpp">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Core\Layer.cpp">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Core\LayerStack.cpp">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Core\Log.cpp">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\ImGuiLayer.cpp">
       <Filter>DyEngine\src\DyEngine\ImGui</Filter>
@@ -1436,15 +1448,6 @@
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.cpp">
       <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Layer.cpp">
-      <Filter>DyEngine\src\DyEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\LayerStack.cpp">
-      <Filter>DyEngine\src\DyEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Log.cpp">
-      <Filter>DyEngine\src\DyEngine</Filter>
-    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
@@ -1452,6 +1455,9 @@
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\RenderCommand.cpp">
@@ -1471,9 +1477,6 @@
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Window.cpp">
-      <Filter>DyEngine\src\DyEngine</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <Filter>DyEngine\src</Filter>

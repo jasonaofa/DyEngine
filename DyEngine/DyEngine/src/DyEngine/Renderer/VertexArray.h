@@ -1,10 +1,13 @@
 #pragma once
 
-#include "DyEngine/Renderer/Buffer.h"
+#include "Buffer.h"
 #include <memory>
+
 
 namespace DyEngine
 {
+
+
 	class VertexArray
 	{
 	public:

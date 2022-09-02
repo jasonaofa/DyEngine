@@ -1,13 +1,14 @@
 #pragma once
-#include <glad/glad.h>
-#include <stdint.h>
+
 #include "DyEngine/Renderer/Buffer.h"
+#include <glad/glad.h>
+
 namespace DyEngine
 {
 	class OpenGLVertexBuffer : public VertexBuffer
 	{
 	public:
-		//OpenGLVertexBuffer(uint32_t size);
+		OpenGLVertexBuffer(uint32_t size);
 		OpenGLVertexBuffer(float* vertices, uint32_t size);
 		virtual ~OpenGLVertexBuffer();
 

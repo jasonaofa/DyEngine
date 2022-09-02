@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "DyEngine/Input.h"
+#include "DyEngine/Core/Input.h"
 
 namespace DyEngine
 {

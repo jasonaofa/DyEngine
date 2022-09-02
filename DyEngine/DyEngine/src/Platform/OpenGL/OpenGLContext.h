@@ -1,5 +1,5 @@
 #pragma once
-#include "DyEngine/Log.h"
+#include "DyEngine/Core/Log.h"
 
 #include "DyEngine/Renderer/GraphicsContext.h"
 

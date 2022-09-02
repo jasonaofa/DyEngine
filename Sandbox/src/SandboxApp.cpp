@@ -8,7 +8,7 @@ class ExamplerLayer : public DyEngine::Layer
 {
 public:
 	ExamplerLayer()
-		:Layer("Example"),m_Camera(-1.0f, 1.0f, -1.0f, 1.0f), m_CameraPosition(0)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
 
 		m_VertexArray.reset(DyEngine::VertexArray::Create());
@@ -20,12 +20,6 @@ public:
 			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
-		//float vertices[5 * 4] = {
-		//	-1.0f, -1.0f, 0.0f, 0.0f, 0.0f,
-		//	 1.0f, -1.0f, 0.0f, 1.0f, 0.0f,
-		//	 1.0f,  1.0f, 0.0f, 1.0f, 1.0f,
-		//	-1.0f,  1.0f, 0.0f, 0.0f, 1.0f
-		//};
 
 		DyEngine::Ref<DyEngine::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(DyEngine::VertexBuffer::Create(vertices, sizeof(vertices)));
@@ -41,7 +35,6 @@ public:
 		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
 
 
-
 		m_TextureShader = DyEngine::Shader::Create("Assets/Shaders/Texture.glsl");
 		m_Texture = DyEngine::Texture2D::Create("Assets/Textures/Checkerboard.png");
 		m_ChernoLogoTexture = DyEngine::Texture2D::Create("assets/textures/ChernoLogo.png");
@@ -52,62 +45,24 @@ public:
 	}
 	void OnUpdate(DyEngine::Timestep deltaTime) override
 	{
-		DY_TRACE("Delta Time:{0}s,({1}ms)", deltaTime.GetSeconds(),deltaTime.GetMilliseconds());
-		if (DyEngine::Input::IsKeyPressed(DY_KEY_LEFT) )
-		{
-			m_CameraPosition.x -= m_CameraMoveSpeed *deltaTime ;
-		}
-		else if (DyEngine::Input::IsKeyPressed(DY_KEY_RIGHT))
-		{
-			m_CameraPosition.x += m_CameraMoveSpeed * deltaTime;
-		}
-		if (DyEngine::Input::IsKeyPressed(DY_KEY_UP))
-		{
-			m_CameraPosition.y += m_CameraMoveSpeed* deltaTime;
-		}
-		else if (DyEngine::Input::IsKeyPressed(DY_KEY_DOWN))
-		{
-			m_CameraPosition.y -= m_CameraMoveSpeed* deltaTime;
-		}
+		//DY_TRACE("Delta Time:{0}s,({1}ms)", deltaTime.GetSeconds(),deltaTime.GetMilliseconds());
+		// Update Camera
+		m_CameraController.OnUpdate(deltaTime);
 
-		if (DyEngine::Input::IsKeyPressed(DY_KEY_A))
-		{
-			m_CameraRotation += m_CameraRotationSpeed* deltaTime;
-		}
-		if (DyEngine::Input::IsKeyPressed(DY_KEY_D))
-		{
-			m_CameraRotation -= m_CameraRotationSpeed* deltaTime;
-		}
-
-
-
+		// Render
 		DyEngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		DyEngine::RenderCommand::Clear();
+		DyEngine::Renderer::BeginScene(m_CameraController.GetCamera());
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-		//glm::mat4 transform = glm::translate(glm::mat4(0.5f), glm::vec3(0.5f));
-		DyEngine::Renderer::BeginScene(m_Camera);
-
-		//DyEngine::Renderer::Submit(m_Shader, m_VertexArray, glm::mat4(1.0f));
+		// Set Uniform
 		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_TextureShader)->UploadUniformFloat3("u_Color", m_TriColor);
 
-
+		//Bindtexture and submit
 		m_Texture->Bind();
 		DyEngine::Renderer::Submit(m_TextureShader, m_VertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
 		m_ChernoLogoTexture->Bind();
 		DyEngine::Renderer::Submit(m_TextureShader, m_VertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
 
-
-		//for (int y = 0; y < 20; y++)
-		//{
-		//	for (int x = 0; x < 20; x++)
-		//	{
-		//		glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
-		//		glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
-		//		DyEngine::Renderer::Submit(m_Shader, m_VertexArray, transform);
-		//	}
-		//}
 		DyEngine::Renderer::EndScene();
 	}
 
@@ -120,8 +75,8 @@ public:
 
 	void OnEvent(DyEngine::Event& event) override
 	{
-
-		//输出所有事件
+		m_CameraController.OnEvent(event);
+		////输出所有事件
 		//DY_TRACE("{0}", event);
 	}
 
@@ -135,11 +90,7 @@ private:
 	DyEngine::Ref<DyEngine::VertexBuffer> m_VertexBuffer;
 	DyEngine::Ref<DyEngine::IndexBuffer> m_IndexBuffer;
 
-	DyEngine::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 1.0f;
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 10.0f;
+	DyEngine::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_TriColor = { 0.2f, 0.3f, 0.8f };
 };

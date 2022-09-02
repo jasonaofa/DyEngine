@@ -126,7 +126,10 @@ project"SandBox"
 	{
 		"SandBox/src/**.h",
 		"SandBox/src/**.c",
-		"SandBox/src/**.cpp"
+		"SandBox/src/**.cpp",
+		"SandBox/Assets/Shaders/**.glsl",
+		"SandBox/Assets/Textures/**.png",
+		"SandBox/**.ini"
 
 	}
 

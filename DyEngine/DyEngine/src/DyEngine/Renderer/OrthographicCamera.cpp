@@ -11,6 +11,20 @@ namespace DyEngine {
 		m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
 	}
 
+	/**
+	 * \brief 计算vp矩阵的，用来resize的
+	 */
+	void OrthographicCamera::SetProjection(float left, float right, float bottom, float top)
+	{
+		m_ProjectionMatrix = glm::ortho(left, right, bottom, top, -1.0f, 1.0f);
+		m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
+	}
+
+		/**
+	 * \brief
+	 * \param rotation 每次调用SetRotation都会把用RecalculateViewMatrix去重新计算一遍
+	 *					m_ViewProjectionMatrix
+	 */
 	void OrthographicCamera::RecalculateViewMatrix()
 	{
 		glm::mat4 transform = glm::translate(glm::mat4(1.0f), m_Position) *

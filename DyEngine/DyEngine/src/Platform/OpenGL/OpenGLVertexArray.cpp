@@ -1,6 +1,8 @@
 ﻿#include "DyPch.h"
 #include "OpenGLVertexArray.h"
 #include "glad/glad.h"
+
+
 namespace DyEngine
 {
 	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)

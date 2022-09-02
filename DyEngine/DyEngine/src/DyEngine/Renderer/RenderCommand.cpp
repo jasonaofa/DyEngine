@@ -5,5 +5,8 @@
 
 namespace DyEngine
 {
+	/**
+	 * \brief —°‘ÒAPI
+	 */
 	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
 }

@@ -9,15 +9,12 @@ namespace DyEngine {
 	public:
 		OrthographicCamera(float left, float right, float bottom, float top);
 
+		void SetProjection(float left, float right, float bottom, float top);
 		const glm::vec3& GetPosition() const { return m_Position; }
 		void SetPosition(const glm::vec3& position) { m_Position = position; RecalculateViewMatrix(); }
 
 		float GetRotation() const { return m_Rotation; }
-		/**
-		 * \brief 
-		 * \param rotation 每次调用SetRotation都会把用RecalculateViewMatrix去重新计算一遍
-		 *					m_ViewProjectionMatrix
-		 */
+
 		void SetRotation(float rotation) { m_Rotation = rotation; RecalculateViewMatrix(); }
 
 		const glm::mat4& GetProjectionMatrix() const { return m_ProjectionMatrix; }

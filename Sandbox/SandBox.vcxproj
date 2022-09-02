@@ -138,12 +138,17 @@
     <ClCompile Include="src\SandboxApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\Texture.glsl" />
+    <None Include="imgui.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\Checkerboard.png" />
+    <Image Include="Assets\Textures\ChernoLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DyEngine\DyEngine.vcxproj">
       <Project>{18506B48-041D-C653-2D36-B4FB1962FBE1}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Shaders\Texture.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

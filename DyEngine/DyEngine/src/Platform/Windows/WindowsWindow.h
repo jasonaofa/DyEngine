@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "DyEngine/Window.h"
+#include "DyEngine/Core/Window.h"
 #include <GLFW/glfw3.h>
 #include "DyEngine/Renderer/GraphicsContext.h"
 

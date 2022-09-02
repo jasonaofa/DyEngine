@@ -1,6 +1,6 @@
 #pragma once
-#include "DyEngine/Core.h"
-#include "DyEngine/Layer.h"
+#include "Core.h"
+#include "Layer.h"
 
 #include <vector>
 

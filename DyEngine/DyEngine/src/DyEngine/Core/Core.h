@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <memory>
+#include <iostream>
 
 #ifdef DY_PLATFORM_WINDOWS
 	#if DY_DYNAMIC_LINK
@@ -43,21 +44,6 @@
 namespace DyEngine
 {
 	template<typename T>
-	using Scope = std::unique_ptr<T>;
-	template<typename T, typename ... Args>
-	constexpr Scope<T> CreateScope(Args&& ... args)
-	{
-		return std::make_unique<T>(std::forward<Args>(args)...);
-	}
-
-
-}
-//bind x to placeholders
-#define DY_BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
-
-namespace DyEngine
-{
-	template<typename T>
 	/// <summary>
 	/// scope 是unique ptr
 	/// </summary>
@@ -69,4 +55,19 @@ namespace DyEngine
 	/// 用来一次性修改项目中的智能指针类型，此时ref是shared ptr
 	/// </summary>
 	using Ref = std::shared_ptr<T>;
+
+	template<typename T, typename ... Args>
+	constexpr Ref<T> CreateRef(Args&& ... args)
+	{
+		return std::make_shared<T>(std::forward<Args>(args)...);
+	}
+
+
 }
+
+/**
+ * \brief 用来把实现的函数绑定到事件上
+ * \param x 发生的各种事件，鼠标点击、按键、etc.
+ */
+#define DY_BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
