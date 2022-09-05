@@ -21,6 +21,8 @@ namespace DyEngine
 
 	Application::Application()
 	{
+		DY_PROFILE_FUNCTION();
+
 		DY_CORE_ASSERT(!s_Instance,"Application already exists!")
 		s_Instance = this;
 
@@ -35,16 +37,22 @@ namespace DyEngine
 
 	Application::~Application()
 	{
+		DY_PROFILE_FUNCTION();
+
 		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
+		DY_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 	void Application::PushOverlay(Layer* layer)
 	{
+		DY_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
 	}
@@ -52,6 +60,8 @@ namespace DyEngine
 
 	void Application::OnEvent(Event& e)
 	{
+		DY_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		//如果事件是WindowCloseEvent，就调用OnWindowClose函数
 		dispatcher.Dispatch<WindowCloseEvent>(DY_BIND_EVENT_FN(Application::OnWindowClose));
@@ -60,11 +70,11 @@ namespace DyEngine
 		//TODO delete later
 		//DY_CORE_TRACE("{0}", e);
 		//反向遍历
-		for(auto it = m_LayerStack.end();it !=m_LayerStack.begin();)
+		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
 		{
-			(*--it)->OnEvent(e);
 			if (e.Handled)
 				break;
+			(*it)->OnEvent(e);
 		}
 	}
 
@@ -72,9 +82,12 @@ namespace DyEngine
 
 	void Application::Run()
 	{
+		DY_PROFILE_FUNCTION();
 
 		while (m_Running)
 		{
+			DY_PROFILE_FUNCTION("RunLoop");
+
 			float time = (float)glfwGetTime();//should be Platform::GetTime;
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
@@ -82,17 +95,26 @@ namespace DyEngine
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
-			}
+				{
+					DY_PROFILE_SCOPE("LayerStack OnUpdate");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
+
 
 			//C++17 结构化绑定的演示
 			//auto [x, y] = Input::GetMousePosition();
 			//DY_CORE_TRACE("{0},{1}",x,y );
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
+				m_ImGuiLayer->Begin();
+				{
+					DY_PROFILE_SCOPE("LayerStack OnImGuiRender");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
+			}
 
 			m_Window->OnUpdate();
 		}
@@ -100,6 +122,8 @@ namespace DyEngine
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
+		DY_PROFILE_FUNCTION();
+
 		m_Running = false;
 		return true;
 	}

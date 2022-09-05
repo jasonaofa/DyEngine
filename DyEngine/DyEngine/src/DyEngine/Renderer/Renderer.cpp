@@ -10,6 +10,8 @@ namespace DyEngine
 
 	void Renderer::Init()
 	{
+		DY_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 	}

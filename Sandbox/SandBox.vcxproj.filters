@@ -15,17 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Sandbox2D.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExampleLayer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Sandbox2D.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\SandboxApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Sandbox2D.cpp" />
+    <ClCompile Include="src\ExampleLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\FlatColor.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
     <None Include="Assets\Shaders\Texture.glsl">
       <Filter>Assets\Shaders</Filter>
     </None>
+    <None Include="HazelProfile-Runtime.json" />
+    <None Include="HazelProfile-Shutdown.json" />
+    <None Include="HazelProfile-Startup.json" />
     <None Include="imgui.ini" />
-    <None Include="Assets\Shaders\FlatColor.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Textures\Checkerboard.png">
@@ -34,8 +48,5 @@
     <Image Include="Assets\Textures\ChernoLogo.png">
       <Filter>Assets\Textures</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Sandbox2D.h" />
   </ItemGroup>
 </Project>

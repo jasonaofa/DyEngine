@@ -10,13 +10,17 @@ int main(int argc, char** argv)
 {
 	DyEngine::Log::Init();
 	DY_CORE_INFO("Initialized Log!");
-	DY_INFO("Hello");
-
-	std::cout << "Welcome to DyEngine!\n" << std::endl;
-	//通过实例化一个Application* 的app变量，这就是sandbox里那个执行new Sandbox的那个函数
+	DY_PROFILE_BEGIN_SESSION("Startup", "HazelProfile-Startup.json");
 	auto app = DyEngine::CreateApplication();
+	DY_PROFILE_END_SESSION();
+
+	DY_PROFILE_BEGIN_SESSION("Runtime", "HazelProfile-Runtime.json");
 	app->Run();
+	DY_PROFILE_END_SESSION();
+
+	DY_PROFILE_BEGIN_SESSION("Startup", "HazelProfile-Shutdown.json");
 	delete app;
+	DY_PROFILE_END_SESSION();
 }
 
 #endif

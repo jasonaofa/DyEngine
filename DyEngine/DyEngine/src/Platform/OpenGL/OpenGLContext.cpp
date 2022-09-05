@@ -15,6 +15,8 @@ namespace DyEngine
 
 	void OpenGLContext::Init()
 	{
+		DY_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 
 		//这是初始化GLAD
@@ -36,6 +38,8 @@ namespace DyEngine
 
 	void OpenGLContext::SwapBuffers()
 	{
+		DY_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 }

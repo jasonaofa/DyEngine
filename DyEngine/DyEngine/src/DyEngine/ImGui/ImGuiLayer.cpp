@@ -19,12 +19,21 @@ namespace DyEngine
 	{
 	}
 
+	void ImGuiLayer::OnEvent(Event& e)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		e.Handled |= e.IsInCategory(EventCategoryMouse) & io.WantCaptureMouse;
+		e.Handled |= e.IsInCategory(EventCategoryKeyboard) & io.WantCaptureKeyboard;
+	}
+
 	ImGuiLayer::~ImGuiLayer()
 	{
 	}
 
 	void ImGuiLayer::Begin()
 	{
+		DY_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -32,7 +41,7 @@ namespace DyEngine
 	}
 	void ImGuiLayer::End()
 	{
-
+		DY_PROFILE_FUNCTION();
 
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
@@ -56,6 +65,8 @@ namespace DyEngine
 
 	void ImGuiLayer::OnAttach()
 	{
+		DY_PROFILE_FUNCTION();
+
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -95,6 +106,8 @@ namespace DyEngine
 
 	void ImGuiLayer::OnDetach()
 	{
+		DY_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "DyEngine/Core/Core.h"
+#include "DyEngine/Core/Base.h"
 
 
 namespace DyEngine

@@ -26,16 +26,19 @@ namespace DyEngine {
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
+		DY_PROFILE_FUNCTION();
 		Init(props);
 	}
 
 	WindowsWindow::~WindowsWindow()
 	{
+		DY_PROFILE_FUNCTION();
 		Shutdown();
 	}
 
 	void WindowsWindow::Init(const WindowProps& props)
 	{
+		DY_PROFILE_FUNCTION();
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
@@ -45,14 +48,18 @@ namespace DyEngine {
 
 		if (!s_GLFWInitialized)
 		{
+			DY_PROFILE_SCOPE("glfwInit");
 			int success = glfwInit();
 			DY_CORE_ASSERT(success,"Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
 
+		{
+			DY_PROFILE_SCOPE("glfwCreateWindow");
+			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+		}
 
 		m_Context = CreateScope<OpenGLContext>(m_Window);
 		m_Context->Init();
@@ -151,11 +158,13 @@ namespace DyEngine {
 
 	void WindowsWindow::Shutdown()
 	{
+		DY_PROFILE_FUNCTION();
 		glfwDestroyWindow(m_Window);
 	}
 
 	void WindowsWindow::OnUpdate()
 	{
+		DY_PROFILE_FUNCTION();
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 
@@ -163,6 +172,7 @@ namespace DyEngine {
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		DY_PROFILE_FUNCTION();
 		if (enabled)
 			glfwSwapInterval(1);
 		else

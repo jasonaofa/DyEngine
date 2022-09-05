@@ -129,7 +129,8 @@ project"SandBox"
 		"SandBox/src/**.cpp",
 		"SandBox/Assets/Shaders/**.glsl",
 		"SandBox/Assets/Textures/**.png",
-		"SandBox/**.ini"
+		"SandBox/**.ini",
+		"SandBox/**.json",
 
 	}
 

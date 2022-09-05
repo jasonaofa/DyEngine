@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Core.h"
+#include "Base.h"
 #include "Window.h"
 #include "DyEngine/Events/Event.h"
 #include "LayerStack.h"
@@ -28,10 +28,9 @@ namespace DyEngine
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
-		inline static Application& Get(){return *s_Instance;}
+		static Application& Get(){return *s_Instance;}
 
-
-		inline Window& GetWindow() { return *m_Window; }
+		Window& GetWindow() { return *m_Window; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);

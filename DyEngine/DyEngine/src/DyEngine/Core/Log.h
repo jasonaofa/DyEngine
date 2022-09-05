@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Core.h"
+#include "Base.h"
 
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
@@ -12,8 +12,8 @@ namespace DyEngine
 	public:
 		static void Init();
 
-		inline static Ref<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
-		inline static Ref<spdlog::logger>& GetClintLogger() { return s_ClintLogger; }
+		static Ref<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
+		static Ref<spdlog::logger>& GetClintLogger() { return s_ClintLogger; }
 
 	private:
 		static Ref<spdlog::logger> s_CoreLogger;
@@ -29,6 +29,7 @@ namespace DyEngine
 #define DY_CORE_INFO(...)		::DyEngine::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define DY_CORE_TRACE(...)	::DyEngine::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define DY_CORE_FATAL(...)	::DyEngine::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define DY_CORE_CRITICAL(...) ::DyEngine::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 //Core Clint macros
 #define DY_ERROR(...)		::DyEngine::Log::GetClintLogger()->error(__VA_ARGS__)
@@ -36,3 +37,4 @@ namespace DyEngine
 #define DY_INFO(...)		::DyEngine::Log::GetClintLogger()->info(__VA_ARGS__)
 #define DY_TRACE(...)		::DyEngine::Log::GetClintLogger()->trace(__VA_ARGS__)
 #define DY_FATAL(...)		::DyEngine::Log::GetClintLogger()->fatal(__VA_ARGS__)
+#define DY_CRITICAL(...)      ::DyEngine::Log::GetClientLogger()->critical(__VA_ARGS__)

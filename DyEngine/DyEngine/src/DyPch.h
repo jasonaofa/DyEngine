@@ -13,6 +13,8 @@
 #include <unordered_set>
 
 #include "DyEngine/Core/Log.h"
+#include "DyEngine/Debug/Instrumentor.h"
+
 #ifdef DY_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

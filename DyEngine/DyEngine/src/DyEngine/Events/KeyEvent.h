@@ -1,25 +1,27 @@
 ﻿#pragma once
 
 
-
 #include "DyEngine/Events/Event.h"
 #include "DyEngine/Core/KeyCodes.h"
 #include "DyPch.h"
 
-namespace DyEngine {
+namespace DyEngine
+{
 	/**
 	 * \brief 继承自Evnet，之前说了，Event是所有event的基类
 	 */
 	class KeyEvent : public Event
 	{
 	public:
-		inline int GetKeyCode() const { return m_KeyCode; }
+		int GetKeyCode() const { return m_KeyCode; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 
 	protected:
 		KeyEvent(int keycode)
-			: m_KeyCode(keycode) {}
+			: m_KeyCode(keycode)
+		{
+		}
 
 		int m_KeyCode;
 	};
@@ -31,7 +33,9 @@ namespace DyEngine {
 	{
 	public:
 		KeyPressedEvent(int keycode, bool isRepeat = false)
-			: KeyEvent(keycode), m_IsRepeat(isRepeat) {}
+			: KeyEvent(keycode), m_IsRepeat(isRepeat)
+		{
+		}
 
 		bool IsRepeat() const { return m_IsRepeat; }
 
@@ -55,7 +59,9 @@ namespace DyEngine {
 	{
 	public:
 		KeyReleasedEvent(int keycode)
-			: KeyEvent(keycode) {}
+			: KeyEvent(keycode)
+		{
+		}
 
 		std::string ToString() const override
 		{
@@ -71,7 +77,9 @@ namespace DyEngine {
 	{
 	public:
 		KeyTypedEvent(int keycode)
-			: KeyEvent(keycode) {}
+			: KeyEvent(keycode)
+		{
+		}
 
 		std::string ToString() const override
 		{
