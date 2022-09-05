@@ -18,12 +18,14 @@
     <ClCompile Include="src\SandboxApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Sandbox2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Texture.glsl">
       <Filter>Assets\Shaders</Filter>
     </None>
     <None Include="imgui.ini" />
+    <None Include="Assets\Shaders\FlatColor.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Textures\Checkerboard.png">
@@ -32,5 +34,8 @@
     <Image Include="Assets\Textures\ChernoLogo.png">
       <Filter>Assets\Textures</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Sandbox2D.h" />
   </ItemGroup>
 </Project>

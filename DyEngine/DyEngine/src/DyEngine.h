@@ -2,6 +2,7 @@
 
 //只给sandbox的application用的，这样就不用在sanboxApp.cpp文件中写一堆包含了
 
+#include "DyEngine/Core/Core.h"
 #include "DyEngine/Core/Timestep.h"
 
 #include "DyEngine/Core/Application.h"
@@ -13,6 +14,7 @@
 #include "DyEngine/Core/MouseButtonCodes.h"
 #include "DyEngine/Core/Layer.h"
 //---------Render-----------
+#include "DyEngine/Renderer/Renderer2D.h"
 #include "DyEngine/Renderer/Renderer.h"
 #include "DyEngine/Renderer/RenderCommand.h"
 
@@ -24,7 +26,4 @@
 
 #include "DyEngine/Renderer/OrthographicCamera.h"
 //-------------------------------
-
-//---------Entry Point-----------
-#include "DyEngine/Core/EntryPoint.h"
-//-------------------------------
+ 

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Core.h"
 #include "Layer.h"
 
@@ -6,10 +6,10 @@
 
 namespace DyEngine
 {
-	class DLLEXPORT LayerStack
+	class LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

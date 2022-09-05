@@ -1,4 +1,4 @@
-#include "DyPch.h"
+﻿#include "DyPch.h"
 #include "RenderCommand.h"
 
 #include "Platform/Opengl/OpenglRendererAPI.h"
@@ -6,7 +6,7 @@
 namespace DyEngine
 {
 	/**
-	 * \brief ѡ��API
+	 * \brief 选择API
 	 */
-	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
+	Scope<RendererAPI> RenderCommand::s_RendererAPI = RendererAPI::Create();
 }

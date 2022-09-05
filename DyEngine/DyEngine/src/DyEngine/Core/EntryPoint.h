@@ -13,6 +13,7 @@ int main(int argc, char** argv)
 	DY_INFO("Hello");
 
 	std::cout << "Welcome to DyEngine!\n" << std::endl;
+	//通过实例化一个Application* 的app变量，这就是sandbox里那个执行new Sandbox的那个函数
 	auto app = DyEngine::CreateApplication();
 	app->Run();
 	delete app;

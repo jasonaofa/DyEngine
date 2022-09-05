@@ -1,17 +1,21 @@
 ﻿#include <DyEngine.h>
+#include <DyEngine/Core/EntryPoint.h>
 #include "imgui.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <glm/gtc/type_ptr.hpp>
+
+#include "Sandbox2D.h"
+
 class ExamplerLayer : public DyEngine::Layer
 {
 public:
 	ExamplerLayer()
-		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
+		: Layer("Example"), m_CameraController(1280.0f /720.0f)
 	{
 
-		m_VertexArray.reset(DyEngine::VertexArray::Create());
+		m_VertexArray=DyEngine::VertexArray::Create();
 
 
 		float vertices[5 * 4] = {
@@ -21,9 +25,8 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		DyEngine::Ref<DyEngine::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(DyEngine::VertexBuffer::Create(vertices, sizeof(vertices)));
 
+		DyEngine::Ref<DyEngine::VertexBuffer> vertexBuffer = DyEngine::VertexBuffer::Create(vertices, sizeof(vertices));
 		vertexBuffer->SetLayout({
 			{DyEngine::ShaderDataType::Float3,"a_Position"},
 			{DyEngine::ShaderDataType::Float2, "a_TexCoord" }
@@ -31,17 +34,18 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t  indices[6] = { 0,1,2,2,3,0 };
-		m_IndexBuffer.reset(DyEngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+;
+		DyEngine::Ref<DyEngine::IndexBuffer> m_IndexBuffer = DyEngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
+
 
 
 		m_TextureShader = DyEngine::Shader::Create("Assets/Shaders/Texture.glsl");
 		m_Texture = DyEngine::Texture2D::Create("Assets/Textures/Checkerboard.png");
 		m_ChernoLogoTexture = DyEngine::Texture2D::Create("assets/textures/ChernoLogo.png");
 
-		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
-
+		m_TextureShader->Bind();
+		m_TextureShader->SetInt("u_Texture", 0);
 	}
 	void OnUpdate(DyEngine::Timestep deltaTime) override
 	{
@@ -52,11 +56,11 @@ public:
 		// Render
 		DyEngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		DyEngine::RenderCommand::Clear();
+
 		DyEngine::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		// Set Uniform
-		std::dynamic_pointer_cast<DyEngine::OpenGLShader>(m_TextureShader)->UploadUniformFloat3("u_Color", m_TriColor);
-
+		m_TextureShader->SetFloat3("u_Color", m_TriColor);
 		//Bindtexture and submit
 		m_Texture->Bind();
 		DyEngine::Renderer::Submit(m_TextureShader, m_VertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
@@ -100,7 +104,8 @@ class Sandbox : public DyEngine::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExamplerLayer());
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 	~Sandbox()
 	{

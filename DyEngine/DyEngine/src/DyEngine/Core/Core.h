@@ -2,20 +2,6 @@
 #include <memory>
 #include <iostream>
 
-#ifdef DY_PLATFORM_WINDOWS
-	#if DY_DYNAMIC_LINK
-		#ifdef DY_BUILD_DLL
-			#define DLLEXPORT __declspec(dllexport)
-		#else
-			#define DLLEXPORT __declspec(dllimport)
-		#endif
-	#else
-		#define DLLEXPORT
-	#endif
-
-#else
-	#error Dy only supports windows!
-#endif
 
 #ifdef DyEngine_Debug
 	#define DY_ENABLE_ASSERTS
@@ -49,6 +35,12 @@ namespace DyEngine
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	using Scope = std::unique_ptr<T>;
+
+	template<typename T, typename ... Args>
+	constexpr Scope<T> CreateScope(Args&& ... args)
+	{
+		return std::make_unique<T>(std::forward<Args>(args)...);
+	}
 
 	template<typename T>
 	/// <summary>

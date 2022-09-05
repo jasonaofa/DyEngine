@@ -1,20 +1,32 @@
-#include "DyPch.h"
+ï»¿#include "DyPch.h"
 #include "Texture.h"
 
 #include "Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace DyEngine {
-	//ÀàËÆÓÚ¹¹Ôìº¯Êı
-	Ref<Texture2D> Texture2D::Create(const std::string& path)
+
+	Ref<Texture2D> Texture2D::Create(uint32_t width, uint32_t height)
 	{
-		//ÏÈ×öAPIÅĞ¶Ï£¬Ä¿Ç°Ö»ÓĞOGL£¬Èç¹ûÊÇIGL¾Í£¬makeÒ»¸öshared ptr£¬ÊÇOpenGLTexture2DÀà£¬Èç²»¹ı²»ÊÇ¾ÍÊä³ö´íÎó£¬²¢ÇÒ·µ»Ø¿ÕÖ¸Õë¡£
 		switch (Renderer::GetAPI())
 		{
 		case RendererAPI::API::None:    DY_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  DY_CORE_INFO("Created OpenGLTexture2D !"); return std::make_shared<OpenGLTexture2D>(path);
+		case RendererAPI::API::OpenGL:  return CreateRef<OpenGLTexture2D>(width, height);
 		}
-		//Èç¹ûÔËĞĞµ½ÕâÀï£¬ÄÇ¾Í±ØÈ»²»ÊÇNoneºÍOPENGL¡£ËùÒÔ·µ»ØÎ´Öªapi£¬ÕâÑù¿ÉÒÔÖªµÀ´íÎóµÄÔ­Òò
+
+		DY_CORE_ASSERT(false, "Unknown RendererAPI!");
+		return nullptr;
+	}
+
+	Ref<Texture2D> Texture2D::Create(const std::string& path)
+	{
+		//å…ˆåšAPIåˆ¤æ–­ï¼Œç›®å‰åªæœ‰OGLï¼Œå¦‚æœæ˜¯IGLå°±ï¼Œmakeä¸€ä¸ªshared ptrï¼Œæ˜¯OpenGLTexture2Dç±»ï¼Œå¦‚ä¸è¿‡ä¸æ˜¯å°±è¾“å‡ºé”™è¯¯ï¼Œå¹¶ä¸”è¿”å›ç©ºæŒ‡é’ˆã€‚
+		switch (Renderer::GetAPI())
+		{
+		case RendererAPI::API::None:    DY_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:  return CreateRef<OpenGLTexture2D>(path);
+		}
+		//å¦‚æœè¿è¡Œåˆ°è¿™é‡Œï¼Œé‚£å°±å¿…ç„¶ä¸æ˜¯Noneå’ŒOPENGLã€‚æ‰€ä»¥è¿”å›æœªçŸ¥apiï¼Œè¿™æ ·å¯ä»¥çŸ¥é“é”™è¯¯çš„åŸå› 
 		DY_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}

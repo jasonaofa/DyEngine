@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Core.h"
 #include "Window.h"
 #include "DyEngine/Events/Event.h"
@@ -15,11 +15,11 @@
 
 namespace DyEngine
 {
-	class DLLEXPORT Application
+	class Application
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void OnEvent(Event& e);
 

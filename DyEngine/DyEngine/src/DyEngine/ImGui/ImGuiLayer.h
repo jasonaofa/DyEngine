@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include"DyEngine/Core/Layer.h"
 #include "DyEngine/Events/MouseEvent.h"
@@ -7,7 +7,7 @@
 
 namespace DyEngine
 {
-	class DLLEXPORT ImGuiLayer : public Layer
+	class ImGuiLayer : public Layer
 	{
 	public:
 		ImGuiLayer();
@@ -16,7 +16,6 @@ namespace DyEngine
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;
-		virtual void OnImGuiRender() override;
 		void Begin();
 		void End();
 

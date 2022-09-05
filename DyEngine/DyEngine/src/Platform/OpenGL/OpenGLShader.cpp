@@ -5,11 +5,10 @@
 #include <fstream>
 #include <glm/gtc/type_ptr.hpp>
 
-namespace DyEngine {
-
+namespace DyEngine
+{
 	static GLenum ShaderTypeFromString(const std::string& type)
 	{
-
 		if (type == "vertex")
 			return GL_VERTEX_SHADER;
 		if (type == "fragment" || type == "pixel")
@@ -39,9 +38,7 @@ namespace DyEngine {
 		sources[GL_VERTEX_SHADER] = vertexSrc;
 		sources[GL_FRAGMENT_SHADER] = fragmentSrc;
 		Compile(sources);
-
 	}
-
 
 
 	OpenGLShader::~OpenGLShader()
@@ -59,13 +56,21 @@ namespace DyEngine {
 			//seekg = seek get
 			//定位到 in 的开头
 			in.seekg(0, std::ios::end);
-			//tellg代表输入流的大小
-			result.resize(in.tellg());
-			//定位到 in 的末尾
-			in.seekg(0, std::ios::beg);
-			//读到result，读result.size()这么多字节
-			in.read(&result[0], result.size());
-			in.close();
+			size_t size = in.tellg();
+			if (size != -1)
+			{
+				//tellg代表输入流的大小
+				result.resize(in.tellg());
+				//定位到 in 的末尾
+				in.seekg(0, std::ios::beg);
+				//读到result，读result.size()这么多字节
+				in.read(&result[0], result.size());
+				in.close();
+			}
+			else
+			{
+				DY_CORE_ERROR("Could not read from file '{0}'", filepath);
+			}
 		}
 		else
 		{
@@ -85,19 +90,25 @@ namespace DyEngine {
 
 		const char* typeToken = "#type";
 		size_t typeTokenLength = strlen(typeToken);
-		size_t pos = source.find(typeToken, 0);
+		size_t pos = source.find(typeToken, 0); //Start of shader type declaration line
 		//当pos！= 容器的最大值时（就是还没读完
 		while (pos != std::string::npos)
 		{
-			size_t eol = source.find_first_of("\r\n", pos);
-			DY_CORE_ASSERT(eol != std::string::npos, "Syntax error");
-			size_t begin = pos + typeTokenLength + 1;
+			size_t eol = source.find_first_of("\r\n", pos); //End of shader type declaration line
+			DY_CORE_ASSERT(eol != std::string::npos, "Shader Syntax error");
+			size_t begin = pos + typeTokenLength + 1; //Start of shader type name (after "#type " keyword)
 			std::string type = source.substr(begin, eol - begin);
 			DY_CORE_ASSERT(ShaderTypeFromString(type), "Invalid shader type specified");
 
+
 			size_t nextLinePos = source.find_first_not_of("\r\n", eol);
-			pos = source.find(typeToken, nextLinePos);
-			shaderSources[ShaderTypeFromString(type)] = source.substr(nextLinePos, pos - (nextLinePos == std::string::npos ? source.size() - 1 : nextLinePos));
+			//Start of shader code after shader type declaration line
+			DY_CORE_ASSERT(nextLinePos != std::string::npos, "Shader Syntax error");
+			pos = source.find(typeToken, nextLinePos); //Start of next shader type declaration line
+			shaderSources[ShaderTypeFromString(type)] = source.substr(nextLinePos,
+			                                                          pos - (nextLinePos == std::string::npos
+				                                                                 ? source.size() - 1
+				                                                                 : nextLinePos));
 		}
 
 		return shaderSources;
@@ -176,7 +187,6 @@ namespace DyEngine {
 
 		for (auto id : glShaderIDs)
 			glDetachShader(program, id);
-
 	}
 
 
@@ -188,6 +198,26 @@ namespace DyEngine {
 	void OpenGLShader::Unbind() const
 	{
 		glUseProgram(0);
+	}
+
+	void OpenGLShader::SetInt(const std::string& name, int value)
+	{
+		UploadUniformInt(name, value);
+	}
+
+	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
+	{
+		UploadUniformFloat3(name, value);
+	}
+
+	void OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
+	{
+		UploadUniformFloat4(name, value);
+	}
+
+	void OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
+	{
+		UploadUniformMat4(name, value);
 	}
 
 	void OpenGLShader::UploadUniformInt(const std::string& name, int value)
@@ -231,5 +261,4 @@ namespace DyEngine {
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
-
 }

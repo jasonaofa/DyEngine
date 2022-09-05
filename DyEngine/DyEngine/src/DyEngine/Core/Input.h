@@ -6,7 +6,7 @@ namespace  DyEngine
 	/**
 	 * \brief 不用在每一次Update中去判定是否有时间，可以直接生成事件
 	 */
-	class DLLEXPORT Input
+	class Input
 	{
 	public:
 		//public 静态从恒源函数提供接口，以访问protected纯虚函数，具体的函数功能实现由派生类重写
@@ -29,7 +29,7 @@ namespace  DyEngine
 
 
 	private:
-		static Input* s_Instance;
+		static Scope<Input> s_Instance;
 
 	};
 

@@ -7,7 +7,7 @@
 
 namespace DyEngine
 {
-	class DLLEXPORT Log
+	class Log
 	{
 	public:
 		static void Init();

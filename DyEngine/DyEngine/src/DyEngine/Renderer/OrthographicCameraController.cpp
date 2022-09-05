@@ -1,4 +1,4 @@
-#include "DyPch.h"
+ï»¿#include "DyPch.h"
 #include "OrthographicCameraController.h"
 
 #include "DyEngine/Core/Input.h"
@@ -13,19 +13,30 @@ namespace DyEngine {
 
 	/**
 	 * \brief 
-	 * \param ts delta Time£¬Ã»ÓÐdtµÄ»°£¬ËÙ¶È¾Í»áËæ×ÅÖ¡ÂÊ±ä»¯
+	 * \param ts delta Timeï¼Œæ²¡æœ‰dtçš„è¯ï¼Œé€Ÿåº¦å°±ä¼šéšç€å¸§çŽ‡å˜åŒ–
 	 */
 	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
 		if (Input::IsKeyPressed(DY_KEY_A))
-			m_CameraPosition.x -= m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 		else if (Input::IsKeyPressed(DY_KEY_D))
-			m_CameraPosition.x += m_CameraTranslationSpeed * ts;
-
+		{
+			m_CameraPosition.x += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 		if (Input::IsKeyPressed(DY_KEY_W))
-			m_CameraPosition.y += m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x += -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 		else if (Input::IsKeyPressed(DY_KEY_S))
-			m_CameraPosition.y -= m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x -= -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 
 		if (m_Rotation)
 		{
@@ -33,6 +44,11 @@ namespace DyEngine {
 				m_CameraRotation += m_CameraRotationSpeed * ts;
 			if (Input::IsKeyPressed(DY_KEY_E))
 				m_CameraRotation -= m_CameraRotationSpeed * ts;
+			if (m_CameraRotation > 180.0f)
+				m_CameraRotation -= 360.0f;
+			else if (m_CameraRotation <= -180.0f)
+				m_CameraRotation += 360.0f;
+
 
 			m_Camera.SetRotation(m_CameraRotation);
 		}
@@ -54,7 +70,7 @@ namespace DyEngine {
 	}
 
 	/**
-	 * \brief Ëõ·ÅÆÁÄ»
+	 * \brief ç¼©æ”¾å±å¹•
 	 * \param e 
 	 */
 	bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent& e)

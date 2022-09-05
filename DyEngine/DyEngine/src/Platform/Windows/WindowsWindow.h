@@ -6,7 +6,7 @@
 
 namespace DyEngine {
 
-	class DLLEXPORT WindowsWindow : public Window
+	class WindowsWindow : public Window
 	{
 	public:
 		WindowsWindow(const WindowProps& props);
@@ -30,7 +30,7 @@ namespace DyEngine {
 	private:
 		//window
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+		Scope<GraphicsContext> m_Context;
 		//只要传这个结构体给GLFW就行了。不用传递整个类
 		struct WindowData
 		{

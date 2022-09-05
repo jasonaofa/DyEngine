@@ -16,7 +16,6 @@
 
 namespace DyEngine
 {
-#define BIND_EVENT_FN(x) std::bind(&Application::x,this,std::placeholders::_1)
 
 	Application* Application::s_Instance = nullptr;
 
@@ -25,13 +24,18 @@ namespace DyEngine
 		DY_CORE_ASSERT(!s_Instance,"Application already exists!")
 		s_Instance = this;
 
-		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window = Window::Create();
+		m_Window->SetEventCallback(DY_BIND_EVENT_FN(Application::OnEvent));
 		m_Window->SetVSync(false);
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
 		Renderer::Init();
+	}
+
+	Application::~Application()
+	{
+		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
@@ -50,8 +54,8 @@ namespace DyEngine
 	{
 		EventDispatcher dispatcher(e);
 		//如果事件是WindowCloseEvent，就调用OnWindowClose函数
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
+		dispatcher.Dispatch<WindowCloseEvent>(DY_BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(DY_BIND_EVENT_FN(Application::OnWindowResize));
 		//this is DyEngine get the event NOT app get event
 		//TODO delete later
 		//DY_CORE_TRACE("{0}", e);

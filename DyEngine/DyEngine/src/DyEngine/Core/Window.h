@@ -15,13 +15,13 @@ namespace DyEngine
 		//Tags 窗口尺寸
 		WindowProps(const std::string& title = "DyEngine",
 					unsigned int width = 1280,
-					unsigned int height = 1280)
+					unsigned int height = 720)
 						:Title(title),Width(width),Height(height)
 		{
 		}
 	};
 
-	class DLLEXPORT Window
+	class Window
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
@@ -39,7 +39,8 @@ namespace DyEngine
 		virtual bool IsVSync() const = 0;
 
 		virtual void* GetNativeWindow() const = 0;
-		static Window* Create(const WindowProps& props = WindowProps());
+		//这里用uniqueptr 
+		static Scope<Window> Create(const WindowProps& props = WindowProps());
 	};
 
 

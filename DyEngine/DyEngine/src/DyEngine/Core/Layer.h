@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Timestep.h"
 #include "Core.h"
 #include "DyEngine/Events/Event.h"
@@ -8,7 +8,7 @@ namespace  DyEngine
 	/**
 	 * \brief layer的抽象类
 	 */
-	class DLLEXPORT Layer
+	class Layer
 	{
 	public:
 		Layer(const std::string& name = "Layer");

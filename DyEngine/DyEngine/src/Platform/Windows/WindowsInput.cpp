@@ -5,7 +5,7 @@
 
 namespace DyEngine
 {
-	Input* Input::s_Instance = new WindowsInput();
+	Scope<Input> Input::s_Instance = CreateScope<WindowsInput>();
 	/**
 	 * \brief
 	 * \param keycode 用来判断在激活的窗口中，按键有没有被按下或者连续按下
