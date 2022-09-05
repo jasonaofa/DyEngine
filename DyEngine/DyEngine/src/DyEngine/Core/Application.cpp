@@ -19,14 +19,14 @@ namespace DyEngine
 
 	Application* Application::s_Instance = nullptr;
 
-	Application::Application()
+	Application::Application(const std::string& name)
 	{
 		DY_PROFILE_FUNCTION();
 
 		DY_CORE_ASSERT(!s_Instance,"Application already exists!")
 		s_Instance = this;
 
-		m_Window = Window::Create();
+		m_Window = Window::Create(WindowProps(name));
 		m_Window->SetEventCallback(DY_BIND_EVENT_FN(Application::OnEvent));
 		m_Window->SetVSync(false);
 		m_ImGuiLayer = new ImGuiLayer();
@@ -77,7 +77,11 @@ namespace DyEngine
 			(*it)->OnEvent(e);
 		}
 	}
-
+	
+	void Application::Close()
+	{
+		m_Running = false;
+	}
 
 
 	void Application::Run()

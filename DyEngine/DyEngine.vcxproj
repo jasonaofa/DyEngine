@@ -170,6 +170,7 @@
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_glfw.h" />
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Framebuffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.h" />
@@ -183,6 +184,7 @@
     <ClInclude Include="DyEngine\src\DyPch.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
@@ -615,6 +617,7 @@
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_glfw.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Framebuffer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.cpp" />
@@ -630,6 +633,7 @@
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp" />

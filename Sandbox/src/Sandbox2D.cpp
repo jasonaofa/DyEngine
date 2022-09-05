@@ -14,6 +14,7 @@ void Sandbox2D::OnAttach()
 {
 	DY_PROFILE_FUNCTION();
 	m_CheckerboardTexture = DyEngine::Texture2D::Create("Assets/Textures/Checkerboard.png");
+
 }
 
 void Sandbox2D::OnDetach()
@@ -29,6 +30,7 @@ void Sandbox2D::OnUpdate(DyEngine::Timestep ts)
 	DyEngine::Renderer2D::ResetStats();
 	{
 		DY_PROFILE_SCOPE("Renderer Prep");
+
 		DyEngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		DyEngine::RenderCommand::Clear();
 	}
@@ -66,17 +68,16 @@ void Sandbox2D::OnImGuiRender()
 {
 	DY_PROFILE_FUNCTION();
 	ImGui::Begin("Settings");
-
 	auto stats = DyEngine::Renderer2D::GetStats();
 	ImGui::Text("Renderer2D Stats:");
 	ImGui::Text("Draw Calls: %d", stats.DrawCalls);
 	ImGui::Text("Quads: %d", stats.QuadCount);
 	ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 	ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-
 	ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 	ImGui::End();
 }
+
 
 void Sandbox2D::OnEvent(DyEngine::Event& e)
 {

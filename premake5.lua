@@ -173,3 +173,64 @@ project"SandBox"
 		defines"DyEngine_Dist"
 		runtime"Release"
 		optimize "on"	
+
+
+
+project "DY-Editor"
+	location "DY-Editor"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/**.ini",
+		"%{prj.name}/**.glsl",
+		"%{prj.name}/**.png"
+	}
+
+	includedirs
+	{
+		"DyEngine/vendor/Glad/include;",
+		"DyEngine/DyEngine/src;",
+		"DyEngine/vendor/spdlog/include;",
+		"DyEngine/vendor/imgui;",
+		"DyEngine/vendor/glfw/include;",
+		"DyEngine/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"DyEngine"
+	}
+
+	filter "system:windows"
+		systemversion	"latest"
+
+		defines	
+		{
+			"DY_PLATFORM_WINDOWS",
+			"GLFW_INCLUDE_NONE"
+		}
+
+	filter "configurations:Debug"
+		defines"DyEngine_Debug"
+		runtime"Debug"
+		symbols "on"	
+
+	filter "configurations:Release"
+		defines"DyEngine_Release"
+		runtime"Release"
+		optimize "on"	
+
+	filter "configurations:Dist"
+		defines"DyEngine_Dist"
+		runtime"Release"
+		optimize "on"	

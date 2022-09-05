@@ -18,7 +18,7 @@ namespace DyEngine
 	class Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "DY App");
 		virtual ~Application();
 
 		void OnEvent(Event& e);
@@ -31,6 +31,9 @@ namespace DyEngine
 		static Application& Get(){return *s_Instance;}
 
 		Window& GetWindow() { return *m_Window; }
+
+		void Close();
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);

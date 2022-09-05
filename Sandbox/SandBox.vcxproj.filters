@@ -15,19 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ExampleLayer.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Sandbox2D.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\ExampleLayer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ExampleLayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\Sandbox2D.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\SandboxApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\ExampleLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\FlatColor.glsl">

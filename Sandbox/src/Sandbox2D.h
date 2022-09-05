@@ -20,6 +20,7 @@ private:
 	// Temp
 	DyEngine::Ref<DyEngine::VertexArray> m_SquareVA;
 	DyEngine::Ref<DyEngine::Shader> m_FlatColorShader;
+	DyEngine::Ref<DyEngine::Framebuffer> m_Framebuffer;
 
 	DyEngine::Ref<DyEngine::Texture2D> m_CheckerboardTexture;
 

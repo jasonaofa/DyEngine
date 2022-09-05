@@ -129,6 +129,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Framebuffer.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
@@ -166,6 +169,9 @@
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h">
@@ -1460,6 +1466,9 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Framebuffer.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
@@ -1497,6 +1506,9 @@
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp">
