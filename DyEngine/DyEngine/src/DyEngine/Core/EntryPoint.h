@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 	app->Run();
 	DY_PROFILE_END_SESSION();
 
-	DY_PROFILE_BEGIN_SESSION("Startup", "HazelProfile-Shutdown.json");
+	DY_PROFILE_BEGIN_SESSION("Shutdown", "HazelProfile-Shutdown.json");
 	delete app;
 	DY_PROFILE_END_SESSION();
 }

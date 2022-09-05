@@ -1,4 +1,4 @@
-#include "EditorLayer.h"
+﻿#include "EditorLayer.h"
 #include <imgui/imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
@@ -32,8 +32,18 @@ namespace DyEngine {
 	{
 		DY_PROFILE_FUNCTION();
 
+		// Resize
+		if (DyEngine::FramebufferSpecification spec = m_Framebuffer->GetSpecification();
+			m_ViewportSize.x > 0.0f && m_ViewportSize.y > 0.0f && // zero sized framebuffer is invalid
+			(spec.Width != m_ViewportSize.x || spec.Height != m_ViewportSize.y))
+		{
+			m_Framebuffer->Resize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+			m_CameraController.OnResize(m_ViewportSize.x, m_ViewportSize.y);
+		}
+
 		// Update
-		m_CameraController.OnUpdate(ts);
+		if (m_ViewportFocused)
+			m_CameraController.OnUpdate(ts);
 
 		// Render
 		DyEngine::Renderer2D::ResetStats();
@@ -75,10 +85,6 @@ namespace DyEngine {
 	{
 		DY_PROFILE_FUNCTION();
 
-		// Note: Switch this to true to enable dockspace
-		static bool dockingEnabled = true;
-		if (dockingEnabled)
-		{
 			static bool dockspaceOpen = true;
 			static bool opt_fullscreen_persistant = true;
 			bool opt_fullscreen = opt_fullscreen_persistant;
@@ -149,34 +155,24 @@ namespace DyEngine {
 
 			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 
+			ImGui::End();
+
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
+			ImGui::Begin("Viewport");
+
+			ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
+			m_ViewportSize = { viewportPanelSize.x, viewportPanelSize.y };
 			uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
-			ImGui::Image((void*)textureID, ImVec2{ 1280, 720 }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
+			ImGui::Image((void*)textureID, ImVec2{ m_ViewportSize.x, m_ViewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
 			ImGui::End();
+			ImGui::PopStyleVar();
 
 			ImGui::End();
-		}
-		else
+	}
+		void EditorLayer::OnEvent(DyEngine::Event & e)
 		{
-			ImGui::Begin("Settings");
-
-			auto stats = DyEngine::Renderer2D::GetStats();
-			ImGui::Text("Renderer2D Stats:");
-			ImGui::Text("Draw Calls: %d", stats.DrawCalls);
-			ImGui::Text("Quads: %d", stats.QuadCount);
-			ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
-			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-
-			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-
-			uint32_t textureID = m_CheckerboardTexture->GetRendererID();
-			ImGui::Image((void*)textureID, ImVec2{ 1280, 720 }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
-			ImGui::End();
+			m_CameraController.OnEvent(e);
 		}
-	}
 
-	void EditorLayer::OnEvent(DyEngine::Event& e)
-	{
-		m_CameraController.OnEvent(e);
-	}
-
+	
 }

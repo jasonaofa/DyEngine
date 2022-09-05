@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "DyEngine/Core/Base.h"
+#include "DyEngine/Core/Input.h"
 
 namespace DyEngine
 {
@@ -121,7 +122,6 @@ namespace DyEngine
 		static Ref<VertexBuffer> Create(float* vertices, uint32_t size);
 		static Ref<VertexBuffer> Create(uint32_t size);
 	};
-
 	class IndexBuffer
 	{
 	public:

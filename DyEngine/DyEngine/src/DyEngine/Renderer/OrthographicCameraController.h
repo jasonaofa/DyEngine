@@ -17,6 +17,7 @@ namespace DyEngine {
 		 * \param rotation 
 		 */
 		OrthographicCameraController(float aspectRatio, bool rotation = true);
+		void OnResize(float width, float height);
 
 		void OnUpdate(Timestep ts);
 		void OnEvent(Event& e);
