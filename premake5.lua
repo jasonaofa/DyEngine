@@ -23,6 +23,7 @@ workspace "DyEngine"
 	IncludeDir["ImGui"] = "DyEngine/vendor/imgui"
 	IncludeDir["glm"] = "DyEngine/vendor/glm"
 	IncludeDir["stb_image"] = "DyEngine/vendor/stb_image"
+	IncludeDir["entt"] = "DyEngine/vendor/entt/include"
 
 group "Dependencies"
 	include"DyEngine/vendor/glfw"
@@ -49,6 +50,7 @@ project"DyEngine"
 		"DyEngine/DyEngine/src/**.c",
 		"DyEngine/DyEngine/src/**.cpp",
 		"DyEngine/vendor/glm/glm/**.hpp",
+		"DyEngine/vendor/entt/include/**.hpp",
 		"DyEngine/vendor/glm/glm/**.inl",
 		"DyEngine/vendor/stb_image/**.h",
 		"DyEngine/vendor/stb_image/**.cpp",
@@ -71,7 +73,8 @@ project"DyEngine"
 		"%{IncludeDir.ImGui}/backends",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 
 	}
 
@@ -203,7 +206,8 @@ project "DY-Editor"
 		"DyEngine/vendor/imgui;",
 		"DyEngine/vendor/glfw/include;",
 		"DyEngine/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links

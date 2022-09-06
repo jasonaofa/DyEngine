@@ -13,6 +13,11 @@
 #include "DyEngine/Core/KeyCodes.h"
 #include "DyEngine/Core/MouseButtonCodes.h"
 #include "DyEngine/Core/Layer.h"
+
+
+//---------Scene-----------
+#include "DyEngine/Scene/Scene.h"
+#include "DyEngine/Scene/Components.h"
 //---------Render-----------
 #include "DyEngine/Renderer/Renderer2D.h"
 #include "DyEngine/Renderer/Renderer.h"

@@ -13,6 +13,9 @@
     <Filter Include="DyEngine\src\DyEngine\Core">
       <UniqueIdentifier>{498315AB-3593-C17B-9E4C-269A8A7BB014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DyEngine\src\DyEngine\Debug">
+      <UniqueIdentifier>{8747D20D-F354-00F4-7C3B-FCDEE847CCAA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="DyEngine\src\DyEngine\Events">
       <UniqueIdentifier>{158BA5CB-0146-9577-AAFD-0DC29697DF07}</UniqueIdentifier>
     </Filter>
@@ -33,6 +36,12 @@
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\entt">
+      <UniqueIdentifier>{DD8078C1-4936-F1B6-D22A-EB8D3EDFE7BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\entt\include">
+      <UniqueIdentifier>{5035F37B-BC96-D089-4504-173CB1640749}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor\glm">
       <UniqueIdentifier>{829FC5A8-6E57-07F6-D75E-E051C335A2E6}</UniqueIdentifier>
@@ -98,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Debug\Instrumentor.h">
+      <Filter>DyEngine\src\DyEngine\Debug</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Events\ApplicationEvent.h">
       <Filter>DyEngine\src\DyEngine\Events</Filter>
@@ -182,6 +194,9 @@
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>DyEngine\src\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\entt\include\entt.hpp">
+      <Filter>vendor\entt\include</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glm\glm\common.hpp">
       <Filter>vendor\glm\glm</Filter>
@@ -1431,7 +1446,8 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Debug\Instrumentor.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Scene.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Components.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Core\Application.cpp">
@@ -1524,8 +1540,6 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\Scene.cpp" />
   </ItemGroup>
 </Project>
