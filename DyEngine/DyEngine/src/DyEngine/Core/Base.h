@@ -1,11 +1,21 @@
 ﻿#pragma once
 #include <memory>
 #include <iostream>
+#include "DyEngine/Core/PlatformDetection.h"
 
-
-#ifdef DyEngine_Debug
-	#define DY_ENABLE_ASSERTS
-#endif 
+#ifdef DY_DEBUG
+	#if defined(DY_PLATFORM_WINDOWS)
+	)
+	#elif defined(DY_PLATFORM_LINUX)
+		#include <signal.h>
+		#define DY_DEBUGBREAK() raise(SIGTRAP)
+	#else
+		#error "Platform doesn't support debugbreak yet!"
+	#endif
+		#define DY_ENABLE_ASSERTS
+#else
+	#define DY_DEBUGBREAK()
+#endif
 
 //USE if TO INSTEAD make "DY_ENABLE_ASSERTS 0"   WORK
 #ifdef DY_ENABLE_ASSERTS

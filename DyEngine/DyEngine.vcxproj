@@ -158,6 +158,7 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\Log.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\PlatformDetection.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\Timestep.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\Window.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\imgui.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_glfw.h" />
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Camera.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Framebuffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.h" />
@@ -181,6 +183,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Texture.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Components.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Scene.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\ScriptableEntity.h" />
     <ClInclude Include="DyEngine\src\DyPch.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
@@ -190,8 +195,8 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Scene\Components.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Scene\Scene.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Entity.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\SceneCamera.h" />
     <ClInclude Include="vendor\entt\include\entt.hpp" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
@@ -630,6 +635,7 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Texture.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\Scene.cpp" />
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -642,7 +648,8 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Scene\Scene.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\Entity.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\SceneCamera.cpp" />
     <ClCompile Include="vendor\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>

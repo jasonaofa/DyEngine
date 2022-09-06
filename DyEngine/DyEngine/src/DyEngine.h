@@ -14,9 +14,10 @@
 #include "DyEngine/Core/MouseButtonCodes.h"
 #include "DyEngine/Core/Layer.h"
 
-
+#include "DyEngine/Scene/ScriptableEntity.h"
 //---------Scene-----------
 #include "DyEngine/Scene/Scene.h"
+#include "DyEngine/Scene/Entity.h"
 #include "DyEngine/Scene/Components.h"
 //---------Render-----------
 #include "DyEngine/Renderer/Renderer2D.h"

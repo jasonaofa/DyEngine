@@ -25,6 +25,9 @@
     <Filter Include="DyEngine\src\DyEngine\Renderer">
       <UniqueIdentifier>{17B32F42-03D9-F9A8-EC1E-7F74D8E31E75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DyEngine\src\DyEngine\Scene">
+      <UniqueIdentifier>{2EAAE00E-9AB7-0EF5-239E-0AE08FAADAAB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="DyEngine\src\Platform">
       <UniqueIdentifier>{637B251D-CFE7-E017-98DB-787504070380}</UniqueIdentifier>
     </Filter>
@@ -167,6 +170,12 @@
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Components.h">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Scene.h">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyPch.h">
       <Filter>DyEngine\src</Filter>
@@ -1446,8 +1455,11 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Scene\Scene.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Scene\Components.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Entity.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Camera.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\SceneCamera.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\ScriptableEntity.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\PlatformDetection.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Core\Application.cpp">
@@ -1507,6 +1519,9 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\Scene.cpp">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyPch.cpp">
       <Filter>DyEngine\src</Filter>
     </ClCompile>
@@ -1540,6 +1555,7 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Scene\Scene.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\Entity.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>
