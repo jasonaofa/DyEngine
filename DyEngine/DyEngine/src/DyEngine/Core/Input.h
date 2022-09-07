@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "DyEngine/Core/Base.h"
+#include <glm/glm.hpp>
 #include "DyEngine/Core/KeyCodes.h"
 #include "DyEngine/Core/MouseCodes.h"
 namespace  DyEngine
@@ -13,7 +13,7 @@ namespace  DyEngine
 		static bool IsKeyPressed(KeyCode key);
 
 		static bool IsMouseButtonPressed(MouseCode button);
-		static std::pair<float, float> GetMousePosition();
+		static glm::vec2 GetMousePosition();
 		static float GetMouseX();
 		static float GetMouseY();
 	};

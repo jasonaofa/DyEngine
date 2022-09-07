@@ -73,7 +73,6 @@ namespace DyEngine
 				in.seekg(0, std::ios::beg);
 				//读到result，读result.size()这么多字节
 				in.read(&result[0], result.size());
-				in.close();
 			}
 			else
 			{

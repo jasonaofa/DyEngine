@@ -102,6 +102,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\MouseCodes.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\PlatformDetection.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\Timestep.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
@@ -136,6 +139,9 @@
       <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Camera.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Framebuffer.h">
@@ -174,7 +180,16 @@
     <ClInclude Include="DyEngine\src\DyEngine\Scene\Components.h">
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\Entity.h">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Scene\Scene.h">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\SceneCamera.h">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\ScriptableEntity.h">
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyPch.h">
@@ -1455,11 +1470,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Scene\Entity.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Camera.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Scene\SceneCamera.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Scene\ScriptableEntity.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Core\PlatformDetection.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Core\Application.cpp">
@@ -1519,7 +1529,13 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\Entity.cpp">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Scene\Scene.cpp">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\SceneCamera.cpp">
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyPch.cpp">
@@ -1555,7 +1571,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Scene\Entity.cpp" />
-    <ClCompile Include="DyEngine\src\DyEngine\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>

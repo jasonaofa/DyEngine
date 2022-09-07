@@ -30,10 +30,7 @@ namespace DyEngine
 		DY_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
 		DY_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
 
-		if (GLVersion.major > 4 || (GLVersion.major == 4 && GLVersion.minor >= 5))
-		{
-			std::cout << "DyEngine requires at least OpenGL version 4.5!" << std::endl;
-		};
+		DY_CORE_ASSERT(GLVersion.major > 4 || (GLVersion.major == 4 && GLVersion.minor >= 5), "Hazel requires at least OpenGL version 4.5!");
 	}
 
 	void OpenGLContext::SwapBuffers()

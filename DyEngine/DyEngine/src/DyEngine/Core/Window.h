@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "Base.h"
+#include <sstream>
 #include "DyEngine/Events/Event.h"
 #include "Log.h"
 

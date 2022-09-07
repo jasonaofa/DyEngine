@@ -32,7 +32,7 @@ namespace DyEngine {
 		//uc就是unsigned char
 		stbi_uc* data = nullptr;
 		{
-			DY_PROFILE_SCOPE("stbi_load - OpenGLTexture2D::OpenGLTexture2D(const std:string&)");
+			DY_PROFILE_SCOPE("stbi_load - OpenGLTexture2D::OpenGLTexture2D(const std::string&)");
 			data = stbi_load(path.c_str(), &width, &height, &channels, 0);
 		}
 		DY_CORE_ASSERT(data, "Failed to load image!");

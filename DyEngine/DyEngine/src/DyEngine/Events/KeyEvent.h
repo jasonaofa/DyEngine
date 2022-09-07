@@ -18,12 +18,12 @@ namespace DyEngine
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 
 	protected:
-		KeyEvent(int keycode)
+		KeyEvent(const KeyCode keycode)
 			: m_KeyCode(keycode)
 		{
 		}
 
-		int m_KeyCode;
+		KeyCode m_KeyCode;
 	};
 
 	/**
@@ -32,24 +32,22 @@ namespace DyEngine
 	class KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(int keycode, bool isRepeat = false)
-			: KeyEvent(keycode), m_IsRepeat(isRepeat)
-		{
-		}
+		KeyPressedEvent(const KeyCode keycode, const uint16_t repeatCount)
+			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
-		bool IsRepeat() const { return m_IsRepeat; }
+		uint16_t GetRepeatCount() const { return m_RepeatCount; }
 
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "KeyPressedEvent: " << m_KeyCode << " (repeat = " << m_IsRepeat << ")";
+			ss << "KeyPressedEvent: " << m_KeyCode << " (" << m_RepeatCount << " repeats)";
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
 	private:
 		//pressedEvent自己的flag 用来判断是否被长按了
-		bool m_IsRepeat;
+		uint16_t m_RepeatCount;
 	};
 
 	/**
@@ -58,10 +56,8 @@ namespace DyEngine
 	class KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleasedEvent(int keycode)
-			: KeyEvent(keycode)
-		{
-		}
+		KeyReleasedEvent(const KeyCode keycode)
+			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
 		{
@@ -76,10 +72,8 @@ namespace DyEngine
 	class KeyTypedEvent : public KeyEvent
 	{
 	public:
-		KeyTypedEvent(int keycode)
-			: KeyEvent(keycode)
-		{
-		}
+		KeyTypedEvent(const KeyCode keycode)
+			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
 		{

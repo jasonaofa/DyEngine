@@ -1,4 +1,13 @@
 #pragma once
+#include "DyEngine/Core/PlatformDetection.h"
+
+#ifdef DY_PLATFORM_WINDOWS
+	#ifndef NOMINMAX
+	// See github.com/skypjack/entt/wiki/Frequently-Asked-Questions#warning-c4003-the-min-the-max-and-the-macro
+		#define NOMINMAX
+	#endif
+#endif
+
 #include <iostream>
 #include <memory>
 #include <utility>
@@ -11,6 +20,8 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+
+#include "DyEngine/Core/Base.h"
 
 #include "DyEngine/Core/Log.h"
 #include "DyEngine/Debug/Instrumentor.h"

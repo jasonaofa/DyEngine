@@ -25,12 +25,13 @@ workspace "DyEngine"
 	IncludeDir["stb_image"] = "DyEngine/vendor/stb_image"
 	IncludeDir["entt"] = "DyEngine/vendor/entt/include"
 
+
 group "Dependencies"
 	include"DyEngine/vendor/glfw"
 	include"DyEngine/vendor/Glad"
 	include"DyEngine/vendor/ImGui"
-group ""
-
+group""
+	
 project"DyEngine"
 	location"DyEngine"
 	kind"StaticLib"
@@ -74,7 +75,7 @@ project"DyEngine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
 
 	}
 

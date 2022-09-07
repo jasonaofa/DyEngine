@@ -16,3 +16,6 @@
 	path = DyEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
 	branch = v1.x
+[submodule "DyEngine/vendor/yaml-cpp"]
+	path = DyEngine/vendor/yaml-cpp
+	url = https://github.com/jasonaofa/yaml-cpp

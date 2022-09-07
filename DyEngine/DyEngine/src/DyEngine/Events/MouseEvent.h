@@ -4,7 +4,7 @@
 
 #include "DyEngine/Events/Event.h"
 #include "DyEngine/Core/MouseCodes.h"
-#include "DyPch.h"
+
 
 namespace DyEngine {
 	/**
@@ -59,7 +59,7 @@ namespace DyEngine {
 	public:
 		MouseCode GetMouseButton() const { return m_Button; }
 
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput | EventCategoryMouseButton)
+	EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput | EventCategoryMouseButton)
 	protected:
 		MouseButtonEvent(const MouseCode button)
 			: m_Button(button) {}
