@@ -22,11 +22,17 @@
     <Filter Include="DyEngine\src\DyEngine\ImGui">
       <UniqueIdentifier>{3BB2300E-A7BF-5EF4-30A6-5ADF9CB22AAB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DyEngine\src\DyEngine\Math">
+      <UniqueIdentifier>{CAC31AAB-B6D3-C67B-1F8D-2B9A0BBCB514}</UniqueIdentifier>
+    </Filter>
     <Filter Include="DyEngine\src\DyEngine\Renderer">
       <UniqueIdentifier>{17B32F42-03D9-F9A8-EC1E-7F74D8E31E75}</UniqueIdentifier>
     </Filter>
     <Filter Include="DyEngine\src\DyEngine\Scene">
       <UniqueIdentifier>{2EAAE00E-9AB7-0EF5-239E-0AE08FAADAAB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DyEngine\src\DyEngine\Utils">
+      <UniqueIdentifier>{713E0E0F-DD4B-3CF5-6632-38E0D23E08AC}</UniqueIdentifier>
     </Filter>
     <Filter Include="DyEngine\src\Platform">
       <UniqueIdentifier>{637B251D-CFE7-E017-98DB-787504070380}</UniqueIdentifier>
@@ -39,6 +45,9 @@
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGuizmo">
+      <UniqueIdentifier>{73BF7F4C-DF4A-ED10-E85B-700554664911}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor\entt">
       <UniqueIdentifier>{DD8078C1-4936-F1B6-D22A-EB8D3EDFE7BA}</UniqueIdentifier>
@@ -138,6 +147,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.h">
       <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Math\Math.h">
+      <Filter>DyEngine\src\DyEngine\Math</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Buffer.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
@@ -195,6 +207,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Scene\ScriptableEntity.h">
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Utils\PlatformUtils.h">
+      <Filter>DyEngine\src\DyEngine\Utils</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyPch.h">
       <Filter>DyEngine\src</Filter>
     </ClInclude>
@@ -221,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h">
       <Filter>DyEngine\src\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\ImGuizmo.h">
+      <Filter>vendor\ImGuizmo</Filter>
     </ClInclude>
     <ClInclude Include="vendor\entt\include\entt.hpp">
       <Filter>vendor\entt\include</Filter>
@@ -1496,6 +1514,9 @@
     <ClCompile Include="DyEngine\src\DyEngine\ImGui\imgui_impl_opengl3.cpp">
       <Filter>DyEngine\src\DyEngine\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Math\Math.cpp">
+      <Filter>DyEngine\src\DyEngine\Math</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
@@ -1571,8 +1592,14 @@
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\Windows\WindowsPlatformUtils.cpp">
+      <Filter>DyEngine\src\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp">
       <Filter>DyEngine\src\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGuizmo\ImGuizmo.cpp">
+      <Filter>vendor\ImGuizmo</Filter>
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>

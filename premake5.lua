@@ -25,6 +25,7 @@ workspace "DyEngine"
 	IncludeDir["stb_image"] = "DyEngine/vendor/stb_image"
 	IncludeDir["entt"] = "DyEngine/vendor/entt/include"
 	IncludeDir["yaml_cpp"] = "DyEngine/vendor/yaml-cpp/include"
+	IncludeDir["ImGuizmo"] = "DyEngine/vendor/ImGuizmo"
 
 group "Dependencies"
 	include"DyEngine/vendor/glfw"
@@ -56,6 +57,9 @@ project"DyEngine"
 		"DyEngine/vendor/glm/glm/**.inl",
 		"DyEngine/vendor/stb_image/**.h",
 		"DyEngine/vendor/stb_image/**.cpp",
+		
+		"DyEngine/vendor/ImGuizmo/ImGuizmo.h",
+		"DyEngine/vendor/ImGuizmo/ImGuizmo.cpp"
 	}
 
 	libdirs 
@@ -77,7 +81,8 @@ project"DyEngine"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
-		"%{IncludeDir.yaml_cpp}"
+		"%{IncludeDir.yaml_cpp}",
+		"%{IncludeDir.ImGuizmo}"
 
 	}
 
@@ -90,6 +95,10 @@ project"DyEngine"
 		"yaml-cpp",
 		"opengl32.lib"
 	}
+
+	filter "files:vendor/ImGuizmo/**.cpp"
+	flags { "NoPCH" }
+	
 	filter "system:windows"
 		systemversion	"latest"
 
@@ -212,7 +221,8 @@ project "DY-Editor"
 		"DyEngine/vendor/glfw/include;",
 		"DyEngine/vendor",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.ImGuizmo}"
 	}
 
 	links

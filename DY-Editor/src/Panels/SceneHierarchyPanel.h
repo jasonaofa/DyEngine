@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "DyEngine/Core/Base.h"
 #include "DyEngine/Core/Log.h"
@@ -16,6 +16,9 @@ namespace DyEngine {
 		void SetContext(const Ref<Scene>& scene);
 
 		void OnImGuiRender();
+
+
+		Entity GetSelectedEntity() const { return m_SelectionContext; }
 	private:
 		void DrawComponents(Entity entity);
 		void DrawEntityNode(Entity entity);

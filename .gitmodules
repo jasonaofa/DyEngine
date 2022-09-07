@@ -19,3 +19,6 @@
 [submodule "DyEngine/vendor/yaml-cpp"]
 	path = DyEngine/vendor/yaml-cpp
 	url = https://github.com/jasonaofa/yaml-cpp
+[submodule "DyEngine/vendor/ImGuizmo"]
+	path = DyEngine/vendor/ImGuizmo
+	url = https://github.com/jasonaofa/ImGuizmo
