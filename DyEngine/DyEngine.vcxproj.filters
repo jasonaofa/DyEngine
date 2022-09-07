@@ -189,6 +189,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Scene\SceneCamera.h">
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Scene\SceneSerializer.h">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Scene\ScriptableEntity.h">
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClInclude>
@@ -1536,6 +1539,9 @@
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Scene\SceneCamera.cpp">
+      <Filter>DyEngine\src\DyEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Scene\SceneSerializer.cpp">
       <Filter>DyEngine\src\DyEngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyPch.cpp">

@@ -1,4 +1,4 @@
-﻿
+
 workspace "DyEngine"
 
 	architecture "x86"
@@ -24,12 +24,13 @@ workspace "DyEngine"
 	IncludeDir["glm"] = "DyEngine/vendor/glm"
 	IncludeDir["stb_image"] = "DyEngine/vendor/stb_image"
 	IncludeDir["entt"] = "DyEngine/vendor/entt/include"
-
+	IncludeDir["yaml_cpp"] = "DyEngine/vendor/yaml-cpp/include"
 
 group "Dependencies"
 	include"DyEngine/vendor/glfw"
 	include"DyEngine/vendor/Glad"
 	include"DyEngine/vendor/ImGui"
+	include "DyEngine/vendor/yaml-cpp"
 group""
 	
 project"DyEngine"
@@ -76,6 +77,7 @@ project"DyEngine"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml_cpp}"
 
 	}
 
@@ -85,6 +87,7 @@ project"DyEngine"
 		"Glad",
 		"ImGui",
 		"GLFW.lib",
+		"yaml-cpp",
 		"opengl32.lib"
 	}
 	filter "system:windows"
@@ -196,7 +199,8 @@ project "DY-Editor"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/**.ini",
 		"%{prj.name}/**.glsl",
-		"%{prj.name}/**.png"
+		"%{prj.name}/**.png",
+		"%{prj.name}/**.dy"
 	}
 
 	includedirs
