@@ -13,6 +13,7 @@
 #include "DyEngine/Core/KeyCodes.h"
 #include "DyEngine/Core/MouseButtonCodes.h"
 #include "DyEngine/Core/Layer.h"
+#include "DyEngine/Core/Assert.h"
 
 #include "DyEngine/Scene/ScriptableEntity.h"
 //---------Scene-----------

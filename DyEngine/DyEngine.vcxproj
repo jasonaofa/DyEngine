@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="DyEngine\src\DyEngine.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\Application.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Assert.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\Base.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\EntryPoint.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Core\Input.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\EditorCamera.h" />
     <ClInclude Include="vendor\ImGuizmo\ImGuizmo.h" />
     <ClInclude Include="vendor\entt\include\entt.hpp" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -657,6 +659,7 @@
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsPlatformUtils.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\EditorCamera.cpp" />
     <ClCompile Include="vendor\ImGuizmo\ImGuizmo.cpp" />
     <ClCompile Include="vendor\stb_image\stb_image.cpp" />
   </ItemGroup>
@@ -673,6 +676,9 @@
     <ProjectReference Include="vendor\yaml-cpp\yaml-cpp.vcxproj">
       <Project>{88F1A057-74BE-FB62-9DD7-E90A890331F1}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

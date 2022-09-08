@@ -957,6 +957,7 @@ namespace entt {
     };
 
 
+    /// <summary>#include "../signal/sigh.hpp"</summary>
 }
 
 
@@ -972,7 +973,6 @@ namespace entt {
 #include <type_traits>
 // #include "../config/config.h"
 
-// #include "hashed_string.hpp"
 
 // #include "fwd.hpp"
 
@@ -1066,6 +1066,7 @@ namespace entt {
 
     /**
      * @brief Concatenates multiple type lists.
+     /// <summary>#include "sparse_set.hpp"</summary>
      * @tparam Type Types provided by the first type list.
      * @tparam Other Types provided by the second type list.
      * @tparam List Other type lists, if any.
@@ -1108,7 +1109,7 @@ namespace entt {
      */
     template<typename Type, typename... Other>
     struct type_list_unique<type_list<Type, Other...>> {
-        /*! @brief A type list without duplicate types. */
+        
         using type = std::conditional_t<
             std::disjunction_v<std::is_same<Type, Other>...>,
             typename type_list_unique<type_list<Other...>>::type,
@@ -1530,6 +1531,7 @@ namespace entt {
          *
          * @tparam It Type of random access iterator.
          * @tparam Compare Type of comparison function object.
+         /// <summary>! @brief Unsigned integer type.</summary>
          * @param first An iterator to the first element of the range to sort.
          * @param last An iterator past the last element of the range to sort.
          * @param compare A valid comparison function object.
@@ -1610,6 +1612,12 @@ namespace entt {
 
                 if constexpr (passes & 1) {
                     part(first, last, aux.begin(), (passes - 1) * Bit);
+                    /// <summary>
+                    /// *
+                    ///  * @brief Returns the capacity of the pool for the given component.
+                    ///  * @tparam Component Type of component in which one is interested.
+                    ///  * @return Capacity of the pool of the given component.
+                    /// </summary>
                     std::move(aux.begin(), aux.end(), first);
                 }
             }

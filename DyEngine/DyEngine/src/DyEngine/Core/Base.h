@@ -16,18 +16,8 @@
 #else
 	#define DY_DEBUGBREAK()
 #endif
-
-//USE if TO INSTEAD make "DY_ENABLE_ASSERTS 0"   WORK
-#ifdef DY_ENABLE_ASSERTS
-	#define DY_ASSERT(x,...){if(!(x)){DY_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
-	#define DY_CORE_ASSERT(x,...){if(!(x)){DY_CORE_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}
-#else
-	#define DY_ASSERT(x,...)
-	#define DY_CORE_ASSERT(x,...)
-#endif 
-
-
-
+#define DY_EXPAND_MACRO(x) x
+#define DY_STRINGIFY_MACRO(x) #x
 
 
 //让enum的值不只等于赋给他的值，还等于小一位的值
@@ -73,3 +63,5 @@ namespace DyEngine
  */
 #define DY_BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
 
+#include "DyEngine/Core/Log.h"
+#include "DyEngine/Core/Assert.h"

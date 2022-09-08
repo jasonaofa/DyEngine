@@ -1491,6 +1491,8 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\EditorCamera.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Assert.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Core\Application.cpp">
@@ -1604,5 +1606,9 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\EditorCamera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

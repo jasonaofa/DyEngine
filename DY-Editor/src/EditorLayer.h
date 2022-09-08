@@ -2,7 +2,7 @@
 
 #include "DyEngine.h"
 #include "Panels/SceneHierarchyPanel.h"
-
+#include "DyEngine/Renderer/EditorCamera.h"
 namespace DyEngine {
 
 	class EditorLayer : public Layer
@@ -40,7 +40,7 @@ namespace DyEngine {
 		bool m_PrimaryCamera = true;
 
 		Ref<Texture2D> m_CheckerboardTexture;
-
+		EditorCamera m_EditorCamera;
 		bool m_ViewportFocused = true, m_ViewportHovered = false;
 		glm::vec2 m_ViewportSize = { 0.0f, 0.0f };
 		glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
