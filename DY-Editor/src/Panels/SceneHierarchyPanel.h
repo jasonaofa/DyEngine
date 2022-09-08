@@ -17,7 +17,7 @@ namespace DyEngine {
 
 		void OnImGuiRender();
 
-
+		void SetSelectedEntity(Entity entity);
 		Entity GetSelectedEntity() const { return m_SelectionContext; }
 	private:
 		void DrawComponents(Entity entity);

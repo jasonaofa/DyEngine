@@ -75,6 +75,10 @@ namespace DyEngine {
 		ImGui::End();
 	}
 
+	void SceneHierarchyPanel::SetSelectedEntity(Entity entity)
+	{
+		m_SelectionContext = entity;
+	}
 
 	void SceneHierarchyPanel::DrawEntityNode(Entity entity)
 	{
