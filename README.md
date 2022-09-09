@@ -10,13 +10,16 @@ after GZIMO. I'll write a WIKI about This tiny engine. and try to figure out eve
 这是基于C++和opengl的小引擎，学习Cherno的引擎课程的记录。
 
 目前已实现:
-- DLL和SANDBOX的衔接，引擎入口点的设置，分成了引擎端和客户端
+- 保存和读取场景
+- 可以保存的UI界面
+- 点击entity
+- 基础的ecs
+- 属性面板
+- Gizmo
 - 日志系统
 - 事件系统
 - 层
-- Imgui
-- Input Polling 
-![image](https://user-images.githubusercontent.com/31367799/186081856-01701abe-82cc-489e-b6e0-e3d5715427d3.png)
+![image](https://user-images.githubusercontent.com/31367799/189267601-7da630bf-361a-43eb-8f6f-9377fe1a220f.png)
 
 <还处在一个非常初级的阶段>
 
@@ -24,12 +27,3 @@ after GZIMO. I'll write a WIKI about This tiny engine. and try to figure out eve
 目前只支持WINDOWS系统。
 基于Premake编译，在根目录下写好了一个批处理：![image](https://user-images.githubusercontent.com/31367799/185866568-dec06497-fcdf-482c-8da6-7c01410ab2fd.png)
 默认是VS2019，可以自己修改
-
-# 3. Submodule
-都在\DyEngine\vendor里，记得拉一下。
-
-目前只有：
-- glfw
-- glad
-- imgui
-- spdlog
