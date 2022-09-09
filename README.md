@@ -1,6 +1,6 @@
 # DyEngine
 ————————————————————————————————————————————
-# Last update
+# Latest Update
 - 终于写（抄）完Gizmo了，我从Hazel复制了大量的代码，因为我是个超级初学者，只能先抄，然后总结学习。所以接下来准备写Wiki，把我抄的这些都弄懂。
 - Finally, I got a gizmo. frankly, I copy a lot of codes from Hazel Cause I'm not a good programmer. so I need to copy at first as a quick way to learn.
 after GZIMO. I'll write a WIKI about This tiny engine. and try to figure out every detail.
