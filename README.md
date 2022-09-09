@@ -9,6 +9,8 @@ after GZIMO. I'll write a WIKI about This tiny engine. and try to figure out eve
 
 这是基于C++和opengl的小引擎，学习Cherno的引擎课程的记录。
 
+正在写WIKI，会把引擎中的各种实现方式和重要的类都做一个剖析，帮助像我这样的新手可以快速学习。
+
 目前已实现:
 - 保存和读取场景
 - 可以保存的UI界面
@@ -23,7 +25,7 @@ after GZIMO. I'll write a WIKI about This tiny engine. and try to figure out eve
 
 <还处在一个非常初级的阶段>
 
-# 2. 如何运行
+# 3. 如何运行
 目前只支持WINDOWS系统。
 基于Premake编译，在根目录下写好了一个批处理：![image](https://user-images.githubusercontent.com/31367799/185866568-dec06497-fcdf-482c-8da6-7c01410ab2fd.png)
 默认是VS2019，可以自己修改
