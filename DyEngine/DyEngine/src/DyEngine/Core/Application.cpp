@@ -66,9 +66,7 @@ namespace DyEngine
 		//如果事件是WindowCloseEvent，就调用OnWindowClose函数
 		dispatcher.Dispatch<WindowCloseEvent>(DY_BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(DY_BIND_EVENT_FN(Application::OnWindowResize));
-		//this is DyEngine get the event NOT app get event
-		//TODO delete later
-		//DY_CORE_TRACE("{0}", e);
+
 		//反向遍历
 		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
 		{

@@ -27,6 +27,9 @@ namespace DyEngine {
 		unsigned int m_Width, m_Height;
 	};
 
+	/**
+	 * \brief 
+	 */
 	class WindowCloseEvent : public Event
 	{
 	public:

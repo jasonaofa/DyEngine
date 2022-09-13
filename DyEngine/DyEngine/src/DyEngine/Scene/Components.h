@@ -9,6 +9,7 @@ namespace DyEngine {
 
 	struct TagComponent
 	{
+		//这就是这个Entity的名字
 		std::string Tag;
 
 		TagComponent() = default;

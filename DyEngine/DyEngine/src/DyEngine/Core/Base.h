@@ -20,11 +20,22 @@
 #define DY_STRINGIFY_MACRO(x) #x
 
 
-//让enum的值不只等于赋给他的值，还等于小一位的值
-//比如
-//EventCategorMouse			= BIT(3),
-//EventCategorMoustButton	= BIT(4)
-//那么MoustButton既是4又是3
+
+/**
+ * \brief
+ * 用二进制左移操作<<
+ * example:
+ * 1 << 0 = `0000 0001`
+ * 1 << 1 = `0000 0010`
+ * 1 << 2 = `0000 0100`
+ * 让enum的值不只等于赋给他的值，还等于小一位的值
+ *	比如
+ *	EventCategorMouse			= BIT(3),
+ *	EventCategorMoustButton	= BIT(4)
+ *	那么MoustButton既是4又是3
+ *
+ * \param x 
+ */
 #define BIT(x) (1 << x)
 
 namespace DyEngine

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DyEngine::DYEditor">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>src\DYEditorApp.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::EditorLayer">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICGAACBEAcIAAAEEEABCAAKAAFIAAAAABAAGAkIQ=</HashCode>
+      <FileName>src\EditorLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::SceneHierarchyPanel">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABIEAAAAAAAAAAAAAAAAEAAAAAQIAACAAAg=</HashCode>
+      <FileName>src\Panels\SceneHierarchyPanel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

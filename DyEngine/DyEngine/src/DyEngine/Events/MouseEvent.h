@@ -6,6 +6,7 @@
 #include "DyEngine/Core/MouseCodes.h"
 #include <sstream>
 
+
 namespace DyEngine {
 	/**
 	 * \brief 鼠标基类
@@ -81,6 +82,7 @@ namespace DyEngine {
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
+			
 	};
 
 	class MouseButtonReleasedEvent : public MouseButtonEvent

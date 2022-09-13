@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DyEngine::Application">
+    <Position X="32.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAAIAgAQQDCEAABAAkQAAhAAAAACAAAAQABAAADAEAI=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Core\Application.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::AppRenderEvent">
+    <Position X="4.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\ApplicationEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::AppTickEvent">
+    <Position X="15.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\ApplicationEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::AppUpdateEvent">
+    <Position X="24.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\ApplicationEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::BufferLayout">
+    <Position X="35.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAgACAAAAAAAAgAAAAQAQAAABAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Buffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Camera">
+    <Position X="6.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::EditorCamera">
+    <Position X="7.5" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ASUIAQhAACQAAEBgAMAACQKQQqAYAQAEABAAAAEARAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\EditorCamera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Entity">
+    <Position X="37.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EACAAAAAAgAIAAAEAAAABQAAAAAASAAEACAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Scene\Entity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Event">
+    <Position X="16" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAIAIAAIAAAEEAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\Event.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::EventDispatcher">
+    <Position X="40.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\Event.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::FileDialogs">
+    <Position X="42" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAABAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Utils\PlatformUtils.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Framebuffer">
+    <Position X="18.5" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAABAAAAAAAAAAAAAAAAABAEBAAAAEAAEQEAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Framebuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::GraphicsContext">
+    <Position X="18.5" Y="16.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAEAAAAACAAAAIAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\GraphicsContext.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::ImGuiLayer">
+    <Position X="6.5" Y="23" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABIAAAAEAAAAAIAAgEAAAACAAIAAEAAABAABAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\ImGui\ImGuiLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::IndexBuffer">
+    <Position X="3.75" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAABAAAAAEAAAAAEAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Buffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Input">
+    <Position X="32.75" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAQAAABAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Core\Input.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::InstrumentationTimer">
+    <Position X="35" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAACIAAEAAAAAAAAAAAAAAAAIAAAABAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Debug\Instrumentor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Instrumentor">
+    <Position X="37.75" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAEIAABgABAAAAAAAAAAABAAIABAEAgAAAIAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Debug\Instrumentor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::KeyEvent">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\KeyEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::KeyPressedEvent">
+    <Position X="17.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAIAAABAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\KeyEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::KeyReleasedEvent">
+    <Position X="20" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\KeyEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::KeyTypedEvent">
+    <Position X="22.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\KeyEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Layer">
+    <Position X="6.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAEAEAAAAAAAIAAEAAEAAABAAEABAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Core\Layer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::LayerStack">
+    <Position X="40" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAAAAAACACAEAQAAICAAAAAAgAAAIEAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Core\LayerStack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Log">
+    <Position X="42" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAABAAAAAAAAAAAAAACAAAAAAAQAACAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Core\Log.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::MouseButtonEvent">
+    <Position X="8.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\MouseEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::MouseButtonPressedEvent">
+    <Position X="6.75" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\MouseEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::MouseMovedEvent">
+    <Position X="27.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAACAAAAAAAAAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\MouseEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::MouseScrolledEvent">
+    <Position X="29.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAMAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\MouseEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLContext">
+    <Position X="18.5" Y="18.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAgACAAAAIAA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenGLContext.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLFramebuffer">
+    <Position X="18.5" Y="11.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAiAAEABQAAAQAAAAAAAAAAAABhARAABAEAAEQBAA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLIndexBuffer">
+    <Position X="3.5" Y="20" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAiAAAAAAAAEAAAAAAAAAAAAAAAQAAAAAEAAQAAAA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenGLBuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLRendererAPI">
+    <Position X="15.5" Y="19.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAACAABAAAA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLShader">
+    <Position X="11.5" Y="19.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EBAAiAAAAAAASgAIAAEAAAAAAAEDIBIAAAAEAABWBEA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenGLShader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLTexture2D">
+    <Position X="0.5" Y="10.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAiAABAAAAAAABBIAAAQJAIAAAgAKAAAAAAEAAAAA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenGLTexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLVertexArray">
+    <Position X="0.5" Y="18.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAiAARAAAAQAABABAAAAAAAAIAAAAAAAAEAAACECA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OpenGLVertexBuffer">
+    <Position X="14.5" Y="11.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAiAABAAAAAEAAAAACAAAAAACAAAAIAAAEAAAQAAA=</HashCode>
+      <FileName>DyEngine\src\Platform\OpenGL\OpenGLBuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OrthographicCamera">
+    <Position X="32.5" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAQACCAAIAAAAAAAASAACAAAggAAgAAAAEAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\OrthographicCamera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::OrthographicCameraController">
+    <Position X="35" Y="11" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAgAAAAACAIAAQkAAIACEAAAAAAAEEAAAAAEAIAI=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\OrthographicCameraController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::RenderCommand">
+    <Position X="37.75" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAEAAAAAAAAAAEEAAACAABAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\RenderCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Renderer">
+    <Position X="40" Y="11" Width="1.75" />
+    <NestedTypes>
+      <Struct Name="DyEngine::Renderer::SceneData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DyEngine\src\DyEngine\Renderer\Renderer.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAggAAAAAAAAAAAAAAAQAAAAAAAAAABCACAUAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Renderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Renderer2D">
+    <Position X="42" Y="11" Width="2.5" />
+    <NestedTypes>
+      <Struct Name="DyEngine::Renderer2D::Statistics" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DyEngine\src\DyEngine\Renderer\Renderer2D.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIBgAAAAEAEAAAAAAAAAQAAAAAEAAAABAACAAIJAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Renderer2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::RendererAPI">
+    <Position X="15.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAEAAEAAAAAAAAAEAEACACCABAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\RendererAPI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Scene">
+    <Position X="32.5" Y="15.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ECCAAAAAABBAAAAAgBAAAAAAQAAAAQAAACAAgAEAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Scene\Scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::SceneCamera">
+    <Position X="4.5" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABFIABAEAACAAAAgAAAAACKIkICAGRBCAAAAEAAAAiA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Scene\SceneCamera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::SceneSerializer">
+    <Position X="35" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAABAAAAAAAAACBEAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Scene\SceneSerializer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::ScriptableEntity">
+    <Position X="37" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAgAAABAAAACAAAAAAAAAAAAEAAAg=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Scene\ScriptableEntity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Shader">
+    <Position X="11.75" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAAAAAAgAIAAEAAAAAAAAAAEAABAAEAAAABAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::ShaderLibrary">
+    <Position X="39" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAFAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Texture">
+    <Position X="1" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAABAAAAgAAAAAAAAQBAAAAAgAAAAAAAAEAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Texture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Texture2D">
+    <Position X="0.75" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Texture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Timestep">
+    <Position X="40.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAIBAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Core\Timestep.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::VertexArray">
+    <Position X="0.5" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAABABAAAAAAAAIAAEAAAAAEAEACAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\VertexArray.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::VertexBuffer">
+    <Position X="14.75" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAABAAAAAAAAAAAAAAAAAACAAEAIAAAEAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Renderer\Buffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::Window">
+    <Position X="11.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAABAAAAAAABAAQAAAGAAgAAAAEEAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Core\Window.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::WindowCloseEvent">
+    <Position X="1.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\ApplicationEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::WindowResizeEvent">
+    <Position X="12.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAEAAAAEAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\ApplicationEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::WindowsWindow">
+    <Position X="11.5" Y="10.75" Width="1.75" />
+    <NestedTypes>
+      <Struct Name="DyEngine::WindowsWindow::WindowData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DyEngine\src\Platform\Windows\WindowsWindow.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAAAAAEAAAAEAABAAIABAQBAAAAAECAAgAACAEEAAAA=</HashCode>
+      <FileName>DyEngine\src\Platform\Windows\WindowsWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DyEngine::MouseButtonReleasedEvent">
+    <Position X="9.75" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DyEngine\src\DyEngine\Events\MouseEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -84,6 +84,9 @@
     <ClInclude Include="DyEngine\src\DyEngine\Core\Application.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Core\Assert.h">
+      <Filter>DyEngine\src\DyEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Core\Base.h">
       <Filter>DyEngine\src\DyEngine\Core</Filter>
     </ClInclude>
@@ -154,6 +157,9 @@
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Camera.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\EditorCamera.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Framebuffer.h">
@@ -1491,8 +1497,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="DyEngine\src\DyEngine\Renderer\EditorCamera.h" />
-    <ClInclude Include="DyEngine\src\DyEngine\Core\Assert.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DyEngine\src\DyEngine\Core\Application.cpp">
@@ -1520,6 +1524,9 @@
       <Filter>DyEngine\src\DyEngine\Math</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Buffer.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\EditorCamera.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Framebuffer.cpp">
@@ -1606,9 +1613,8 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="DyEngine\src\DyEngine\Renderer\EditorCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="class diagram.cd" />
   </ItemGroup>
 </Project>

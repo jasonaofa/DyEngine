@@ -102,7 +102,6 @@ namespace DyEngine {
 	{
 		DY_PROFILE_FUNCTION();
 
-
 		// Resize
 		if (FramebufferSpecification spec = m_Framebuffer->GetSpecification();
 			m_ViewportSize.x > 0.0f && m_ViewportSize.y > 0.0f && // zero sized framebuffer is invalid
@@ -134,8 +133,11 @@ namespace DyEngine {
 		m_Framebuffer->ClearAttachment(1, -1);
 
 		// Update scene
+			//当我们打开一个场景的时候，会把场景文件中所有的entity都反序列化并加载到sharedPtr scene的m_ActiveScene中
+			//然后我们用OnUpdateEditor把场景画出来
 		m_ActiveScene->OnUpdateEditor(ts, m_EditorCamera);
 
+		//得到鼠标在viewport中的的xy坐标(像素级就行了
 		auto [mx, my] = ImGui::GetMousePos();
 		mx -= m_ViewportBounds[0].x;
 		my -= m_ViewportBounds[0].y;
@@ -143,10 +145,14 @@ namespace DyEngine {
 		my = viewportSize.y - my;
 		int mouseX = (int)mx;
 		int mouseY = (int)my;
-
+		std::cout << mouseX<< std::endl;
+		//通过
 		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
 		{
+			
 			int pixelData = m_Framebuffer->ReadPixel(1, mouseX, mouseY);
+			//pixelData =-1 说明鼠标现在没有放在任何像素上
+			//我们把pixelData的值直接给m_HoveredEntity
 			m_HoveredEntity = pixelData == -1 ? Entity() : Entity((entt::entity)pixelData, m_ActiveScene.get());
 		}
 
@@ -252,6 +258,7 @@ namespace DyEngine {
 		ImGui::Text("Quads: %d", stats.QuadCount);
 		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
+		ImGui::Text("PixelData: %i", m_HoveredEntity);
 
 		
 
@@ -353,7 +360,7 @@ namespace DyEngine {
 		// Shortcuts
 		if (e.GetRepeatCount() > 0)
 			return false;
-
+		//m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
 		bool control = Input::IsKeyPressed(Key::LeftControl) || Input::IsKeyPressed(Key::RightControl);
 		bool shift = Input::IsKeyPressed(Key::LeftShift) || Input::IsKeyPressed(Key::RightShift);
 		switch (e.GetKeyCode())
@@ -412,11 +419,15 @@ namespace DyEngine {
 		}
 	}
 
+	//选择
 	bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent& e)
 	{
 		if (e.GetMouseButton() == Mouse::ButtonLeft)
 		{
+			m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
 			if (m_ViewportHovered && !ImGuizmo::IsOver() && !Input::IsKeyPressed(Key::LeftAlt))
+				//第一次点击默认就显示translate
+
 				m_SceneHierarchyPanel.SetSelectedEntity(m_HoveredEntity);
 		}
 		return false;

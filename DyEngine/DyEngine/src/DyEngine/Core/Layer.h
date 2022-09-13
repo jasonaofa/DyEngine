@@ -7,6 +7,7 @@ namespace  DyEngine
 {
 	/**
 	 * \brief layer的抽象类
+	 * DyEngine创建的的每一个应用/编辑器，都是由Layer来实现的
 	 */
 	class Layer
 	{
