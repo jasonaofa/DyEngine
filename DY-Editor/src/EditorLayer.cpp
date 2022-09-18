@@ -22,7 +22,8 @@ namespace DyEngine {
 		DY_PROFILE_FUNCTION();
 
 		m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
-		//创建framebuffer 并且初始化
+
+		// 输出到editor的fbo
 		FramebufferSpecification fbSpec;
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
@@ -30,10 +31,9 @@ namespace DyEngine {
 		//fbSpec.Attachments.Attachments.push_back(FramebufferTextureFormat::RGBA8);
 		m_Framebuffer = Framebuffer::Create(fbSpec);
 
-		//DEBUG
-		
-
+		//初始化场景
 		m_ActiveScene = CreateRef<Scene>();
+		//相机
 		m_EditorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
 #if 0
 		// Entity
@@ -145,7 +145,7 @@ namespace DyEngine {
 		my = viewportSize.y - my;
 		int mouseX = (int)mx;
 		int mouseY = (int)my;
-		std::cout << mouseX<< std::endl;
+		//std::cout << mouseX<< std::endl;
 		//通过
 		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
 		{
@@ -259,6 +259,7 @@ namespace DyEngine {
 		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
 		ImGui::Text("PixelData: %i", m_HoveredEntity);
+		ImGui::Text("test:", m_Test_01);
 
 		
 
@@ -417,6 +418,7 @@ namespace DyEngine {
 
 
 		}
+		return true;
 	}
 
 	//选择

@@ -1,4 +1,4 @@
-#include "DyPch.h"
+﻿#include "DyPch.h"
 #include "Framebuffer.h"
 
 #include "DyEngine/Renderer/Renderer.h"
@@ -6,7 +6,11 @@
 #include "Platform/OpenGL/OpenGLFramebuffer.h"
 
 namespace DyEngine {
-
+	/**
+	 * \brief 用选定的API的方法创建fbo
+	 * \param spec 
+	 * \return 
+	 */
 	Ref<Framebuffer> Framebuffer::Create(const FramebufferSpecification& spec)
 	{
 		switch (Renderer::GetAPI())

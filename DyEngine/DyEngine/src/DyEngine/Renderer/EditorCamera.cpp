@@ -1,4 +1,4 @@
-#include "DyPch.h"
+﻿#include "DyPch.h"
 #include "EditorCamera.h"
 
 #include "DyEngine/Core/Input.h"
@@ -9,6 +9,8 @@
 
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/quaternion.hpp>
+
+#include "Platform/Windows/WindowsWindow.h"
 
 namespace DyEngine {
 
@@ -27,6 +29,7 @@ namespace DyEngine {
 	void EditorCamera::UpdateView()
 	{
 		// m_Yaw = m_Pitch = 0.0f; // Lock the camera's rotation
+		//更新位置
 		m_Position = CalculatePosition();
 
 		glm::quat orientation = GetOrientation();
@@ -63,16 +66,46 @@ namespace DyEngine {
 	{
 		if (Input::IsKeyPressed(Key::LeftAlt))
 		{
+			//当前鼠标的坐标
 			const glm::vec2& mouse{ Input::GetMouseX(), Input::GetMouseY() };
-			glm::vec2 delta = (mouse - m_InitialMousePosition) * 0.003f;
+			//鼠标的增量= 鼠标当前位置-鼠标初始位置
+			glm::vec2 mouseDelta = (mouse - m_InitialMousePosition) * 0.003f;
+			//让鼠标初始位置=鼠标当前位置。
 			m_InitialMousePosition = mouse;
-
 			if (Input::IsMouseButtonPressed(Mouse::ButtonMiddle))
-				MousePan(delta);
+				MousePan(mouseDelta);
 			else if (Input::IsMouseButtonPressed(Mouse::ButtonLeft))
-				MouseRotate(delta);
+				MouseRotate(mouseDelta);
 			else if (Input::IsMouseButtonPressed(Mouse::ButtonRight))
-				MouseZoom(delta.y);
+				MouseZoom(mouseDelta.y);
+		}
+
+		if(Input::IsMouseButtonPressed(Mouse::ButtonRight))
+		{
+			if (Input::IsKeyPressed(Key::W))
+			{
+				m_Distance -= ZoomSpeed()* ts;
+			}
+			else if (Input::IsKeyPressed(Key::S))
+			{
+				m_Distance += ZoomSpeed()* ts;
+			}
+			if (Input::IsKeyPressed(Key::A))
+			{
+				m_FocalPoint -= GetRightDirection()  * m_Distance * glm::vec3(ts);
+			}
+			else if (Input::IsKeyPressed(Key::D))
+			{
+				m_FocalPoint += GetRightDirection() * m_Distance * glm::vec3(ts);
+			}
+			if (Input::IsKeyPressed(Key::Q))
+			{
+				m_FocalPoint -= GetUpDirection() * m_Distance * glm::vec3(ts);
+			}
+			else if (Input::IsKeyPressed(Key::E))
+			{
+				m_FocalPoint += GetUpDirection() * m_Distance * glm::vec3(ts);;
+			}
 		}
 
 		UpdateView();
@@ -90,6 +123,7 @@ namespace DyEngine {
 		MouseZoom(delta);
 		UpdateView();
 		return false;
+
 	}
 
 	void EditorCamera::MousePan(const glm::vec2& delta)

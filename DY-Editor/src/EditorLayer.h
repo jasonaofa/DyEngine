@@ -18,6 +18,9 @@ namespace DyEngine {
 		virtual void OnImGuiRender() override;
 		void OnEvent(Event& e) override;
 
+	public:
+		Entity m_Test_01;
+
 	private:
 		bool OnKeyPressed(KeyPressedEvent& e);
 		bool OnMouseButtonPressed(MouseButtonPressedEvent& e);
@@ -39,6 +42,9 @@ namespace DyEngine {
 		Entity m_SecondCamera;
 
 		Entity m_HoveredEntity;
+
+
+
 		bool m_PrimaryCamera = true;
 
 		Ref<Texture2D> m_CheckerboardTexture;

@@ -185,5 +185,9 @@ namespace DyEngine {
 	{
 		return m_Data.VSync;
 	}
+	void WindowsWindow::DisableMouse()
+	{
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	}
 
 }
