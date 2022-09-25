@@ -100,7 +100,7 @@ namespace DyEngine {
 
 		for (auto spec : m_Specification.Attachments.Attachments)
 		{
-			std::cout << "666" << std::endl;
+			//std::cout << "666" << std::endl;
 			
 			if (!Utils::IsDepthFormat(spec.TextureFormat))
 			{
@@ -222,10 +222,10 @@ namespace DyEngine {
 	int OpenGLFramebuffer::ReadPixel(uint32_t attachmentIndex, int x, int y)
 	{
 		DY_CORE_ASSERT(attachmentIndex < m_ColorAttachments.size(),"Color Attachment size error");
-
+		//读的是COLOR_ATTACHMENT1的数据
 		glReadBuffer(GL_COLOR_ATTACHMENT0 + attachmentIndex);
 		int pixelData;
-		//读取显存,
+		//读取famebuffer中的颜色，此时其实就是shader画出来的entityID
 		glReadPixels(x, y, 1, 1, GL_RED_INTEGER, GL_INT, &pixelData);
 		return pixelData;
 

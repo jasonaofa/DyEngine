@@ -10,7 +10,7 @@ namespace DyEngine {
 
 		// Color
 		RGBA8,
-		RED_INTEGER,
+		RED_INTEGER,//用来存entityID的
 
 		// Depth/stencil
 		DEPTH24STENCIL8,
@@ -56,8 +56,15 @@ namespace DyEngine {
 		virtual void Unbind() = 0;
 
 		virtual void Resize(uint32_t width, uint32_t height) = 0;
+		/**
+		 * \brief 通过鼠标的坐标，读取entityID
+		 * \param attachmentIndex 
+		 * \param x 
+		 * \param y 
+		 * \return 
+		 */
 		virtual int ReadPixel(uint32_t attachmentIndex, int x, int y) = 0;
-
+		//清除entityID的，在没有entity的地方清除
 		virtual void ClearAttachment(uint32_t attachmentIndex, int value) = 0;
 
 		virtual uint32_t GetColorAttachmentRendererID(uint32_t index = 0) const = 0;

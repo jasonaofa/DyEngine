@@ -35,8 +35,10 @@ namespace DyEngine {
 		m_ActiveScene = CreateRef<Scene>();
 		//相机
 		m_EditorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
-#if 0
-		// Entity
+
+		#define defaultScene 1;
+#if defaultScene
+		// Entitys
 		auto square = m_ActiveScene->CreateEntity("Green Square");
 		square.AddComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
 
@@ -149,7 +151,7 @@ namespace DyEngine {
 		//通过
 		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
 		{
-			
+			//通过readpixel把framebuffer中的entityID读出来
 			int pixelData = m_Framebuffer->ReadPixel(1, mouseX, mouseY);
 			//pixelData =-1 说明鼠标现在没有放在任何像素上
 			//我们把pixelData的值直接给m_HoveredEntity

@@ -168,6 +168,12 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Mesh.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Model.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
@@ -190,6 +196,9 @@
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Texture.h">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\UniformBuffer.h">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h">
@@ -228,10 +237,16 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLMesh.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLUniformBuffer.h">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1535,6 +1550,12 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Mesh.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Model.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
@@ -1557,6 +1578,9 @@
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Texture.cpp">
+      <Filter>DyEngine\src\DyEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\UniformBuffer.cpp">
       <Filter>DyEngine\src\DyEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp">
@@ -1586,10 +1610,16 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLMesh.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>DyEngine\src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLUniformBuffer.cpp">
       <Filter>DyEngine\src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp">
@@ -1613,8 +1643,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="class diagram.cd" />
   </ItemGroup>
 </Project>

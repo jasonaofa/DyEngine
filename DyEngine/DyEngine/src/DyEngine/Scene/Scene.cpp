@@ -114,7 +114,7 @@ namespace DyEngine {
 			Renderer2D::EndScene();
 		}
 	}
-
+	
 
 	void Scene::OnUpdateEditor(Timestep ts, EditorCamera& camera)
 	{

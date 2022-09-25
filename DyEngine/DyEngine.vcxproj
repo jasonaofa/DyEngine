@@ -77,11 +77,11 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Debug;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\assimp\include;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -90,8 +90,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>GLFW.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>vendor\glfw\bin\Debug-windows-x86\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GLFW.lib;opengl32.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\glfw\bin\Debug-windows-x86\GLFW;vendor\assimp\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,13 +100,13 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\assimp\include;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -116,8 +116,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>GLFW.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>vendor\glfw\bin\Debug-windows-x86\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GLFW.lib;opengl32.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\glfw\bin\Debug-windows-x86\GLFW;vendor\assimp\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
@@ -126,13 +126,13 @@
       <PrecompiledHeaderFile>DyPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DY_ENABLE_ASSERTS;DY_PLATFORM_WINDOWS;DY_BUILD_DLL;_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;DyEngine_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>DyEngine\src;;vendor\spdlog\include;;vendor\imgui;;vendor\Glad;;vendor\assimp\include;vendor\Glad\include;vendor\imgui;vendor\imgui\backends;vendor\glfw\include;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -142,8 +142,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>GLFW.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>vendor\glfw\bin\Debug-windows-x86\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GLFW.lib;opengl32.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\glfw\bin\Debug-windows-x86\GLFW;vendor\assimp\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -177,6 +177,8 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\EditorCamera.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Framebuffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Mesh.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\Model.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\RenderCommand.h" />
@@ -185,6 +187,7 @@
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\RendererAPI.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Shader.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\Texture.h" />
+    <ClInclude Include="DyEngine\src\DyEngine\Renderer\UniformBuffer.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Renderer\VertexArray.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Scene\Components.h" />
     <ClInclude Include="DyEngine\src\DyEngine\Scene\Entity.h" />
@@ -197,8 +200,10 @@
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLMesh.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLUniformBuffer.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.h" />
     <ClInclude Include="DyEngine\src\Platform\Windows\WindowsWindow.h" />
@@ -634,6 +639,8 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\EditorCamera.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Framebuffer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Mesh.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\Model.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\RenderCommand.cpp" />
@@ -642,6 +649,7 @@
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\RendererAPI.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Shader.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\Texture.cpp" />
+    <ClCompile Include="DyEngine\src\DyEngine\Renderer\UniformBuffer.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Renderer\VertexArray.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Scene\Entity.cpp" />
     <ClCompile Include="DyEngine\src\DyEngine\Scene\Scene.cpp" />
@@ -653,8 +661,10 @@
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLMesh.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLUniformBuffer.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="DyEngine\src\Platform\OpenGL\OpenglRendererAPI.cpp" />
     <ClCompile Include="DyEngine\src\Platform\Windows\WindowsInput.cpp" />
@@ -676,9 +686,6 @@
     <ProjectReference Include="vendor\yaml-cpp\yaml-cpp.vcxproj">
       <Project>{88F1A057-74BE-FB62-9DD7-E90A890331F1}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="class diagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

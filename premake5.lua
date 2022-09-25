@@ -26,6 +26,7 @@ workspace "DyEngine"
 	IncludeDir["entt"] = "DyEngine/vendor/entt/include"
 	IncludeDir["yaml_cpp"] = "DyEngine/vendor/yaml-cpp/include"
 	IncludeDir["ImGuizmo"] = "DyEngine/vendor/ImGuizmo"
+	IncludeDir["assimp"] = "DyEngine/vendor/assimp/include"
 
 group "Dependencies"
 	include"DyEngine/vendor/glfw"
@@ -39,7 +40,7 @@ project"DyEngine"
 	kind"StaticLib"
 	language"C++"
 	cppdialect"C++17"	
-	staticruntime"on"
+	staticruntime"off"
 
 	targetdir("bin/" .. outputdir .."/%{prj.name}")
 	objdir("bin-int/" .. outputdir .."/%{prj.name}")
@@ -64,7 +65,10 @@ project"DyEngine"
 
 	libdirs 
 	{
-		"DyEngine/vendor/glfw/bin/Debug-windows-x86/GLFW"
+		"DyEngine/vendor/glfw/bin/Debug-windows-x86/GLFW",
+		"DyEngine/vendor/assimp/bin/Debug"
+
+
 	}
 	includedirs
 	{
@@ -74,6 +78,7 @@ project"DyEngine"
 		"%{prj.name}/vendor/Glad;",
 
 
+		"%{IncludeDir.assimp}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.ImGui}/backends",
@@ -93,7 +98,8 @@ project"DyEngine"
 		"ImGui",
 		"GLFW.lib",
 		"yaml-cpp",
-		"opengl32.lib"
+		"opengl32.lib",
+		"assimp-vc142-mtd.lib"
 	}
 
 	filter "files:vendor/ImGuizmo/**.cpp"
@@ -132,7 +138,7 @@ project"SandBox"
 	kind "ConsoleApp"
 	language"C++"
 	cppdialect"C++17"	
-	staticruntime"on"
+	staticruntime"off"
 
 
 	targetdir("bin/" .. outputdir .."/%{prj.name}")
@@ -197,7 +203,7 @@ project "DY-Editor"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -222,7 +228,8 @@ project "DY-Editor"
 		"DyEngine/vendor",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
-		"%{IncludeDir.ImGuizmo}"
+		"%{IncludeDir.ImGuizmo}",
+		"%{IncludeDir.assimp}"
 	}
 
 	links
