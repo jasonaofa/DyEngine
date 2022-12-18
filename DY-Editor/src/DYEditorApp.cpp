@@ -8,8 +8,7 @@ namespace DyEngine {
 	class DYEditor : public Application
 	{
 	public:
-		DYEditor()
-			: Application("DY Editor")
+		DYEditor(): Application("DY Editor")
 		{
 			PushLayer(new EditorLayer());
 		}

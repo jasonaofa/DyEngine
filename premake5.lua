@@ -26,7 +26,7 @@ workspace "DyEngine"
 	IncludeDir["entt"] = "DyEngine/vendor/entt/include"
 	IncludeDir["yaml_cpp"] = "DyEngine/vendor/yaml-cpp/include"
 	IncludeDir["ImGuizmo"] = "DyEngine/vendor/ImGuizmo"
-	IncludeDir["assimp"] = "DyEngine/vendor/assimp/include"
+
 
 group "Dependencies"
 	include"DyEngine/vendor/glfw"
@@ -66,7 +66,7 @@ project"DyEngine"
 	libdirs 
 	{
 		"DyEngine/vendor/glfw/bin/Debug-windows-x86/GLFW",
-		"DyEngine/vendor/assimp/bin/Debug"
+
 
 
 	}
@@ -78,7 +78,7 @@ project"DyEngine"
 		"%{prj.name}/vendor/Glad;",
 
 
-		"%{IncludeDir.assimp}",
+
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.ImGui}/backends",
@@ -99,7 +99,7 @@ project"DyEngine"
 		"GLFW.lib",
 		"yaml-cpp",
 		"opengl32.lib",
-		"assimp-vc142-mtd.lib"
+
 	}
 
 	filter "files:vendor/ImGuizmo/**.cpp"
@@ -228,8 +228,7 @@ project "DY-Editor"
 		"DyEngine/vendor",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
-		"%{IncludeDir.ImGuizmo}",
-		"%{IncludeDir.assimp}"
+		"%{IncludeDir.ImGuizmo}"
 	}
 
 	links

@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <glm/glm.hpp>
-#include <assimp/material.h>
+//#include <assimp/material.h>
 
 namespace DyEngine
 {
@@ -31,7 +31,7 @@ namespace DyEngine
 
 	private:
 		virtual void setupMesh() = 0;
-		virtual std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName) = 0;
+		//virtual std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName) = 0;
 	};
 
 }
