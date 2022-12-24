@@ -3,6 +3,8 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+
+#include "entt.hpp"
 #include "DyEngine/Scene/SceneSerializer.h"
 #include "DyEngine/Utils/PlatformUtils.h"
 

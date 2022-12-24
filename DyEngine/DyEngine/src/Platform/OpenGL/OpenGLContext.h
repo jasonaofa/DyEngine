@@ -11,7 +11,6 @@ namespace DyEngine
 	{
 	public:
 
-
 		OpenGLContext(GLFWwindow* windowHandle);
 
 		virtual void Init() override;
