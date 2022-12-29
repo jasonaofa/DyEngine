@@ -1,6 +1,12 @@
 # DyEngine
 ————————————————————————————————————————————
 # Latest Update
+- 学完半本《C++ Primer》之后 终于弄搞明白之前抄的是什么东西了，增加了3D场景的渲染，增加了一些component
+- ![image](https://user-images.githubusercontent.com/31367799/209920282-64a80bce-95b0-493c-8f5c-304bdfc539e4.png)
+
+
+
+# 9.9 Update
 - 终于写（抄）完Gizmo了，我从Hazel复制了大量的代码，因为我是个超级初学者，只能先抄，然后总结学习。所以接下来准备写Wiki，把我抄的这些都弄懂。
 - Finally, I got a gizmo. frankly, I copy a lot of codes from Hazel Cause I'm not a good programmer. so I need to copy at first as a quick way to learn.
 after GZIMO. I'll write a WIKI about This tiny engine. and try to figure out every detail.
