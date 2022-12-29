@@ -72,7 +72,7 @@ namespace DyEngine
 		auto blueSquare = m_ActiveScene->CreateEntity("blue Square");
 		blueSquare.AddComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 0.0f, 1.0f, 1.0f });
 
-		m_SquareEntity = square;
+		//m_SquareEntity = square;
 
 		m_CameraEntity = m_ActiveScene->CreateEntity("Camera A");
 		m_CameraEntity.AddComponent<CameraComponent>();
