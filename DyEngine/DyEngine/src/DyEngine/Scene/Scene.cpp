@@ -1,6 +1,7 @@
 ﻿#include "DyPch.h"
 #include "Scene.h"
 
+
 #include "Components.h"
 #include "DyEngine/Renderer/Renderer2D.h"
 
@@ -120,14 +121,51 @@ namespace DyEngine {
 	{
 		Renderer2D::BeginScene(camera);
 
-		auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
-		for (auto entity : group)
-		{
-			auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-			Renderer2D::DrawSprite(transform.GetTransform(), sprite, (int)entity);
+
+		//auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+		//for (auto entity : group)
+		//{
+		//	auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+		//	Renderer2D::DrawSprite(transform.GetTransform(), sprite, (int)entity);
+		//}
+		//auto EnvGroup = m_Registry.get<EnvComponent>();
+		//auto total_entity = m_Registry.create();
+		//auto ent_entity = m_Registry.get<EnvComponent>(total_entity);
+		auto env_view = m_Registry.view<EnvComponent>();
+		for (auto entity : env_view)
+		{
+			auto trans = m_Registry.get<TransformComponent>(entity);
+			EnvComponent& Env = env_view.get<EnvComponent>(entity);
+			Env.env_shader->Bind();
+			Env.env_shader->SetInt("a_EntityID", (int)entity);
+			Env.env_shader->SetMat4("u_ViewProjection", camera.GetViewProjection() * (trans.GetTransform()));
+			Env.EnvDraw(Env.env_data, Env.env_shader);
 		}
 
+		auto meshGroup = m_Registry.group<TransformComponent>(entt::get<MeshComponent>);
+		for (auto m_entity:meshGroup)
+		{
+			auto trans = m_Registry.get<TransformComponent>(m_entity);
+			if (m_Registry.has<MaterialComponent>(m_entity)&&m_Registry.has<MeshComponent>(m_entity))
+			{
+				auto allMesh = m_Registry.get<MeshComponent>(m_entity);
+				auto allMaterial = m_Registry.get<MaterialComponent>(m_entity);
+				allMaterial.m_shader->Bind();
+				allMaterial.m_shader->SetInt("a_EntityID", (int)m_entity);
+				allMaterial.m_shader->SetMat4("u_ViewProjection", camera.GetViewProjection() * (trans.GetTransform()));
+				allMesh.m_model->Draw(allMaterial.m_shader);
+			}
+	
+
+
+			//m_FlatColorShader->SetInt("a_EntityID", (int)m_entity);
+			//std::cout<<"Entity id is :" << ((int)m_entity) << std::endl;//id is 1
+			//todo add the entity ID to the colorattachment id in fbo 
+
+			//auto [transform, sprite] = group.get<TransformComponent, MeshComponent>(m_entity);
+			//std::cout << transform.Scale.x;
+		}
 		Renderer2D::EndScene();
 	}
 
@@ -163,6 +201,20 @@ namespace DyEngine {
 	void Scene::OnComponentAdded(Entity entity, T& component)
 	{
 		static_assert(false);
+	}
+	//TODO DO SOMETHING
+	template<>
+	void Scene::OnComponentAdded<MeshComponent>(Entity entity, MeshComponent& component)
+	{
+	}
+	template<>
+	void Scene::OnComponentAdded<EnvComponent>(Entity entity, EnvComponent& component)
+	{
+	}
+
+	template<>
+	void Scene::OnComponentAdded<MaterialComponent>(Entity entity, MaterialComponent& component)
+	{
 	}
 
 	template<>

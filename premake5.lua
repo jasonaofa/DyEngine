@@ -26,7 +26,8 @@ workspace "DyEngine"
 	IncludeDir["entt"] = "DyEngine/vendor/entt/include"
 	IncludeDir["yaml_cpp"] = "DyEngine/vendor/yaml-cpp/include"
 	IncludeDir["ImGuizmo"] = "DyEngine/vendor/ImGuizmo"
-
+	IncludeDir["assimp"] = "DyEngine/vendor/assimp"
+	
 
 group "Dependencies"
 	include"DyEngine/vendor/glfw"
@@ -58,7 +59,10 @@ project"DyEngine"
 		"DyEngine/vendor/glm/glm/**.inl",
 		"DyEngine/vendor/stb_image/**.h",
 		"DyEngine/vendor/stb_image/**.cpp",
-		
+
+		"DyEngine/vendor/assimp/**.h",
+		"DyEngine/vendor/assimp/**.cpp",
+
 		"DyEngine/vendor/ImGuizmo/ImGuizmo.h",
 		"DyEngine/vendor/ImGuizmo/ImGuizmo.cpp"
 	}
@@ -87,8 +91,9 @@ project"DyEngine"
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
 		"%{IncludeDir.yaml_cpp}",
-		"%{IncludeDir.ImGuizmo}"
-
+		"%{IncludeDir.ImGuizmo}",
+		"%{IncludeDir.assimp}"
+		
 	}
 
 	links
@@ -228,7 +233,9 @@ project "DY-Editor"
 		"DyEngine/vendor",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
-		"%{IncludeDir.ImGuizmo}"
+		"%{IncludeDir.ImGuizmo}",
+		"%{IncludeDir.assimp}"
+		
 	}
 
 	links

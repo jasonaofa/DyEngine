@@ -1,0 +1,673 @@
+﻿# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 07.08.2022 13:32:08
+
+newmtl all_all_grass_side
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/grass_side.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_old_03_top
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sf_old_03_top.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_silvery03_top
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sf_silvery03_top.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_old_03_side
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sf_old_03_side.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_door_wood_upper
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/door_wood_upper.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_door_wood_lower
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/door_wood_lower.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_old_02_top
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sf_old_02_top.png
+		map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_yellow03_top
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sf_yellow03_top.png
+		map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_glazed_tile
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/glazed_tile.png
+		map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_planks_cathaya
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/planks_cathaya.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_gravel
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/gravel.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_planks_fruittree
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/planks_fruittree.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_hay_block_bottom
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/hay_block_bottom.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_metel02_side
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sf_metel02_side.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_jar1
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/jar1.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_planks_arbor
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/planks_arbor.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_dirt
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/dirt.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sulfur_brick
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sulfur_brick.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_planks_redwood
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/planks_redwood.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_hotcrystal_top
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/hotcrystal_top.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_skylight
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/skylight.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_planks_walnut
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/planks_walnut.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_yellow03_side
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/sf_yellow03_side.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_old_02_side
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+
+	map_Kd textures/sf_old_02_side.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_sf_silvery03_side
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+
+	map_Kd textures/sf_silvery03_side.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_flowerbeds
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+
+	map_Kd textures/flowerbeds.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_planks_bamboo
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+
+	map_Kd textures/planks_bamboo.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_fence
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+
+	map_Kd textures/fence.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_planks_birch
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+
+	map_Kd textures/planks_birch.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_hay_block_top
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+
+	map_Kd textures/hay_block_top.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+#stone wall  brick
+newmtl all_all_sandstone_normal
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Kd		textures/DungeonStoneBrick_basecolor.png
+	map_Ka		textures/DungeonStoneBrick_roughness.png
+	map_Bump	textures/DungeonStoneBrick_normal.png
+	map_Ks		textures/DungeonStoneBrick_metallic.png
+	map_Ns		textures/DungeonStoneBrick_ambientOcclusion.png
+
+newmtl all_all_jar5
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/jar3.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_ladder
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/ladder.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_scatteredstone
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/scatteredstone.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_board_fruittree
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/board_fruittree.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_jar2
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/jar2.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_hay_block_side
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/hay_block_side.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_grass_top
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/grass_top.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png
+
+newmtl all_all_farmland_wet
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5500 0.5500 0.5500
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.9000 0.9000 0.9000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka textures/white.png
+	map_Kd textures/farmland_wet.png
+	map_Bump	textures/emptyNormal.png
+	map_Ks		textures/black.png
+	map_Ns		textures/white.png

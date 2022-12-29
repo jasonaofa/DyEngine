@@ -11,43 +11,64 @@
 #include "ImGuizmo.h"
 
 #include "DyEngine/Math/Math.h"
+#include "DyEngine/Renderer/Model.h"
+#include "DyEngine/Renderer/Environment.h"
 
-namespace DyEngine {
-
+namespace DyEngine
+{
 	EditorLayer::EditorLayer()
-		: Layer("EditorLayer"), m_CameraController(1280.0f / 720.0f), m_SquareColor({ 0.2f, 0.3f, 0.8f, 1.0f })
+		: Layer("EditorLayer"), m_CameraController(1280.0f / 720.0f), m_SquareColor({0.2f, 0.3f, 0.8f, 1.0f})
 	{
+		m_FlatColorShader = DyEngine::Shader::Create("assets/shaders/Default.glsl");
+
 	}
 
 	void EditorLayer::OnAttach()
 	{
 		DY_PROFILE_FUNCTION();
+		//m_FlatColorShader->Bind();
+
 
 		m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
+		m_Environment = Environment::Create(m_Environment->GetEnvData(), env_cloudsShader);
 
 		// 输出到editor的fbo
 		FramebufferSpecification fbSpec;
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
-		fbSpec.Attachments = { FramebufferTextureFormat::RGBA8, FramebufferTextureFormat::RED_INTEGER, FramebufferTextureFormat::Depth };
+		fbSpec.Attachments = {
+			FramebufferTextureFormat::RGBA8, FramebufferTextureFormat::RED_INTEGER, FramebufferTextureFormat::Depth
+		};
 		//fbSpec.Attachments.Attachments.push_back(FramebufferTextureFormat::RGBA8);
 		m_Framebuffer = Framebuffer::Create(fbSpec);
 
 		//初始化场景
 		m_ActiveScene = CreateRef<Scene>();
+		env_cloudsShader = Shader::Create("assets/shaders/Default.glsl");
 		//相机
 		m_EditorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
 
-		#define defaultScene 1;
+#define defaultScene 1;
 #if defaultScene
 		// Entitys
-		auto square = m_ActiveScene->CreateEntity("Green Square");
-		square.AddComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
+		//auto square = m_ActiveScene->CreateEntity("Green Square");
+		//square.AddComponent<SpriteRendererComponent>(glm::vec4{0.0f, 1.0f, 0.0f, 1.0f});
+		//m_SquareEntity = square;
 
-		auto redSquare = m_ActiveScene->CreateEntity("Red Square");
-		redSquare.AddComponent<SpriteRendererComponent>(glm::vec4{ 1.0f, 0.0f, 0.0f, 1.0f });
+		//auto redSquare = m_ActiveScene->CreateEntity("Red Square");
+		//redSquare.AddComponent<SpriteRendererComponent>(glm::vec4{1.0f, 0.0f, 0.0f, 1.0f});
 
-		m_SquareEntity = square;
+
+
+		//model
+		m_Scene = Model::Create("assets/models/cz/all.obj");
+		m_TownEntity = m_ActiveScene->CreateEntity("town");
+		m_TownEntity.AddComponent<MeshComponent>(m_Scene);
+		m_TownEntity.AddComponent<MaterialComponent>(m_FlatColorShader);
+
+		//m_TownEntity.AddComponent<TagComponent>("66");
+		env_Entity = m_ActiveScene->CreateEntity("Environment");
+		env_Entity.AddComponent<EnvComponent>(m_Environment->GetEnvData(),env_cloudsShader);
 
 		m_CameraEntity = m_ActiveScene->CreateEntity("Camera A");
 		m_CameraEntity.AddComponent<CameraComponent>();
@@ -95,6 +116,9 @@ namespace DyEngine {
 #endif
 		//panel
 		m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+
+
+
 	}
 
 	void EditorLayer::OnDetach()
@@ -124,10 +148,14 @@ namespace DyEngine {
 
 		m_EditorCamera.OnUpdate(ts);
 
+
+		//m_FlatColorShader->SetMat4("u_ViewProjection", m_EditorCamera.GetViewProjection());
+
+
 		// Render
 		Renderer2D::ResetStats();
 		m_Framebuffer->Bind();
-		RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});
 		RenderCommand::Clear();
 
 
@@ -137,8 +165,8 @@ namespace DyEngine {
 		m_Framebuffer->ClearAttachment(1, -1);
 
 		// Update scene
-			//当我们打开一个场景的时候，会把场景文件中所有的entity都反序列化并加载到sharedPtr scene的m_ActiveScene中
-			//然后我们用OnUpdateEditor把场景画出来
+		//当我们打开一个场景的时候，会把场景文件中所有的entity都反序列化并加载到sharedPtr scene的m_ActiveScene中
+		//然后我们用OnUpdateEditor把场景画出来
 		m_ActiveScene->OnUpdateEditor(ts, m_EditorCamera);
 
 		//得到鼠标在viewport中的的xy坐标(像素级就行了
@@ -187,7 +215,8 @@ namespace DyEngine {
 			ImGui::SetNextWindowViewport(viewport->ID);
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
-			window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+			window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |
+				ImGuiWindowFlags_NoMove;
 			window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
 		}
 
@@ -247,7 +276,6 @@ namespace DyEngine {
 		m_SceneHierarchyPanel.OnImGuiRender();
 
 
-
 		ImGui::Begin("Stats");
 
 		std::string name = "None";
@@ -258,6 +286,8 @@ namespace DyEngine {
 
 		auto stats = Renderer2D::GetStats();
 		ImGui::Text("Renderer2D Stats:");
+		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate,
+			ImGui::GetIO().Framerate);
 		ImGui::Text("Draw Calls: %d", stats.DrawCalls);
 		ImGui::Text("Quads: %d", stats.QuadCount);
 		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
@@ -265,29 +295,74 @@ namespace DyEngine {
 		ImGui::Text("PixelData: %i", m_HoveredEntity);
 		ImGui::Text("test:", m_Test_01);
 
-		
 
 		ImGui::End();
 
-		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
+	
+		ImGui::Begin("Environment");
+		ImGui::Text("Save:");
+		if (ImGui::Button("Save_1")) cloudStats_01 = cloudStatsDefault;ImGui::SameLine();
+		if (ImGui::Button("Save_2")) cloudStats_02 = cloudStatsDefault;ImGui::SameLine();
+		if (ImGui::Button("Save_3")) cloudStats_03 = cloudStatsDefault;
+		ImGui::Text("Load:");
+		if (ImGui::Button("Load_1")) cloudStatsDefault = cloudStats_01; ImGui::SameLine();
+		if (ImGui::Button("Load_2")) cloudStatsDefault = cloudStats_02; ImGui::SameLine();
+		if (ImGui::Button("Load_3")) cloudStatsDefault = cloudStats_03;
+		ImGui::SliderFloat("windStrength", &cloudStatsDefault.windStrength, 0.000f, 0.001f, "%.5f");
+		ImGui::InputFloat3("windDirection", glm::value_ptr(cloudStatsDefault.windDirection));
+
+		ImGui::InputFloat("Sun Energy", &sunStats.sunEnergy, 0.0f, 10.0f);
+		ImGui::ColorEdit3("Sun Color", glm::value_ptr(sunStats.sunColor));
+		ImGui::ColorEdit3("CloudBaseColor", glm::value_ptr(cloudStatsDefault.CloudBaseColor));
+		ImGui::ColorEdit3("CloudTopColor", glm::value_ptr(cloudStatsDefault.CloudTopColor));
+		ImGui::SliderFloat("NoiseThreshold", &cloudStatsDefault.NoiseThreshold, 0.0f, 1.0f);
+		ImGui::SliderFloat("NoiseMax", &cloudStatsDefault.NoiseMax, 0.0f, 1.0f);
+
+		ImGui::Text("Global Clouds Settings");
+		ImGui::InputFloat("CloudVolumeStartHeight", &cloudStatsDefault.cloudVolumeStartHeight, 0.0f, 10000.0f);
+		ImGui::InputFloat("CloudVolumeHeight", &cloudStatsDefault.cloudVolumeHeight, 0.0f, 10000.0f);
+		ImGui::InputFloat("groundRadius", &cloudStatsDefault.groundRadius, 0.0f, 10000.0f);
+
+
+		ImGui::SliderFloat("cloudTopOffset", &cloudStatsDefault.cloudTopOffset, -10.0f, 500.0f);
+
+		ImGui::InputFloat3("weatherTexMod", glm::value_ptr(cloudStatsDefault.weatherTexMod));
+
+		ImGui::Text("Cloud Shape Settings");
+		ImGui::SliderFloat("precipiFactor", &cloudStatsDefault.precipiFactor, 0, 1.0f, "%.3f");
+		ImGui::SliderFloat("coverageFactor", &cloudStatsDefault.coverageFactor, 0, 1.0f, "%.3f");
+
+
+		ImGui::Text("Cloud Detail Settings");
+		ImGui::SliderFloat("detailScale", &cloudStatsDefault.detailScale, 0.0001, 10.0f, "%.4f");
+		ImGui::SliderFloat("curlNoiseMultiple", &cloudStatsDefault.curlNoiseMultiple, 0, 10.0f, "%.3f");
+
+		ImGui::InputFloat3("detailwindDirection", (float*)&cloudStatsDefault.detailwindDirection);
+		ImGui::SliderFloat("Wind Cloud Speed", &cloudStatsDefault.cloudSpeed, 0.0f, 100.0f);
+
+		ImGui::End();
+
+
+
+		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{0, 0});
 		ImGui::Begin("Viewport");
 
 		auto viewportMinRegion = ImGui::GetWindowContentRegionMin();
 		auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
 		auto viewportOffset = ImGui::GetWindowPos();
-		m_ViewportBounds[0] = { viewportMinRegion.x + viewportOffset.x, viewportMinRegion.y + viewportOffset.y };
-		m_ViewportBounds[1] = { viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y };
+		m_ViewportBounds[0] = {viewportMinRegion.x + viewportOffset.x, viewportMinRegion.y + viewportOffset.y};
+		m_ViewportBounds[1] = {viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y};
 
 		m_ViewportFocused = ImGui::IsWindowFocused();
 		m_ViewportHovered = ImGui::IsWindowHovered();
 		Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused && !m_ViewportHovered);
 
 		ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
-		m_ViewportSize = { viewportPanelSize.x, viewportPanelSize.y };
+		m_ViewportSize = {viewportPanelSize.x, viewportPanelSize.y};
 
 		uint64_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
-		ImGui::Image(reinterpret_cast<void*>(textureID), ImVec2{ m_ViewportSize.x, m_ViewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
-
+		ImGui::Image(reinterpret_cast<void*>(textureID), ImVec2{m_ViewportSize.x, m_ViewportSize.y}, ImVec2{0, 1},
+		             ImVec2{1, 0});
 
 
 		// Gizmos
@@ -297,7 +372,9 @@ namespace DyEngine {
 			ImGuizmo::SetOrthographic(false);
 			ImGuizmo::SetDrawlist();
 
-			ImGuizmo::SetRect(m_ViewportBounds[0].x, m_ViewportBounds[0].y, m_ViewportBounds[1].x - m_ViewportBounds[0].x, m_ViewportBounds[1].y - m_ViewportBounds[0].y);
+			ImGuizmo::SetRect(m_ViewportBounds[0].x, m_ViewportBounds[0].y,
+			                  m_ViewportBounds[1].x - m_ViewportBounds[0].x,
+			                  m_ViewportBounds[1].y - m_ViewportBounds[0].y);
 
 			// Camera
 
@@ -323,11 +400,11 @@ namespace DyEngine {
 			if (m_GizmoType == ImGuizmo::OPERATION::ROTATE)
 				snapValue = 45.0f;
 
-			float snapValues[3] = { snapValue, snapValue, snapValue };
+			float snapValues[3] = {snapValue, snapValue, snapValue};
 
 			ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
-				(ImGuizmo::OPERATION)m_GizmoType, ImGuizmo::LOCAL, glm::value_ptr(transform),
-				nullptr, snap ? snapValues : nullptr);
+			                     (ImGuizmo::OPERATION)m_GizmoType, ImGuizmo::LOCAL, glm::value_ptr(transform),
+			                     nullptr, snap ? snapValues : nullptr);
 
 			if (ImGuizmo::IsUsing())
 			{
@@ -340,8 +417,6 @@ namespace DyEngine {
 				tc.Scale = scale;
 			}
 		}
-
-
 
 
 		ImGui::End();
@@ -371,35 +446,35 @@ namespace DyEngine {
 		switch (e.GetKeyCode())
 		{
 		case Key::N:
-		{
-			if (control)
-				NewScene();
+			{
+				if (control)
+					NewScene();
 
-			break;
-		}
+				break;
+			}
 		case Key::O:
-		{
-			if (control)
-				OpenScene();
+			{
+				if (control)
+					OpenScene();
 
-			break;
-		}
+				break;
+			}
 		case Key::S:
-		{
-			if (control && shift)
-				SaveSceneAs();
+			{
+				if (control && shift)
+					SaveSceneAs();
 
-			break;
-		}
+				break;
+			}
 
 
 		// Gizmos
 		case Key::Q:
-		{
-			if (!ImGuizmo::IsUsing())
-				m_GizmoType = -1;
-			break;
-		}
+			{
+				if (!ImGuizmo::IsUsing())
+					m_GizmoType = -1;
+				break;
+			}
 		case Key::W:
 			{
 				if (!ImGuizmo::IsUsing())
@@ -419,8 +494,6 @@ namespace DyEngine {
 					m_GizmoType = ImGuizmo::OPERATION::SCALE;
 				break;
 			}
-
-
 		}
 		return true;
 	}
@@ -469,5 +542,4 @@ namespace DyEngine {
 			serializer.Serialize(filepath);
 		}
 	}
-
 }

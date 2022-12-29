@@ -1,14 +1,14 @@
 ﻿#pragma once
 
-#include "DyEngine/Renderer/EditorCamera.h"
-
 #include "entt.hpp"
+#include "DyEngine/Renderer/EditorCamera.h"
 
 #include "DyEngine/Core/Timestep.h"
 
-namespace DyEngine {
-
+namespace DyEngine
+{
 	class Entity;
+
 	class Scene
 	{
 	public:
@@ -23,8 +23,9 @@ namespace DyEngine {
 		void OnViewportResize(uint32_t width, uint32_t height);
 
 		Entity GetPrimaryCameraEntity();
+
 	private:
-		template<typename T>
+		template <typename T>
 		void OnComponentAdded(Entity entity, T& component);
 
 	private:
@@ -35,5 +36,4 @@ namespace DyEngine {
 		friend class SceneSerializer;
 		friend class SceneHierarchyPanel;
 	};
-
 }

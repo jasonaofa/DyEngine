@@ -3,6 +3,10 @@
 #include "DyEngine.h"
 #include "Panels/SceneHierarchyPanel.h"
 #include "DyEngine/Renderer/EditorCamera.h"
+#include "DyEngine/Renderer/Environment.h"
+#include "DyEngine/Renderer/Model.h"
+
+
 namespace DyEngine {
 
 	class EditorLayer : public Layer
@@ -30,23 +34,30 @@ namespace DyEngine {
 		void SaveSceneAs();
 	private:
 		DyEngine::OrthographicCameraController m_CameraController;
+		//Environment::EnvData& env_data ;
+		Ref<Environment> m_Environment ;
 
 		// Temp
 		Ref<VertexArray> m_SquareVA;
 		Ref<Shader> m_FlatColorShader;
+		Ref<Shader> m_FlatColorShader_2;
+		Ref<Shader> env_cloudsShader;
 		Ref<Framebuffer> m_Framebuffer;
 
 		Ref<Scene> m_ActiveScene;
 		Entity m_SquareEntity;
+		Entity m_TownEntity;
+		Entity env_Entity;
+
 		Entity m_CameraEntity;
 		Entity m_SecondCamera;
-
 		Entity m_HoveredEntity;
 
 
 
 		bool m_PrimaryCamera = true;
 
+		Ref<Model> m_Scene;
 		Ref<Texture2D> m_CheckerboardTexture;
 		EditorCamera m_EditorCamera;
 		bool m_ViewportFocused = true, m_ViewportHovered = false;
@@ -56,6 +67,12 @@ namespace DyEngine {
 		//Gizmo
 		int m_GizmoType = -1;
 
+
+		Environment::CloudsStats cloudStatsDefault;
+		Environment::CloudsStats cloudStats_01 ;
+		Environment::CloudsStats cloudStats_02;
+		Environment::CloudsStats cloudStats_03 ;
+		Environment::SunStats sunStats;
 
 		// Panels
 		SceneHierarchyPanel m_SceneHierarchyPanel;

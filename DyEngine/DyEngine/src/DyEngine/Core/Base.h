@@ -18,7 +18,7 @@
 #endif
 #define DY_EXPAND_MACRO(x) x
 #define DY_STRINGIFY_MACRO(x) #x
-
+#define USEOPENGL true
 
 
 /**

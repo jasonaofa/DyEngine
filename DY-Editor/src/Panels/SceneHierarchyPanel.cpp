@@ -67,6 +67,16 @@ namespace DyEngine {
 					ImGui::CloseCurrentPopup();
 				}
 
+				if(!m_SelectionContext.HasComponent<MaterialComponent>())
+				{
+					if (ImGui::MenuItem("Material"))
+					{
+						m_SelectionContext.AddComponent<MaterialComponent>();
+						ImGui::CloseCurrentPopup();
+					}
+				}
+
+
 				ImGui::EndPopup();
 			}
 
@@ -181,6 +191,7 @@ namespace DyEngine {
 
 	void SceneHierarchyPanel::DrawComponents(Entity entity)
 	{
+		const ImGuiTreeNodeFlags treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_AllowItemOverlap;
 		if (entity.HasComponent<TagComponent>())
 		{
 			auto& tag = entity.GetComponent<TagComponent>().Tag;
@@ -194,7 +205,25 @@ namespace DyEngine {
 			}
 		}
 
-		const ImGuiTreeNodeFlags treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_AllowItemOverlap;
+		if (entity.HasComponent<MaterialComponent>())
+		{
+
+			if(ImGui::TreeNodeEx((void*)typeid(MaterialComponent).hash_code(), treeNodeFlags, "Material")  )
+			{
+			auto& mc = entity.GetComponent<MaterialComponent>();
+
+			ImGui::Text("ShaderName:");
+			ImGui::SameLine();
+			ImGui::Text(mc.m_shader->GetName().c_str());
+
+
+			ImGui::TreePop();
+			}
+		}
+
+
+
+
 
 		if (entity.HasComponent<TransformComponent>())
 		{

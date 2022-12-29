@@ -96,12 +96,10 @@ namespace DyEngine {
 	OpenGLFramebuffer::OpenGLFramebuffer(const FramebufferSpecification& spec)
 		: m_Specification(spec)
 	{
-		std::cout << m_Specification.Attachments.Attachments.size() << std::endl;
+		//std::cout << m_Specification.Attachments.Attachments.size() << std::endl;
 
 		for (auto spec : m_Specification.Attachments.Attachments)
 		{
-			//std::cout << "666" << std::endl;
-			
 			if (!Utils::IsDepthFormat(spec.TextureFormat))
 			{
 				m_ColorAttachmentSpecifications.emplace_back(spec);
@@ -114,7 +112,7 @@ namespace DyEngine {
 				std::cout << "NO ColorAttachement" << std::endl;
 			}
 		}
-		std::cout << "NO Attachement at all" << std::endl;
+	//	std::cout << "NO Attachement at all" << std::endl;
 
 		Invalidate();
 	}

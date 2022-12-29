@@ -1,11 +1,12 @@
 ﻿#pragma once
 
 #include <glm/glm.hpp>
-//#include <assimp/material.h>
+
+#include "Shader.h"
+#include <assimp/material.h>
 
 namespace DyEngine
 {
-	class Shader;
 
 	struct Vertex
 	{
@@ -14,7 +15,7 @@ namespace DyEngine
 		glm::vec2 TexCoords;
 	};
 
-	struct Texture
+	struct meshTexture
 	{
 		unsigned int id;
 		std::string type;
@@ -24,10 +25,12 @@ namespace DyEngine
 	class Mesh
 	{
 	public:
-		static Ref<Mesh> Create(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
+		static Ref<Mesh> Create(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<meshTexture> textures);
 
 		virtual ~Mesh() = default;
-		virtual void Draw(Shader* shader) = 0;
+		virtual void Draw(Ref<Shader> shader) = 0;
+		virtual void drawCube() = 0;
+		virtual void drawQuad() = 0;
 
 	private:
 		virtual void setupMesh() = 0;
