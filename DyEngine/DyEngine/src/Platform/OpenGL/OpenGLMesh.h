@@ -27,6 +27,9 @@ namespace DyEngine
 		//virtual std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName) override;
 
 
+		std::vector<Texture> m_Textures;
+		void setupMesh();
+		std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
 
 	};
 }
